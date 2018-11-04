@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>My first changecolor test page</title>
+        <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+        <script>
+            function changeColor()
+            {
+                var attributeOutput = document.getElementById("move").getAttribute('scale');
+                if(document.getElementById("plate").getAttribute('diffuseColor')=="1 0 0")
+                {
+                    document.getElementById("plate").setAttribute('diffuseColor', '0 0 1');
+                }
+                else
+                {
+                    document.getElementById("plate").setAttribute('diffuseColor', '1 0 0');
+                }
+                alert(attributeOutput); 
+            }
+            
+            function moveAway()
+            {   
+                var attributeOutput = document.getElementById("move").getAttribute('translation');
+                var firstParam = attributeOutput.substr(0,1);
+                var secondParam = attributeOutput.substr(2,1);
+                var thirdParam = attributeOutput.substr(4,1);
+                firstParam++;
+                attributeOutput = "";
+                attributeOutput = attributeOutput.concat(firstParam, " ", secondParam, " ", thirdParam);
+                document.getElementById("move").setAttribute('translation', attributeOutput);
+                
+            }
+        </script>
+        <style>
+            x3d
+            {
+                border:2px solid darkorange;
+                background: rgba(128, 128, 128, 0.4);
+            }
+            body
+            {
+                font-size:110%;
+                font-family:verdana, sans-serif;
+                margin: 3em;
+                color: lightgray;
+            }
+
+            h1
+            {
+                color: darkorange;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello, X3DOM!</h1>
+        <p>
+            This is my first html page with some 3d objects.
+        </p>
+        <x3d width='500px' height='400px'>
+            <scene>
+                <transform id="move" DEF="Basis" translation="1 0 0">
+                    <shape onclick="moveAway();">
+                        <box></box>
+                        <appearance>
+                            <material id="plate" diffuseColor="1 0 0"/>
+                        </appearance>
+                    </shape>
+                </transform>
+            </scene>
+        </x3d>
+    </body>
+</html>
