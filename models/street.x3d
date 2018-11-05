@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile='Immersive'>
+<head>
+    <meta name='filename' content='trees.x3d'/>
+    <meta name='description' content='Tree Models'/>
+</head>
+<Scene>
+    <Shape DEF='Street'>
+        <Box size='200 1 15'/>
+        <Appearance>
+            <Material diffuseColor='0.5 0.5 0.5'/>
+            <ImageTexture url="../textures/street_texture.jpg"/>
+            <TextureTransform scale='10 1'/>
+        </Appearance>
+    </Shape>
+</Scene>
+</X3D>

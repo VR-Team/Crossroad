@@ -10,7 +10,7 @@
             <Sphere radius = '3'/>
             <Appearance>
                 <ImageTexture url="../textures/leaf-tree-texture.jpg" repeatS ='true' repeatT = 'true'/>
-                <TextureTransform scale='3 3'/>
+                <TextureTransform scale='5 5'/>
             </Appearance>
         </Shape>
         <Transform translation='0 -3 0'>

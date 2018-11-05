@@ -35,7 +35,7 @@
                         </Transform>
                         <Transform translation='0 -0.5 3.7'>
                             <Shape DEF='LightBox'>
-                                <Box size='.75 1.5 .75'/>
+                                <Box size='.75 1.5 .75'></Box>
                                 <Appearance>
                                     <Material diffuseColor='0.5 0.5 0.5'/>
                                 </Appearance>
@@ -103,8 +103,8 @@
                 </Transform>
                 <Transform rotation='0 1 0 1.5708'>
                     <Transform translation='0.25 -3.5 0'>
-                        <Shape>
-                            <Box size='.1 .2 .1'/>
+                        <Shape DEF='Button'>
+                            <Box size='.1 .2 .1'></Box>
                             <Appearance>
                                 <Material diffuseColor='1 1 0.1'/>
                             </Appearance>
@@ -179,12 +179,7 @@
                     </Transform>
                     <Transform rotation='0 1 0 1.5708'>
                         <Transform translation='0.25 -3.5 0'>
-                            <Shape>
-                                <Box size='.1 .2 .1'/>
-                                <Appearance>
-                                    <Material diffuseColor='1 1 0.1'/>
-                                </Appearance>
-                            </Shape>
+                            <Shape USE='Button'/>
                             <TouchSensor DEF="Touch2" description="Bitte druecken 2"/>
                         </Transform>
                     </Transform>
@@ -254,12 +249,7 @@
                     </Transform>
                     <Transform rotation='0 1 0 1.5708'>
                         <Transform translation='0.25 -3.5 0'>
-                            <Shape>
-                                <Box size='.1 .2 .1'/>
-                                <Appearance>
-                                    <Material diffuseColor='1 1 0.1'/>
-                                </Appearance>
-                            </Shape>
+                            <Shape USE='Button'/>
                             <TouchSensor USE="Touch1"/>
                         </Transform>
                     </Transform>
@@ -324,12 +314,7 @@
                     </Transform>
                     <Transform rotation='0 1 0 1.5708'>
                         <Transform translation='0.25 -3.5 0'>
-                            <Shape>
-                                <Box size='.1 .2 .1'/>
-                                <Appearance>
-                                    <Material diffuseColor='1 1 0.1'/>
-                                </Appearance>
-                            </Shape>
+                            <Shape USE='Button'/>
                             <TouchSensor USE="Touch2"/>
                         </Transform>
                     </Transform>
@@ -385,12 +370,7 @@
                 </Transform>
             </Transform>
             <Transform translation='0.25 2.5 0'>
-                <Shape>
-                    <Box size='.1 .2 .1'/>
-                    <Appearance>
-                        <Material diffuseColor='1 1 0.1'/>
-                    </Appearance>
-                </Shape>
+                <Shape USE='Button'/>
                 <TouchSensor USE='Touch2'/>
             </Transform>
         </Transform>
@@ -443,12 +423,7 @@
                 </Transform>
             </Transform>
             <Transform translation='0.25 2.5 0'>
-                <Shape>
-                    <Box size='.1 .2 .1'/>
-                    <Appearance>
-                        <Material diffuseColor='1 1 0.1'/>
-                    </Appearance>
-                </Shape>
+                <Shape USE='Button'/>
                 <TouchSensor USE='Touch1'/>
             </Transform>
         </Transform>
@@ -502,12 +477,7 @@
                 
             </Transform>
             <Transform translation='0.25 2.5 0'>
-                <Shape>
-                    <Box size='.1 .2 .1'/>
-                    <Appearance>
-                        <Material diffuseColor='1 1 0.1'/>
-                    </Appearance>
-                </Shape>
+                <Shape USE='Button'/>
                 <TouchSensor USE='Touch2'/>
             </Transform>
         </Transform>
@@ -561,12 +531,7 @@
                 </Transform>
             </Transform>
             <Transform translation='0.25 2.5 0'>
-                <Shape>
-                    <Box size='.1 .2 .1'/>
-                    <Appearance>
-                        <Material diffuseColor='1 1 0.1'/>
-                    </Appearance>
-                </Shape>
+                <Shape USE='Button'/>
                 <TouchSensor USE='Touch1'/>
             </Transform>
         </Transform>

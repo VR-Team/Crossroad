@@ -30,16 +30,9 @@
                     </Appearance>
                 </Shape>
             </Transform>
-		    <Shape DEF='Street'>
-			<Box size='200 1 15'/>
-			<Appearance>
-			    <Material diffuseColor='0.5 0.5 0.5'/>
-                <ImageTexture url="../textures/street_texture.jpg"/>
-                <TextureTransform scale='10 1'/>
-			</Appearance>
-		    </Shape>
+		    <Inline url='street.x3d'/>
             <Transform rotation = '0 1 0 1.5708'>
-                <Shape USE='Street'/>
+                <Inline url='street.x3d'/>
             </Transform>
         </Transform>
 	</Group>
