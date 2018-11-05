@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile='Immersive'>
+<head>
+    <meta name='filename' content='trees.x3d'/>
+    <meta name='description' content='Tree Models'/>
+</head>
+<Scene>
+    <Transform DEF = 'LeafTree' translation='0 5 0'>
+        <Shape>
+            <Sphere radius = '3'/>
+            <Appearance>
+                <ImageTexture url="leaf-tree-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                <TextureTransform scale='3 3'/>
+            </Appearance>
+        </Shape>
+        <Transform translation='0 -3 0'>
+            <Shape>
+                <Cylinder height= '3' radius = '0.5'/>
+                <Appearance>
+                    <ImageTexture url="wood-grain-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                    <TextureTransform scale='1 1'/>
+                </Appearance>
+            </Shape>
+        </Transform>
+    </Transform>
+</Scene>
+</X3D>

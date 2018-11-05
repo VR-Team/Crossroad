@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile='Immersive'>
+<head>
+    <meta name='filename' content='arcTrafficLight.x3d'/>
+    <meta name='description' content='Traffic light Models'/>
+</head>
+<Scene>
+<Transform DEF='Lights'>
+    <Shape DEF='YELLOW'>
+        <Cylinder height='0.6' radius='0.22'/>
+        <Appearance>
+            <Material diffuseColor='.5 .5 0.1'/>
+        </Appearance>
+    </Shape>
+    <DirectionalLight id="yellowLight" direction='1 1 1' on ="FALSE" intensity='1.0' shadowIntensity='0.0'> </DirectionalLight> 
+    <Transform translation='0.5 0 0'>
+        <Shape DEF='RED'>
+            <Cylinder height='0.6' radius='0.22'/>
+            <Appearance>
+                <Material diffuseColor='.5 0 0'/>
+            </Appearance>
+        </Shape>
+        <DirectionalLight id="redLight" direction='1 1 1' on ="TRUE" intensity='1.0' shadowIntensity='0.0'> </DirectionalLight> 
+    </Transform>
+    <Transform translation='-0.5 0 0'>
+        <Shape DEF='GREEN'>
+            <Cylinder height='0.6' radius='0.22'/>
+            <Appearance>
+                <Material diffuseColor='0 .5 0'/>
+            </Appearance>
+        </Shape>
+        <DirectionalLight id="greenLight" direction='1 1 1' on ="TRUE" intensity='1.0' shadowIntensity='0.0'> </DirectionalLight> 
+    </Transform>
+</Transform>
+</Scene>
+</X3D>

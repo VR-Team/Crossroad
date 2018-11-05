@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile='Immersive'>
+<head>
+    <meta name='filename' content='pavement.x3d'/>
+    <meta name='description' content='Pavement Models'/>
+</head>
+<Scene>
+    <Transform translation='45 0.5 -2'>
+        <Transform DEF='Pavement'>
+            <Shape DEF='Walk'>
+                <Box size='90 2 4'/>
+                <Appearance>
+                    <Material diffuseColor='1 1 1'/>
+                    <ImageTexture url="pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
+                    <TextureTransform scale='5 1'/>
+                </Appearance>
+            </Shape>
+            <Transform translation='-45 0 2'>
+                <Shape DEF='PavementCircle'>
+                    <Cylinder height='2' radius='4'/>
+                    <Appearance>
+                        <Material diffuseColor='1 1 1'/>
+                        <ImageTexture url="pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
+                        <TextureTransform scale='1 1'/>
+                    </Appearance>
+                </Shape>
+                <Transform translation='-2 0 45'>
+                    <Transform rotation='0 1 0 1.5708'>
+                        <Shape USE='Walk'/>
+                    </Transform>
+                </Transform>
+            </Transform>
+        </Transform>
+    </Transform>
+</Scene>
+</X3D>

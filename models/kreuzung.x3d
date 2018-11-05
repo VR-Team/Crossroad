@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"					"http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile='Immersive'>
+<head>
+    <meta name='filename' content='MyWorld.x3d'/>
+    <meta name='description' content='My first X3D World'/>
+</head>
+<Scene>
+    <TextureBackground>
+        <ImageTexture containerField='leftTexture' url= "sky_106.png"/> 
+        <ImageTexture containerField='rightTexture' url= "sky_106.png"/> 
+        <ImageTexture containerField='frontTexture' url= "sky_106.png"/> 
+        <ImageTexture containerField='backTexture' url= "sky_106.png"/> 
+        <ImageTexture containerField='topTexture' url= "sky_106.png"/> 
+    </TextureBackground> 
+    <Group DEF='DefGroup'>
+        <Shape DEF='Ground'>
+            <Box size='200 1 200'/>
+            <Appearance>
+                <Material diffuseColor='0 1 0'/>
+                <ImageTexture url="grass-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                <TextureTransform scale='5 5'/>
+            </Appearance>
+        </Shape>
+    </Group>
+	
+    <Group DEF='StreetsGroup'>
+    	<Transform translation='0 0.5 0'>
+            <Transform translation = '0 0.02 0'>
+                <Shape>
+                    <Box size='8 1 0.6'/>
+                    <Appearance>
+                        <Material diffuseColor='1 1 1'/>
+                    </Appearance>
+                </Shape>
+                <Shape>
+                    <Box size='0.6 1 8'/>
+                    <Appearance>
+                        <Material diffuseColor='1 1 1'/>
+                    </Appearance>
+                </Shape>
+            </Transform>
+		    <Shape DEF='Street'>
+			<Box size='200 1 15'/>
+			<Appearance>
+			    <Material diffuseColor='0.5 0.5 0.5'/>
+                <ImageTexture url="street_texture.jpg"/>
+                <TextureTransform scale='3 1'/>
+			</Appearance>
+		    </Shape>
+            <Transform rotation = '0 1 0 1.5708'>
+                <Shape USE='Street'/>
+            </Transform>
+        </Transform>
+	</Group>
+	
+	<Group DEF='PavementGroup'>
+        <Transform translation='10 0 10'>
+            <Inline url='pavement.x3d'/>
+        </Transform>
+        <Transform translation='10 0 -10'>
+            <Transform rotation='0 1 0 1.5708'>
+                <Inline url='pavement.x3d'/>
+            </Transform>
+        </Transform>
+        <Transform translation='-10 0 10'>
+            <Transform rotation='0 1 0 -1.5708'>
+                <Inline url='pavement.x3d'/>
+            </Transform>
+        </Transform>
+        <Transform translation='-10 0 -10'>
+            <Transform rotation='0 1 0 3.1416'>
+                <Inline url='pavement.x3d'/>
+            </Transform>
+        </Transform>
+    </Group>
+    
+    <Group DEF='TreeGroup'>
+        <Transform  translation='30 0 30'>
+            <Inline url='pineTree.x3d'/>
+        </Transform>
+        <Transform  translation='18 0 24'>
+            <Inline url='leafTree.x3d'/>
+        </Transform>
+    </Group>
+    
+    <Group DEF='TrafficLightGroup'>
+        <Transform translation='-10 0 -6'>
+            <Inline url="arcTrafficLight.x3d"/>
+        </Transform>
+        <Transform translation='6 0 -10'>
+            <Transform rotation = '0 1 0 -1.5708'>
+                <Inline url="arcTrafficLight.x3d"/>
+            </Transform>
+        </Transform>
+        <Transform translation='10 0 6'>
+             <Transform rotation = '0 1 0 3.1416'>
+                <Inline url="arcTrafficLight.x3d"/>
+            </Transform>
+        </Transform>
+        <Transform translation='-6 0 10'>
+             <Transform rotation = '0 1 0 1.5708'>
+                <Inline url="arcTrafficLight.x3d"/>
+            </Transform>
+        </Transform>
+        <Transform translation='-6 0 -10'>
+            <Inline url='simpleTrafficLight.x3d'/>
+        </Transform>
+        <Transform translation='10 0 -6'>
+            <Transform rotation = '0 1 0 -1.5708'>
+                <Inline url='simpleTrafficLight.x3d'/>
+            </Transform>
+        </Transform>
+        <Transform translation='-10 0 6'>
+             <Transform rotation = '0 1 0 1.5708'>
+                <Inline url='simpleTrafficLight.x3d'/>
+            </Transform>
+        </Transform>
+        <Transform translation='6 0 10'>
+             <Transform rotation = '0 1 0 3.1416'>
+                <Inline url='simpleTrafficLight.x3d'/>
+            </Transform>
+        </Transform>
+    </Group>
+</Scene>
+</X3D>

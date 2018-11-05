@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile='Immersive'>
+<head>
+    <meta name='filename' content='trees.x3d'/>
+    <meta name='description' content='Tree Models'/>
+</head>
+<Scene>
+    <Transform DEF = 'PineTree' translation='0 4.5 0'>
+        <Shape>
+            <Cone height = '7' bottomRadius = '3'/>
+            <Appearance>
+                <Material diffuseColor='1 1 1'/>
+                <ImageTexture url="pine-tree-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                <TextureTransform scale='3 3'/>
+            </Appearance>
+        </Shape>
+        <Transform translation='0 +2.5 0'>
+            <Shape>
+                <Cone height = '4' bottomRadius = '2'/>
+                <Appearance>
+                    <Material diffuseColor='1 1 1'/>
+                    <ImageTexture url="pine-tree-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                    <TextureTransform scale='3 3'/>
+                </Appearance>
+            </Shape>
+        </Transform>
+        <Transform translation='0 -3.5 0'>
+            <Shape>
+                <Cylinder height= '1' radius = '0.5'/>
+                <Appearance>
+                    <ImageTexture url="wood-grain-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                    <TextureTransform scale='1 1'/>
+                </Appearance>
+            </Shape>
+        </Transform>
+    </Transform>
+</Scene>
+</X3D>
