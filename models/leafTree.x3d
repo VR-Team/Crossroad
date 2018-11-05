@@ -9,7 +9,7 @@
         <Shape>
             <Sphere radius = '3'/>
             <Appearance>
-                <ImageTexture url="leaf-tree-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                <ImageTexture url="../textures/leaf-tree-texture.jpg" repeatS ='true' repeatT = 'true'/>
                 <TextureTransform scale='3 3'/>
             </Appearance>
         </Shape>
@@ -17,7 +17,7 @@
             <Shape>
                 <Cylinder height= '3' radius = '0.5'/>
                 <Appearance>
-                    <ImageTexture url="wood-grain-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                    <ImageTexture url="../textures/wood-grain-texture.jpg" repeatS ='true' repeatT = 'true'/>
                     <TextureTransform scale='1 1'/>
                 </Appearance>
             </Shape>

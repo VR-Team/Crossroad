@@ -13,17 +13,7 @@
         <ImageTexture containerField='backTexture' url= "sky_106.png"/> 
         <ImageTexture containerField='topTexture' url= "sky_106.png"/> 
     </TextureBackground> 
-    <Group DEF='DefGroup'>
-        <Shape DEF='Ground'>
-            <Box size='200 1 200'/>
-            <Appearance>
-                <Material diffuseColor='0 1 0'/>
-                <ImageTexture url="grass-texture.jpg" repeatS ='true' repeatT = 'true'/>
-                <TextureTransform scale='5 5'/>
-            </Appearance>
-        </Shape>
-    </Group>
-	
+    <Inline url='ground.x3d'/>	
     <Group DEF='StreetsGroup'>
     	<Transform translation='0 0.5 0'>
             <Transform translation = '0 0.02 0'>
@@ -44,8 +34,8 @@
 			<Box size='200 1 15'/>
 			<Appearance>
 			    <Material diffuseColor='0.5 0.5 0.5'/>
-                <ImageTexture url="street_texture.jpg"/>
-                <TextureTransform scale='10 1'/>
+                <ImageTexture url="../street_texture.jpg"/>
+                <TextureTransform scale='3 1'/>
 			</Appearance>
 		    </Shape>
             <Transform rotation = '0 1 0 1.5708'>
@@ -84,6 +74,43 @@
         </Transform>
     </Group>
     
-    <Inline url="trafficLightsGroup.x3d"/>
+    <Group DEF='TrafficLightGroup'>
+        <Transform translation='-10 0 -6'>
+            <Inline url="arcTrafficLight.x3d"/>
+        </Transform>
+        <Transform translation='6 0 -10'>
+            <Transform rotation = '0 1 0 -1.5708'>
+                <Inline url="arcTrafficLight.x3d"/>
+            </Transform>
+        </Transform>
+        <Transform translation='10 0 6'>
+             <Transform rotation = '0 1 0 3.1416'>
+                <Inline url="arcTrafficLight.x3d"/>
+            </Transform>
+        </Transform>
+        <Transform translation='-6 0 10'>
+             <Transform rotation = '0 1 0 1.5708'>
+                <Inline url="arcTrafficLight.x3d"/>
+            </Transform>
+        </Transform>
+        <Transform translation='-6 0 -10'>
+            <Inline url='simpleTrafficLight.x3d'/>
+        </Transform>
+        <Transform translation='10 0 -6'>
+            <Transform rotation = '0 1 0 -1.5708'>
+                <Inline url='simpleTrafficLight.x3d'/>
+            </Transform>
+        </Transform>
+        <Transform translation='-10 0 6'>
+             <Transform rotation = '0 1 0 1.5708'>
+                <Inline url='simpleTrafficLight.x3d'/>
+            </Transform>
+        </Transform>
+        <Transform translation='6 0 10'>
+             <Transform rotation = '0 1 0 3.1416'>
+                <Inline url='simpleTrafficLight.x3d'/>
+            </Transform>
+        </Transform>
+    </Group>
 </Scene>
 </X3D>

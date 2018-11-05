@@ -10,7 +10,7 @@
             <Cone height = '7' bottomRadius = '3'/>
             <Appearance>
                 <Material diffuseColor='1 1 1'/>
-                <ImageTexture url="pine-tree-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                <ImageTexture url="../textures/pine-tree-texture.jpg" repeatS ='true' repeatT = 'true'/>
                 <TextureTransform scale='3 3'/>
             </Appearance>
         </Shape>
@@ -19,7 +19,7 @@
                 <Cone height = '4' bottomRadius = '2'/>
                 <Appearance>
                     <Material diffuseColor='1 1 1'/>
-                    <ImageTexture url="pine-tree-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                    <ImageTexture url="../textures/pine-tree-texture.jpg" repeatS ='true' repeatT = 'true'/>
                     <TextureTransform scale='3 3'/>
                 </Appearance>
             </Shape>
@@ -28,7 +28,7 @@
             <Shape>
                 <Cylinder height= '1' radius = '0.5'/>
                 <Appearance>
-                    <ImageTexture url="wood-grain-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                    <ImageTexture url="../textures/wood-grain-texture.jpg" repeatS ='true' repeatT = 'true'/>
                     <TextureTransform scale='1 1'/>
                 </Appearance>
             </Shape>
