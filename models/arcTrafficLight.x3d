@@ -5,13 +5,14 @@
     <meta name='description' content='Traffic light Models'/>
 </head>
 <Scene>
-    <Transform DEF = 'ArcTrafficLight1' translation='0 6 0'>
-        <Shape DEF = 'VPillar'>
-            <Cylinder height= '10' radius = '0.25'/>
-            <Appearance>
-                <Material diffuseColor='0.5 0.5 0.5'/>
-            </Appearance>
-        </Shape>
+    <Transform DEF = 'ArcTrafficLight'>
+        <Transform translation='0 6 0'>
+            <Shape DEF = 'VPillar'>
+                <Cylinder height= '10' radius = '0.25'/>
+                <Appearance>
+                    <Material diffuseColor='0.5 0.5 0.5'/>
+                </Appearance>
+            </Shape>
             <Transform translation='0 5.2 0.3'>
             <Transform rotation = '1 0 0 0.7904'>
                 <Shape>
@@ -37,78 +38,11 @@
                             <Material diffuseColor='0.5 0.5 0.5'/>
                         </Appearance>
                     </Shape>
-                        <Transform rotation='0 0 1 1.5708'>
-                        <Transform translation='0 0.1 0'>
-                            <Transform DEF='CarLights'>
-                                    <Shape DEF='YELLOWCAR'>S
-                                        <Cylinder height='0.6' radius='0.22'/>
-                                        <Appearance>
-                                            <Material diffuseColor='.5 .5 0.1'/>
-                                        </Appearance>
-                                    </Shape>
-                                    <DirectionalLight DEF="yellowCarLight1" direction='-1 -1 -1' on ="FALSE" intensity='1.0' shadowIntensity='0.0'> </DirectionalLight> 
-                                    <Transform translation='0.5 0 0'>
-                                        <Shape DEF='REDCAR'>
-                                            <Cylinder height='0.6' radius='0.22'/>
-                                            <Appearance>
-                                                <Material diffuseColor='.5 0 0'/>
-                                            </Appearance>
-                                        </Shape>
-                                        <DirectionalLight DEF="redCarLight1" direction='-1 -1 -1' on ="True" intensity='1.0' shadowIntensity='0.0'> </DirectionalLight> 
-                                    </Transform>
-                                </Transform>
-                                <Transform translation='-0.5 0 0'>
-                                    <Shape DEF='GREENCAR'>
-                                        <Cylinder height='0.6' radius='0.22'/>
-                                        <Appearance>
-                                            <Material diffuseColor='0 .5 0'/>
-                                        </Appearance>
-                                    </Shape>
-                                    <DirectionalLight DEF="greenCarLight1" direction='-1 -1 -1' on ="FALSE" intensity='1.0' shadowIntensity='0.0'> </DirectionalLight> 
-                                </Transform>
-                        </Transform>
-                    </Transform>
                 </Transform>
             </Transform>
         </Transform>
         <Shape USE='LightBox'/>
-        <Transform rotation='0 0 1 1.5708'>
-                    <Transform rotation='1 0 0 1.5708'>
-            <Transform translation='0 0.1 0'>
-                <Transform DEF='FootLights1'>
-                    <Transform translation='0.25 0 0'>
-                        <Shape DEF='REDFOOT'>
-                            <Cylinder height='0.6' radius='0.22'/>
-                            <Appearance>
-                                <Material diffuseColor='.5 0 0'/>
-                            </Appearance>
-                        </Shape>
-                        <DirectionalLight DEF="redFootLight1" direction='-1 -1 -1' on ="True" intensity='1.0' shadowIntensity='0.0'> </DirectionalLight> 
-                    </Transform>
-                    <Transform translation='-0.25 0 0'>
-                        <Shape DEF='GREENFOOT'>
-                            <Cylinder height='0.6' radius='0.22'/>
-                            <Appearance>
-                                <Material diffuseColor='0 .5 0'/>
-                            </Appearance>
-                        </Shape>
-                        <DirectionalLight DEF="greenFootLight1" direction='-1 -1 -1' on ="FALSE" intensity='1.0' shadowIntensity='0.0'> </DirectionalLight> 
-                    </Transform>
-                </Transform>
-            </Transform>
-        </Transform>
-        </Transform>
-        <Transform rotation='0 1 0 1.5708'>
-            <Transform translation='0.25 -3.5 0'>
-                <Shape>
-                    <Box size='.1 .2 .1'/>
-                    <Appearance>
-                        <Material diffuseColor='1 1 0.1'/>
-                    </Appearance>
-                </Shape>
-                <TouchSensor DEF="Touch" description="Bitte druecken"/>
-            </Transform>
-        </Transform>
     </Transform>
+</Transform>
 </Scene>
 </X3D>

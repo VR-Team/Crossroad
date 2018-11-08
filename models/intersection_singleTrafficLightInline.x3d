@@ -67,6 +67,6 @@
         </Transform>
     </Group>
     
-    <Inline url="trafficLightsGroupNoLights.x3d"/>
+    <Inline url="trafficLightsGroup.x3d"/>
 </Scene>
 </X3D>

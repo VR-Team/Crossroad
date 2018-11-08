@@ -1,36 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <X3D profile='Immersive'>
 <head>
-    <meta name='filename' content='arcTrafficLight.x3d'/>
-    <meta name='description' content='Traffic light Models'/>
+    <meta name='filename' content='trafficLightsGroup.x3d'/>
+    <meta name='description' content='Traffic light Models arranged with no use of lights to illuminate colors'/>
 </head>
 <Scene>
-<Transform DEF='Lights'>
-    <Shape DEF='YELLOW'>
-        <Cylinder height='0.6' radius='0.22'/>
-        <Appearance>
-            <Material diffuseColor='.5 .5 0.1'/>
-        </Appearance>
-    </Shape>
-    <DirectionalLight id="yellowLight" direction='1 1 1' on ="FALSE" intensity='1.0' shadowIntensity='0.0'> </DirectionalLight> 
-    <Transform translation='0.5 0 0'>
-        <Shape DEF='RED'>
-            <Cylinder height='0.6' radius='0.22'/>
-            <Appearance>
-                <Material diffuseColor='.5 0 0'/>
-            </Appearance>
-        </Shape>
-        <DirectionalLight id="redLight" direction='1 1 1' on ="TRUE" intensity='1.0' shadowIntensity='0.0'> </DirectionalLight> 
+<Transform translation='-7 0 -11'>
+
+    <Transform translation='-4 0 4'>
+        <Transform DEF='HorizontalArcCarLights'>
+            <Transform translation='0 11.0 7.7'>
+                <Transform DEF='HorizontalCarLights'>
+                    <Transform rotation='0 0 1 1.5708'>
+                        <Transform translation='0 0.1 0'>
+                            <Shape DEF='HorizontalYELLOWCAR'>
+                                <Cylinder height='0.6' radius='0.22'/>
+                                <Appearance>
+                                    <Material diffuseColor='.5 .5 0.1'/>
+                                </Appearance>
+                            </Shape>
+                            <Transform translation='0.5 0 0'>
+                                <Shape DEF='HorizontalREDCAR'>
+                                    <Cylinder height='0.6' radius='0.22'/>
+                                    <Appearance>
+                                        <Material diffuseColor='.5 0 0'/>
+                                    </Appearance>
+                                </Shape>
+                            </Transform>
+                            <Transform translation='-0.5 0 0'>
+                                <Shape DEF='HorizontalGREENCAR'>
+                                    <Cylinder height='0.6' radius='0.22'/>
+                                    <Appearance>
+                                        <Material diffuseColor='0 .5 0'/>
+                                    </Appearance>
+                                </Shape>
+                            </Transform>
+                        </Transform>
+                    </Transform>                            
+                </Transform>
+            </Transform>
+            
+            <Transform DEF='VerticalArcFootLights'>
+                <Transform rotation='0 0 1 1.5708'>
+                    <Transform rotation='1 0 0 1.5708'>
+                        <Transform translation='5.75 0.1 0'>
+                                <Transform translation='0.6 0 0'>
+                                    <Shape DEF='VerticalREDFOOT'>
+                                        <Cylinder height='0.6' radius='0.22'/>
+                                        <Appearance>
+                                            <Material diffuseColor='.5 0 0'/>
+                                        </Appearance>
+                                    </Shape>
+                                </Transform>
+                                <Transform translation='0 0 0'>
+                                    <Shape DEF='VerticalGREENFOOT'>
+                                        <Cylinder height='0.6' radius='0.22'/>
+                                        <Appearance>
+                                            <Material diffuseColor='0 .5 0'/>
+                                        </Appearance>
+                                    </Shape>
+                                </Transform>
+                        </Transform>
+                    </Transform>
+                </Transform>
+            </Transform>
+            
+            <Transform rotation='0 1 0 1.5708'>
+                <Transform translation='0.25 2.3 0'> 
+                    <Group DEF='Button1'>
+                        <Shape DEF='Button'>
+                            <Box size='.1 .2 .1'/>
+                            <Appearance>
+                                <Material diffuseColor='1 1 0.1'/>
+                            </Appearance>
+                        </Shape>
+                        <TouchSensor DEF="Touch1" description="Bitte druecken 1"/>
+                    </Group>
+                </Transform>
+            </Transform>
+        </Transform>
     </Transform>
-    <Transform translation='-0.5 0 0'>
-        <Shape DEF='GREEN'>
-            <Cylinder height='0.6' radius='0.22'/>
-            <Appearance>
-                <Material diffuseColor='0 .5 0'/>
-            </Appearance>
-        </Shape>
-        <DirectionalLight id="greenLight" direction='1 1 1' on ="TRUE" intensity='1.0' shadowIntensity='0.0'> </DirectionalLight> 
+    
+    <Transform translation='14 0 0'>
+        <Transform DEF='VerticalArcCarLights'>
+            <Transform rotation = '0 1 0 -1.5708'>
+                <Transform translation='0 11.0 7.7'>
+                    <Transform DEF='VerticalCarLights'>
+                        <Transform rotation='0 0 1 1.5708'>
+                            <Transform translation='0 0.1 0'>
+                                <Shape DEF='VerticalYELLOWCAR'>
+                                    <Cylinder height='0.6' radius='0.22'/>
+                                    <Appearance>
+                                        <Material diffuseColor='.5 .5 0.1'/>
+                                    </Appearance>
+                                </Shape>
+                                <Transform translation='0.5 0 0'>
+                                    <Shape DEF='VerticalREDCAR'>
+                                        <Cylinder height='0.6' radius='0.22'/>
+                                        <Appearance>
+                                            <Material diffuseColor='.5 0 0'/>
+                                        </Appearance>
+                                    </Shape>
+                                </Transform>
+                                <Transform translation='-0.5 0 0'>
+                                    <Shape DEF='VerticalGREENCAR'>
+                                        <Cylinder height='0.6' radius='0.22'/>
+                                        <Appearance>
+                                            <Material diffuseColor='0 .5 0'/>
+                                        </Appearance>
+                                    </Shape>
+                                </Transform>
+                            </Transform>
+                        </Transform>     
+                    </Transform>
+                </Transform>
+                <Transform DEF='HorizontalArcFootLights'>
+                    <Transform rotation='0 0 1 1.5708'>
+                        <Transform rotation='1 0 0 1.5708'>
+                            <Transform translation='5.75 0.1 0'>
+                                    <Transform translation='0.6 0 0'>
+                                        <Shape DEF='HorizontalREDFOOT'>
+                                            <Cylinder height='0.6' radius='0.22'/>
+                                            <Appearance>
+                                                <Material diffuseColor='.5 0 0'/>
+                                            </Appearance>
+                                        </Shape>
+                                    </Transform>
+                                    <Transform translation='0 0 0'>
+                                        <Shape DEF='HorizontalGREENFOOT'>
+                                            <Cylinder height='0.6' radius='0.22'/>
+                                            <Appearance>
+                                                <Material diffuseColor='0 .5 0'/>
+                                            </Appearance>
+                                        </Shape>
+                                    </Transform>
+                            </Transform>
+                        </Transform>
+                    </Transform>
+                </Transform>
+                <Transform rotation='0 1 0 1.5708'>
+                    <Transform translation='0.25 2.3 0'> 
+                        <Group DEF='Button2'>
+                            <Shape USE='Button'/>
+                            <TouchSensor DEF="Touch2" description="Bitte druecken 2"/>
+                        </Group>
+                    </Transform>
+                </Transform>
+            </Transform>
+        </Transform>
     </Transform>
+    
+    <Transform translation='18 0 18'>
+        <Transform rotation='0 1 0 3.1416'>
+            <Transform USE='HorizontalArcCarLights'/>
+        </Transform>
+    </Transform>
+
+    <Transform translation='0 0 22'>
+        <Transform rotation='0 1 0 3.1416'>
+            <Transform USE='VerticalArcCarLights'/>
+        </Transform>
+    </Transform>
+    
+    
+    
+    <Transform translation = '0 0 0'>
+        <Transform DEF = 'VerticalSimpleCarLights'>
+            <Transform translation='0 5.75 0'>
+                <Transform rotation= '0 1 0 -1.5708'>
+                    <Transform USE='VerticalCarLights'/>
+                </Transform>
+                <Transform translation='0 -6 0'>
+                    <Transform rotation= '0 1 0 1.5708'>
+                        <Transform USE='HorizontalArcFootLights'/>
+                    </Transform>
+                </Transform>
+                <Transform rotation='0 1 0 3.1416'>
+                    <Transform translation='0.25 -3.5 0'>
+                        <Group USE='Button2'/>
+                    </Transform>
+                </Transform>
+            </Transform>
+        </Transform>
+    </Transform>
+    
+    <Transform translation = '-4 0 18'>
+        <Transform DEF = 'HorizontalSimpleCarLights' translation='0 3 0'>
+            <Transform rotation='0 1 0 1.5708'>
+                <Transform translation='0 2.75 0'>
+                    <Transform rotation= '0 1 0 -1.5708'>
+                        <Transform USE='HorizontalCarLights'/>
+                    </Transform>
+                    <Transform translation='0.2 -6 0'>
+                        <Transform rotation= '0 1 0 -1.5708'>
+                            <Transform USE='VerticalArcFootLights'/>
+                        </Transform>
+                    </Transform>
+                    <Transform rotation='0 1 0 3.1416'>
+                        <Transform translation='0.25 -3.5 0'>
+                            <Group USE='Button1'/>
+                        </Transform>
+                    </Transform>
+                </Transform>
+            </Transform>
+        </Transform>
+    </Transform>
+    
+    <Transform translation='14 0 22'>
+        <Transform rotation='0 1 0 3.1416'>
+            <Transform USE='VerticalSimpleCarLights'/>
+        </Transform>
+    </Transform>
+
+    <Transform translation='18 0 4'>
+        <Transform rotation='0 1 0 3.1416'>
+            <Transform USE='HorizontalSimpleCarLights'/>
+        </Transform>
+    </Transform>
+    
 </Transform>
 </Scene>
 </X3D>
