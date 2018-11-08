@@ -8,7 +8,7 @@
     <Transform DEF = 'ArcTrafficLight'>
         <Transform translation='0 6 0'>
             <Shape DEF = 'VPillar'>
-                <Cylinder height= '10' radius = '0.25'/>
+                <Cylinder height= '10' radius = '0.15'/>
                 <Appearance>
                     <Material diffuseColor='0.5 0.5 0.5'/>
                 </Appearance>
@@ -16,7 +16,7 @@
             <Transform translation='0 5.2 0.3'>
             <Transform rotation = '1 0 0 0.7904'>
                 <Shape>
-                    <Cylinder height= '1' radius = '0.25'/>
+                    <Cylinder height= '1' radius = '0.15'/>
                     <Appearance>
                         <Material diffuseColor='0.5 0.5 0.5'/>
                     </Appearance>
@@ -25,7 +25,7 @@
             <Transform translation='0 0.3 3.7'>
                 <Transform rotation = '1 0 0 1.5708'>
                     <Shape Def='HPillar'>
-                        <Cylinder height= '7' radius = '0.25'/>
+                        <Cylinder height= '7' radius = '0.15'/>
                         <Appearance>
                             <Material diffuseColor='0.5 0.5 0.5'/>
                         </Appearance>

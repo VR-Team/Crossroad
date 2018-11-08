@@ -10,8 +10,8 @@
             <Box size='200 1 200'/>
             <Appearance>
                 <Material diffuseColor='0 1 0'/>
-                <ImageTexture url="../textures/grass-texture.jpg" repeatS ='true' repeatT = 'true'/>
-                <TextureTransform scale='5 5'/>
+                <ImageTexture url="../../textures/grass-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                <TextureTransform scale='10 10'/>
             </Appearance>
         </Shape>
     </Scene>

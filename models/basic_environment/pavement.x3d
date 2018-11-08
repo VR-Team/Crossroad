@@ -11,7 +11,7 @@
                 <Box size='90 2 4'/>
                 <Appearance>
                     <Material diffuseColor='1 1 1'/>
-                    <ImageTexture url="../textures/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
+                    <ImageTexture url="../../textures/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
                     <TextureTransform scale='13 0.75'/>
                 </Appearance>
             </Shape>
@@ -20,7 +20,7 @@
                     <Cylinder height='2' radius='4'/>
                     <Appearance>
                         <Material diffuseColor='1 1 1'/>
-                        <ImageTexture url="../textures/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
+                        <ImageTexture url="../../textures/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
                         <TextureTransform scale='1 1'/>
                     </Appearance>
                 </Shape>

@@ -7,35 +7,14 @@
 </head>
 <Scene>
     <TextureBackground>
-        <ImageTexture containerField='leftTexture' url= "sky_106.png"/> 
-        <ImageTexture containerField='rightTexture' url= "sky_106.png"/> 
-        <ImageTexture containerField='frontTexture' url= "sky_106.png"/> 
-        <ImageTexture containerField='backTexture' url= "sky_106.png"/> 
-        <ImageTexture containerField='topTexture' url= "sky_106.png"/> 
+        <ImageTexture containerField='leftTexture' url= "../..sky_106.png"/> 
+        <ImageTexture containerField='rightTexture' url= "../../sky_106.png"/> 
+        <ImageTexture containerField='frontTexture' url= "../../sky_106.png"/> 
+        <ImageTexture containerField='backTexture' url= "../../sky_106.png"/> 
+        <ImageTexture containerField='topTexture' url= "../../sky_106.png"/> 
     </TextureBackground> 
     <Inline url='ground.x3d'/>	
-    <Group DEF='StreetsGroup'>
-    	<Transform translation='0 0.5 0'>
-            <Transform translation = '0 0.02 0'>
-                <Shape>
-                    <Box size='8 1 0.6'></Box>
-                    <Appearance>
-                        <Material diffuseColor='1 1 1'/>
-                    </Appearance>
-                </Shape>
-                <Shape>
-                    <Box size='0.6 1 8'></Box>
-                    <Appearance>
-                        <Material diffuseColor='1 1 1'/>
-                    </Appearance>
-                </Shape>
-            </Transform>
-		    <Inline url='street.x3d'/>
-            <Transform rotation = '0 1 0 1.5708'>
-                <Inline url='street.x3d'/>
-            </Transform>
-        </Transform>
-	</Group>
+    <Inline url='streetCrossing.x3d'/>
 	
 	<Group DEF='PavementGroup'>
         <Transform translation='10 0 10'>
