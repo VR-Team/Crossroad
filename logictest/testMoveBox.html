@@ -1,9 +1,11 @@
 <html>
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <title>My first changecolor test page</title>
+        <title>moving test</title>
         <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
         <script>
+            alert("Alarm!"); 
+            
             function changeColor()
             {
                 var attributeOutput = document.getElementById("move").getAttribute('scale');
@@ -18,17 +20,23 @@
                 alert(attributeOutput); 
             }
             
-            function moveAway()
+            function moveAway(id)
             {   
-                var attributeOutput = document.getElementById("move").getAttribute('translation');
+                var attributeOutput = document.getElementById(id).translation;
                 var firstParam = attributeOutput.substr(0,1);
                 var secondParam = attributeOutput.substr(2,1);
                 var thirdParam = attributeOutput.substr(4,1);
                 firstParam++;
                 attributeOutput = "";
                 attributeOutput = attributeOutput.concat(firstParam, " ", secondParam, " ", thirdParam);
-                document.getElementById("move").setAttribute('translation', attributeOutput);
-                
+                document.getElementById(id).translation = attributeOutput;
+            }
+            
+            function moveInvenite(id){
+                alert('inviteMove triggert!');
+                while(1==1){
+                    moveAway(id);
+                }
             }
         </script>
         <style>
@@ -58,11 +66,19 @@
         </p>
         <x3d width='500px' height='400px'>
             <scene>
-                <transform id="move" DEF="Basis" translation="1 0 0">
-                    <shape onclick="moveAway();">
-                        <box></box>
+                <transform id="move" DEF="Movable" translation="1 0 0">
+                    <shape onclick="moveAway('move');">
+                        <box/>
                         <appearance>
                             <material id="plate" diffuseColor="1 0 0"/>
+                        </appearance>
+                    </shape>
+                </transform>
+                <transform DEF="Street" translation="0 0 -1" scale="200 2 0.5">
+                    <shape>
+                        <box></box>
+                        <appearance>
+                            <material diffuseColor="0.3 0.3 0"/>
                         </appearance>
                     </shape>
                 </transform>
