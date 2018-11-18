@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<X3D>
+	<Scene>
+		<Background skyColor='0.9 0.9 0.9'/>
+		<Transform scale="2 4 2">
+			<Group DEF="House1">
+				################################### Vorne ###################################
+				<Transform translation="0 0.7 0" rotation="0 1 0 1.57">
+					<Shape>
+						<Box size="0 1 1"/>
+						<Appearance>
+							<ImageTexture url="../../textures/OldBuilding/Facade.jpg"/>
+							<TextureTransform scale="2.5 2.5"/> 
+						</Appearance>
+					</Shape>
+				</Transform>
+				################################### Links ###################################
+				<Transform translation="-0.5 0.7 -0.5">
+					<Shape>
+						<Box size="0 1 1"/>
+						<Appearance>
+							<ImageTexture url="../../textures/OldBuilding/Facade.jpg"/>
+							<TextureTransform scale="2.5 2.5"/> 
+						</Appearance>
+					</Shape>
+				</Transform>
+				################################### Rechts ###################################
+				<Transform translation="0.5 0.7 -0.5">
+					<Shape>
+						<Box size="0 1 1"/>
+						<Appearance>
+							<ImageTexture url="../../textures/OldBuilding/Facade.jpg"/>
+							<TextureTransform scale="2.5 2.5"/> 
+						</Appearance>
+					</Shape>
+				</Transform>
+				################################### Hinten ###################################
+				<Transform translation="0 0.7 -1" rotation="0 1 0 1.57">
+					<Shape>
+						<Box size="0 1 1"/>
+						<Appearance>
+							<ImageTexture url="../../textures/OldBuilding/Facade.jpg"/>
+							<TextureTransform scale="2.5 2.5"/> 
+						</Appearance>
+					</Shape>
+				</Transform>
+				################################### Oben ###################################
+				<Transform translation="0 1.2 -0.5" rotation="0 0 1 1.57">
+					<Shape>
+						<Box size="0.03 1.05 1.05"/>
+						<Appearance>
+							<ImageTexture url="../../textures/OldBuilding/Roof.jpg"/>
+							<TextureTransform scale="3 3"/> 
+						</Appearance>
+					</Shape>
+				</Transform>
+				################################### Eingang ###################################
+				<Transform rotation="0 1 0 1.57">
+					<Shape>
+						<Box size="0 0.4 1"/>
+						<Appearance>
+							<ImageTexture url="../../textures/OldBuilding/Entrance.jpg"/>
+						</Appearance>
+					</Shape>
+				</Transform>
+				################################### Eingang - Facade ###################################
+				<Transform translation="-0.5 0 -0.5">
+					<Shape>
+						<Box size="0 0.4 1"/>
+						<Appearance>
+							<ImageTexture url="../../textures/OldBuilding/EntranceFacade.jpg"/>
+							<TextureTransform scale="2 1"/> 
+						</Appearance>
+					</Shape>
+				</Transform>
+				################################### Eingang - Facade ###################################
+				<Transform translation="0.5 0 -0.5">
+					<Shape>
+						<Box size="0 0.4 1"/>
+						<Appearance>
+							<ImageTexture url="../../textures/OldBuilding/EntranceFacade.jpg"/>
+							<TextureTransform scale="2 1"/> 
+						</Appearance>
+					</Shape>
+				</Transform>
+				################################### Eingang - Facade ###################################
+				<Transform translation="0 0 -1" rotation="0 1 0 1.57">
+					<Shape>
+						<Box size="0 0.4 1"/>
+						<Appearance>
+							<ImageTexture url="../../textures/OldBuilding/EntranceFacade.jpg"/>
+							<TextureTransform scale="2 1"/> 
+						</Appearance>
+					</Shape>
+				</Transform>
+				################################### Übergang ###################################
+				<Transform translation="0 0.19 -0.5" rotation="0 0 1 1.57">
+					<Shape>
+						<Box size="0.03 1.05 1.05"/>
+						<Appearance>
+							<ImageTexture url="../../textures/OldBuilding/Overlap.jpg"/>
+							<TextureTransform scale="3 3"/> 
+						</Appearance>
+					</Shape>
+				</Transform>
+			</Group>
+		</Transform>
+	</Scene>
+</X3D>

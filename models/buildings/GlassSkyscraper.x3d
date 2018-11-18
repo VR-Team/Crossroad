@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D>
+	<Scene>
+		<Background skyColor='0.9 0.9 0.9'/>
+		################################### Dach ###################################
+		<Transform DEF="DACH" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Seiten.jpg"/>
+					<TextureTransform scale="2 1" rotation="2.35"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="0 2 3 1 -1 ">
+					<Coordinate point="-0.827831 0.587507 5.742064 -0.579836 0.833222 5.742064 0.579836 -0.833222 5.742064 0.827831 -0.587507 5.742064 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="HINTEN_LINKS_GERADE" translation="0 1 0"  rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Seiten.jpg"/>
+					<TextureTransform scale="3.5 1" rotation="1.56"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="0 1 2 -1 ">
+					<Coordinate point="-1 -1 -0.256634 1 -1 -0.256634 0.579836 -0.833222 5.742064 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="HINTEN_LINKS_KANTE" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Seiten.jpg"/>
+					<TextureTransform scale="3.5 3.5"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="2 1 0 -1 ">
+					<Coordinate point="1 -1 -0.256634 0.579836 -0.833222 5.742064 0.827831 -0.587507 5.742064 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="LINKS_GERADE" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Seiten.jpg"/>
+					<TextureTransform scale="3.5 1" rotation="1.56"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="0 1 2 -1 ">
+					<Coordinate point="1 -1 -0.256634 1 1 -0.256634 0.827831 -0.587507 5.742064 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="VORNE_LINKS_SCHRAEGE" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Seiten.jpg"/>
+					<TextureTransform scale="3.5 3.5"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="1 2 0 -1 ">
+					<Coordinate point="1 1 -0.256634 -0.579836 0.833222 5.742064 0.827831 -0.587507 5.742064 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="VORNE_GERADE" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Seiten.jpg"/>
+					<TextureTransform scale="3.5 1" rotation="1.56"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="1 0 2 -1 ">
+					<Coordinate point="-1 1 -0.256634 1 1 -0.256634 -0.579836 0.833222 5.742064 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="RECHTS_VORNE_KANTE" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Seiten.jpg"/>
+					<TextureTransform scale="3.5 3.5"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="0 1 2 -1 ">
+					<Coordinate point="-1 1 -0.256634 -0.827831 0.587507 5.742064 -0.579836 0.833222 5.742064 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="RECHTS_GERADE" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Seiten.jpg"/>
+					<TextureTransform scale="3.5 1" rotation="1.56"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="1 0 2 -1 ">
+					<Coordinate point="-1 -1 -0.256634 -1 1 -0.256634 -0.827831 0.587507 5.742064 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="RECHTS_HINTEN_SCHRAEGE" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Seiten.jpg"/>
+					<TextureTransform scale="3.5 3.5"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="2 1 0 -1 ">
+					<Coordinate point="-1 -1 -0.256634 -0.827831 0.587507 5.742064 0.579836 -0.833222 5.742064 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="HINTEN" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Geraden.jpg"/>
+					<TextureTransform scale="1.5 1.5"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="1 0 2 3 -1 ">
+					<Coordinate point="-1 -1 -1 -1 -1 -0.256634 1 -1 -1 1 -1 -0.256634 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="RECHTS" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Geraden.jpg"/>
+					<TextureTransform scale="1.5 1.5"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="0 1 3 2 -1 ">
+					<Coordinate point="-1 -1 -1 -1 -1 -0.256634 -1 1 -1 -1 1 -0.256634 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="VORNE" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Geraden.jpg"/>
+					<TextureTransform scale="1.5 1.5" rotation="1.56"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="0 1 3 2 -1 ">
+					<Coordinate point="-1 1 -1 -1 1 -0.256634 1 1 -1 1 1 -0.256634 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+		<Transform DEF="LINKS" translation="0 1 0" rotation="0 0.707107 0.707107 3.141593">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/GlassSkycraper/Geraden.jpg"/>
+					<TextureTransform scale="1.5 1.5"/> 
+				</Appearance>
+				<IndexedFaceSet solid="true" coordIndex="1 0 2 3 -1 ">
+					<Coordinate point="1 -1 -1 1 -1 -0.256634 1 1 -1 1 1 -0.256634 "/>
+				</IndexedFaceSet>
+			</Shape>
+		</Transform>
+	</Scene>
+</X3D>
