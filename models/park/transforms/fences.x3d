@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x3d>
+    <scene>
+        <!--fence r-->
+        <transform translation="41.5 1 0">
+            <inline url="../models/fencelong2.x3d"/>
+        </transform>
+        <!--fence l-->
+        <transform translation="-41.5 1 0">
+            <inline url="../models/fencelong2.x3d"/>
+        </transform>
+        <!--fence u-->
+        <transform translation="0 1 41.5" rotation="0 1 0 1.57">
+            <inline url="../models/fencelong2.x3d"/>
+        </transform>
+        <!--fence o-->
+        <transform translation="0 1 -41.5" rotation="0 1 0 1.57">
+            <inline url="../models/fencelong2.x3d"/>
+        </transform>
+    </scene>
+</x3d>

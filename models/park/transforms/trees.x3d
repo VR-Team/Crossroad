@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x3d>
+    <scene>
+      
+        <!--tree1 u-l-l-->
+        <transform translation="-15 0 18.25" rotation="0 1 0 1.57">
+            <inline url="../models/tree1.x3d"/>
+        </transform>
+        <!--tree2s u-r-r-->
+        <transform translation="15 0 18.25" rotation="0 1 0 1.57">
+            <inline url="../models/tree2s.x3d"/>
+        </transform>
+        <!--tree2s u-r-r-->
+        <transform translation="7 0 12.25">
+            <inline url="../models/tree2s.x3d"/>
+        </transform>
+        <!--tanne u-r-r-->
+        <transform translation="10 0 5">
+            <inline url="../models/tanne.x3d"/>
+        </transform>
+        <!--tree2s u-r-r-->
+        <transform translation="30 0 4">
+            <inline url="../models/tree2s.x3d"/>
+        </transform>
+        <!--tanne u-r-r-->
+        <transform translation="25 0 30">
+            <inline url="../models/tanne.x3d"/>
+        </transform>
+        <!--tree1 u-r-r-->
+        <transform translation="20 0 8" rotation="0 1 0 1.57">
+            <inline url="../models/tree1.x3d"/>
+        </transform>
+        <!--tanne o-r-r-->
+        <transform translation="15 0 -18.25" rotation="0 1 0 1.57">
+            <inline url="../models/tanne.x3d"/>
+        </transform>
+    </scene>
+</x3d>
