@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D>
+	<Scene>
+		<Transform DEF="Cube_TRANSFORM" translation="0 1 0" scale="1 1.950842 1" rotation="0 0.707107 0.707107 3.141593"
+		           >
+			<Transform DEF="Cube_ifs_TRANSFORM">
+				<Group DEF="group_ME_Cube">
+					<Shape>
+						<IndexedFaceSet solid="false"
+						                texCoordIndex="0 1 2 3 -1 4 5 6 7 -1 8 9 10 11 -1 12 13 14 15 -1 16 17 18 19 -1 "
+						                coordIndex="0 1 2 3 -1 7 6 10 11 -1 5 4 8 9 -1 8 11 17 16 -1 10 9 20 21 -1 "
+						                >
+							<Coordinate DEF="coords_ME_Cube"
+							            point="1 1 -1 1 -1 -1 -1 -1 -1 -1 1 -1 1 0.999999 0.164929 0.999999 -1.000001 0.164929 -1 -1 0.164929 -1 1 0.164929 1 0.536266 0.164929 0.999999 -0.536267 0.164929 -1 -0.536266 0.164929 -1 0.536266 0.164929 1 0.536266 3.603541 0.999999 -0.536267 3.603541 -1 -0.536266 3.603541 -1 0.536266 3.603541 0.748689 0.846253 0.164929 -0.748688 0.846254 0.164929 0.748689 0.846253 3.603541 -0.748688 0.846254 3.603541 0.755287 -0.845069 0.164929 -0.755289 -0.845068 0.164929 0.755287 -0.845069 3.603541 -0.755289 -0.845068 3.603541 "
+							            />
+							<TextureCoordinate point="0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 " />
+						</IndexedFaceSet>
+					</Shape>
+					<Shape>
+						<Appearance>
+							<ImageTexture DEF="IM_Dach_png" url="../../textures/HotelTower/Dach.png"/>
+						</Appearance>
+						<IndexedFaceSet solid="false"
+						                texCoordIndex="0 1 2 3 -1 4 5 6 7 -1 8 9 10 11 -1 "
+						                coordIndex="12 15 14 13 -1 15 12 18 19 -1 13 14 23 22 -1 "
+						                >
+							<Coordinate USE="coords_ME_Cube" />
+							<TextureCoordinate point="0.3343 0.9933 0.3253 0.0064 0.6792 -0.0025 0.6731 0.9799 0.3008 0.0173 0.3080 0.9898 0.1773 0.9146 0.1214 0.1208 0.6869 0.9778 0.6882 0.0111 0.7744 0.1336 0.7744 0.8552 " />
+						</IndexedFaceSet>
+					</Shape>
+					<Shape>
+						<Appearance>
+							<ImageTexture DEF="IM_Facade_jpg" url="../../textures/HotelTower/Facade.jpg"/>
+						</Appearance>
+						<IndexedFaceSet solid="false"
+						                texCoordIndex="0 1 2 3 -1 4 5 6 7 -1 8 9 10 11 -1 12 13 14 15 -1 16 17 18 19 -1 20 21 22 23 -1 24 25 26 27 -1 28 29 30 31 -1 "
+						                coordIndex="11 10 14 15 -1 12 8 16 18 -1 14 10 21 23 -1 9 8 12 13 -1 16 17 19 18 -1 11 15 19 17 -1 21 20 22 23 -1 9 13 22 20 -1 "
+						                >
+							<Coordinate USE="coords_ME_Cube" />
+							<TextureCoordinate point="0.0001 -7.0659 0.9998 -7.0659 0.9998 8.0659 0.0001 8.0659 0.0000 8.1016 0.0000 -7.1016 0.3006 -7.1016 0.3006 8.1016 0.0000 8.0823 0.0004 -7.0829 0.2409 -7.0823 0.2406 8.0829 0.0001 -7.0915 0.9984 -7.0915 0.9984 8.0915 0.0001 8.0915 0.0004 -7.0225 0.8001 -7.0202 0.7998 8.0225 0.0001 8.0202 0.2448 -7.0402 0.2448 8.0402 0.0000 8.0402 0.0000 -7.0402 0.0004 8.0304 0.8039 8.0282 0.8036 -7.0304 0.0001 -7.0282 0.2508 8.0946 0.2508 -7.0946 0.0000 -7.0946 0.0000 8.0946 " />
+						</IndexedFaceSet>
+					</Shape>
+					<Shape>
+						<Appearance>
+							<ImageTexture DEF="IM_Facade2_jpg" url="../../textures/HotelTower/Facade2.jpg"/>
+						</Appearance>
+						<IndexedFaceSet solid="false"
+						                texCoordIndex="0 1 2 3 -1 4 5 6 7 -1 8 9 10 11 -1 12 13 14 15 -1 "
+						                coordIndex="0 4 5 1 -1 1 5 6 2 -1 2 6 7 3 -1 4 0 3 7 -1 "
+						                >
+							<Coordinate USE="coords_ME_Cube" />
+							<TextureCoordinate point="-3.0453 0.0073 -2.9635 0.9988 3.9864 0.9988 3.9046 0.0073 3.0360 0.0432 3.0360 1.0204 -2.0360 1.0204 -2.0360 0.0432 4.9498 0.9773 4.9498 0.0001 -3.0549 0.0001 -3.0549 0.9773 2.9368 0.0001 2.9368 0.9845 -2.0310 0.9845 -2.0310 0.0001 " />
+						</IndexedFaceSet>
+					</Shape>
+					<Shape>
+						<Appearance>
+							<ImageTexture DEF="IM_Overlap_jpg" url="../../textures/HotelTower/Overlap.jpg"/>
+						</Appearance>
+						<IndexedFaceSet solid="false"
+						                texCoordIndex="0 1 2 3 -1 4 5 6 7 -1 "
+						                coordIndex="4 7 11 8 -1 6 5 9 10 -1 "
+						                >
+							<Coordinate USE="coords_ME_Cube" />
+							<TextureCoordinate point="1.0000 0.4647 0.0000 0.4647 0.0000 -0.2328 1.0000 -0.2328 0.0000 -0.4983 1.0000 -0.4983 1.0000 0.7302 0.0000 0.7302 " />
+						</IndexedFaceSet>
+					</Shape>
+				</Group>
+			</Transform>
+		</Transform>
+	</Scene>
+</X3D>
