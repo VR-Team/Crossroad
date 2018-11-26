@@ -10,7 +10,6 @@
                 </appearance>
             </shape>
         </transform>
-        
         <!--Rechter Weg aussen-->
         <transform translation="36.5 0.5 0">
             <shape>

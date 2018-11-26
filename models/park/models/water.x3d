@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <x3d>
     <scene>
-        <!--<directionalLight direction="0 -1 0" color="1.0 1.0 0.0" on="true"/>-->
-        <!--sideworks-->
-        <transform>
-            <inline url="transforms/sideworks.x3d"/>
-        </transform>
-        <!--fences-->
-        <transform>
-            <inline url="transforms/fences.x3d"/>
-        </transform>
-        <!--fountain-->
-        <transform translation="0 0.5 0">
-            <inline url="models/fountainFinal.x3d"/>
-        </transform>
-        <!--benches-->
-        <transform>
-            <inline url="transforms/benches.x3d"/>
-        </transform>
-        <!--trees-->
-        <transform>
-            <inline url="transforms/trees.x3d"/>
-        </transform>
-        
-        <transform translation="0 1 0">
+       <transform translation="0 1 0">
             <shape>
                 <cylinder  radius="4.7" height="0.5"/>
                 <appearance>
