@@ -6,7 +6,7 @@
 </head>
 <Scene>
     <Shape DEF='Street'>
-        <Box size='92.5 1 15'/>
+        <Box size='91.5 1 15'/>
         <Appearance>
             <Material diffuseColor='0.5 0.5 0.5'/>
             <ImageTexture url="../../textures/street_texture.jpg"/>

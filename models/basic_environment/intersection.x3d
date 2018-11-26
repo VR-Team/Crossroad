@@ -7,11 +7,11 @@
 </head>
 <Scene>
     <TextureBackground>
-        <ImageTexture containerField='leftTexture' url= "../..sky_106.png"/> 
-        <ImageTexture containerField='rightTexture' url= "../../sky_106.png"/> 
-        <ImageTexture containerField='frontTexture' url= "../../sky_106.png"/> 
-        <ImageTexture containerField='backTexture' url= "../../sky_106.png"/> 
-        <ImageTexture containerField='topTexture' url= "../../sky_106.png"/> 
+        <ImageTexture containerField='leftTexture' url= "../../textures/sky_106.png"/> 
+        <ImageTexture containerField='rightTexture' url= "../../textures/sky_106.png"/> 
+        <ImageTexture containerField='frontTexture' url= "../../textures/sky_106.png"/> 
+        <ImageTexture containerField='backTexture' url= "../../textures/sky_106.png"/> 
+        <ImageTexture containerField='topTexture' url= "../../textures/sky_106.png"/> 
     </TextureBackground> 
     <Inline url='ground.x3d'/>	
     <Inline url='streetCrossing.x3d'/>
@@ -36,16 +36,6 @@
             </Transform>
         </Transform>
     </Group>
-    
-    <Group DEF='TreeGroup'>
-        <Transform  translation='30 0 30'>
-            <Inline url='pineTree.x3d'/>
-        </Transform>
-        <Transform  translation='18 0 24'>
-            <Inline url='leafTree.x3d'/>
-        </Transform>
-    </Group>
-    
     <Inline url="trafficLightsGroup.x3d"/>
 </Scene>
 </X3D>

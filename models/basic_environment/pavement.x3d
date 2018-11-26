@@ -5,26 +5,28 @@
     <meta name='description' content='Pavement Models'/>
 </head>
 <Scene>
-    <Transform translation='45 0.5 -2'>
+    <Transform translation='44 1 -2'>
         <Transform DEF='Pavement'>
             <Shape DEF='Walk'>
-                <Box size='90 2 4'/>
+                <Box size='91.75 1 4'/>
                 <Appearance>
                     <Material diffuseColor='1 1 1'/>
                     <ImageTexture url="../../textures/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
                     <TextureTransform scale='13 0.75'/>
                 </Appearance>
             </Shape>
-            <Transform translation='-45 0 2'>
-                <Shape DEF='PavementCircle'>
-                    <Cylinder height='2' radius='4'/>
-                    <Appearance>
-                        <Material diffuseColor='1 1 1'/>
-                        <ImageTexture url="../../textures/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
-                        <TextureTransform scale='1 1'/>
-                    </Appearance>
-                </Shape>
-                <Transform translation='-2 0 45'>
+            <Transform translation='-44 0 2'>
+                <Transform translation="-2 0 -2">
+                    <Shape DEF='PavementCircle'>
+                        <Cylinder height='1' radius='2'/>
+                        <Appearance>
+                            <Material diffuseColor='1 1 1'/>
+                            <ImageTexture url="../../textures/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
+                            <TextureTransform scale='1 1'/>
+                        </Appearance>
+                    </Shape>
+                </Transform>
+                <Transform translation='-2 0 44'>
                     <Transform rotation='0 1 0 1.5708'>
                         <Shape USE='Walk'/>
                     </Transform>
