@@ -16,14 +16,14 @@
                             <Shape DEF='HorizontalYELLOWCAR'>
                                 <Cylinder height='0.6' radius='0.22'/>
                                 <Appearance>
-                                    <Material diffuseColor='.5 .5 0.1'/>
+                                    <Material DEF="HorizontalYellowCarLight" diffuseColor='.1 .1 .1'/>
                                 </Appearance>
                             </Shape>
                             <Transform translation='0.5 0 0'>
                                 <Shape DEF='HorizontalREDCAR'>
                                     <Cylinder height='0.6' radius='0.22'/>
                                     <Appearance>
-                                        <Material diffuseColor='.5 0 0'/>
+                                        <Material DEF="HorizontalRedCarLight" diffuseColor='.1 .1 .1'/>
                                     </Appearance>
                                 </Shape>
                             </Transform>
@@ -31,7 +31,7 @@
                                 <Shape DEF='HorizontalGREENCAR'>
                                     <Cylinder height='0.6' radius='0.22'/>
                                     <Appearance>
-                                        <Material diffuseColor='0 .5 0'/>
+                                        <Material DEF="HorizontalGreenCarLight" diffuseColor='.1 .1 .1'/>
                                     </Appearance>
                                 </Shape>
                             </Transform>
@@ -48,7 +48,7 @@
                                     <Shape DEF='VerticalREDFOOT'>
                                         <Cylinder height='0.6' radius='0.22'/>
                                         <Appearance>
-                                            <Material diffuseColor='.5 0 0'/>
+                                            <Material DEF="VerticalRedFootLight" diffuseColor='.1 .1 .1'/>
                                         </Appearance>
                                     </Shape>
                                 </Transform>
@@ -56,7 +56,7 @@
                                     <Shape DEF='VerticalGREENFOOT'>
                                         <Cylinder height='0.6' radius='0.22'/>
                                         <Appearance>
-                                            <Material diffuseColor='0 .5 0'/>
+                                            <Material DEF="VerticalGreenFootLight" diffuseColor='.1 .1 .1'/>
                                         </Appearance>
                                     </Shape>
                                 </Transform>
@@ -91,14 +91,14 @@
                                 <Shape DEF='VerticalYELLOWCAR'>
                                     <Cylinder height='0.6' radius='0.22'/>
                                     <Appearance>
-                                        <Material diffuseColor='.5 .5 0.1'/>
+                                        <Material DEF="VerticalYellowCarLight" diffuseColor='.1 .1 .1'/>
                                     </Appearance>
                                 </Shape>
                                 <Transform translation='0.5 0 0'>
                                     <Shape DEF='VerticalREDCAR'>
                                         <Cylinder height='0.6' radius='0.22'/>
                                         <Appearance>
-                                            <Material diffuseColor='.5 0 0'/>
+                                            <Material DEF="VerticalRedCarLight" diffuseColor='.1 .1 .1'/>
                                         </Appearance>
                                     </Shape>
                                 </Transform>
@@ -106,7 +106,7 @@
                                     <Shape DEF='VerticalGREENCAR'>
                                         <Cylinder height='0.6' radius='0.22'/>
                                         <Appearance>
-                                            <Material diffuseColor='0 .5 0'/>
+                                            <Material DEF="VerticalGreenCarLight" diffuseColor='.1 .1 .1'/>
                                         </Appearance>
                                     </Shape>
                                 </Transform>
@@ -122,7 +122,7 @@
                                         <Shape DEF='HorizontalREDFOOT'>
                                             <Cylinder height='0.6' radius='0.22'/>
                                             <Appearance>
-                                                <Material diffuseColor='.5 0 0'/>
+                                                <Material DEF="HorizontalRedFootLight" diffuseColor='.1 .1 .1'/>
                                             </Appearance>
                                         </Shape>
                                     </Transform>
@@ -130,7 +130,7 @@
                                         <Shape DEF='HorizontalGREENFOOT'>
                                             <Cylinder height='0.6' radius='0.22'/>
                                             <Appearance>
-                                                <Material diffuseColor='0 .5 0'/>
+                                                <Material DEF="HorizontalGreenFootLight" diffuseColor='.1 .1 .1'/>
                                             </Appearance>
                                         </Shape>
                                     </Transform>
@@ -161,8 +161,6 @@
             <Transform USE='VerticalArcCarLights'/>
         </Transform>
     </Transform>
-    
-    
     
     <Transform translation = '0 0 0'>
         <Transform DEF = 'VerticalSimpleCarLights'>
@@ -217,7 +215,6 @@
             <Transform USE='HorizontalSimpleCarLights'/>
         </Transform>
     </Transform>
-    
-</Transform>
+ </Transform>
 </Scene>
 </X3D>
