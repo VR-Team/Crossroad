@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat="true">
+  <Scene>
+    <Viewpoint position="0.0 40.0 120.0" orientation="1.0 0.0 0.0 -0.5" fieldOfView="1.0" description="Entry View"/>
+    
+<!-- ############### Skript #######################################################################-->
+    <Script DEF="ToggleLight">
+        <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
+        <field accessType="inputOutput" type="SFBool" name="red" value="true"/>
+        <field accessType="inputOutput" type="SFBool" name="canChange" value="true"/>
+        <field accessType="inputOnly" type="SFFloat" name="set_fraction"/>
+        <field accessType="outputOnly" type="SFColor" name="color_changed"/>
+        <![CDATA[ecmascript:
+function set_fraction (value, time)
+{
+    if(!enabled){
+        return;
+    }
+    
+    if(value < 0.8){
+        return;
+    }
+    
+    if(value >= 0.9 && canChange == true){
+        if (red == true){
+            red = false;
+            color_changed [0] = 0.0;
+            color_changed [1] = 1.0;
+            color_changed [2] = 0.0;
+        } else {
+            red = true;
+            color_changed [0] = 1.0;
+            color_changed [1] = 0.0;
+            color_changed [2] = 0.0;
+        }
+        canChange = false;
+    }
+    
+    if(value >= 0.8 && value < 0.9){
+        canChange = true;
+    }
+}
+]]>
+    </Script>
+    <Script DEF="ToggleColor">
+        <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
+        <field accessType="inputOutput" type="SFBool" name="red" value="true"/>
+        <field accessType="inputOnly" type="SFBool" name="set_active"/>
+        <field accessType="outputOnly" type="SFColor" name="color_changed"/>
+        <![CDATA[ecmascript:
+function set_active (value, time)
+{
+  if(!enabled){
+    return;
+  }
+
+  if (value == false)
+    return;
+ 
+  if (red == true){
+    red = FALSE;
+    color_changed [0] = 0.0;
+    color_changed [1] = 1.0;
+    color_changed [2] = 0.0;
+  } else {
+    red = true;
+    color_changed [0] = 1.0;
+    color_changed [1] = 0.0;
+    color_changed [2] = 0.0;
+  }
+}
+]]>
+    </Script>
+    <Script DEF="ToggleMoving">
+        <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
+        <field accessType="inputOutput" type="SFBool" name="isMTL" value="true"/>
+        <field accessType="inputOnly" type="SFTime" name="set_active"/>
+        <field accessType="outputOnly" type="SFTime" name="slot1_changed"/>
+        <field accessType="outputOnly" type="SFTime" name="slot2_changed" />
+        <![CDATA[ecmascript:
+function set_active (value, time)
+{
+  if (!enabled)
+    return;
+ 
+  if (isMTL == true){
+    isMTL = false;
+    slot1_changed = value;
+    slot2_changed = "0.0";
+  } else {
+    isMTL = true;
+    slot1_changed = "0.0";
+    slot2_changed = value;
+  }
+}
+]]>
+    </Script>
+<!-- ############### TimeSensor ####################################################################-->
+    <TimeSensor DEF="MainClock" cycleInterval="10" loop="true"/>
+    <!--                        moveToLight Clocks                                                    -->
+    <TimeSensor DEF="mTLC1" cycleInterval="5" loop="false"/>
+    <TimeSensor DEF="mTLC2" cycleInterval="5" loop="false"/>
+    <!--                        moveAway Clocks                                                       -->
+    <TimeSensor DEF="mAC1" cycleInterval="6" loop="false"/>
+    <TimeSensor DEF="mAC2" cycleInterval="6" loop="false"/>
+<!-- ############### Objects #######################################################################-->
+    <Transform translation="4 10 0"> <!-- AmpelLicht -->
+      <Shape>
+        <Box/>
+        <Appearance>
+          <Material DEF="Light" diffuseColor="1 0 0"/>
+        </Appearance>
+      </Shape>
+    </Transform>
+    <Transform DEF="veh1" translation="0 -2 0">
+      <Transform rotation="0 1 0 -1.5708">
+        <Inline url="models/cars/car.x3d"/>
+      </Transform>
+    </Transform>
+    <Transform DEF="veh2" translation="0 -2 0">
+       <Transform rotation="0 1 0 3.1416">
+          <Inline url="models/cars/car.x3d"></Inline>
+        </Transform>
+    </Transform>
+    <Transform DEF="veh3" translation="0 -2 0">
+        <Transform rotation="0 1 0 1.5708">
+            <Inline url="models/cars/car.x3d"></Inline>
+        </Transform>
+    </Transform>
+    <Transform DEF="veh4" translation="0 -2 0">
+        <Inline url="models/cars/car.x3d"></Inline>
+    </Transform>
+    
+<!-- ############## PositionInterpolator ########################################################-->
+    <!--                         moveToLight                                                         -->
+    <PositionInterpolator DEF="mTL1" key="0 0.5 1" keyValue="-100 2 3, -60 2 3, -20 2 3"/>
+    <PositionInterpolator DEF="mTL2" key="0 0.5 1" keyValue="-3 2 -100, -3 2 -60, -3 2 -20"/>
+    <PositionInterpolator DEF="mTL3" key="0 0.5 1" keyValue="100 2 -3, 60 2 -3, 20 2 -3"/>
+    <PositionInterpolator DEF="mTL4" key="0 0.5 1" keyValue="3 2 100, 3 2 60, 3 2 20"/>
+    <!--                        moveAway                                                            -->
+    <PositionInterpolator DEF="mA1" key="0 0.5 0.9999 1" keyValue="-20 2 3, 40 2 3, 100 2 3, 0 -4 0"/>
+    <PositionInterpolator DEF="mA2" key="0 0.5 0.9999 1" keyValue="-3 2 -20, -3 2 40, -3 2 100, 0 -4 0"/>
+    <PositionInterpolator DEF="mA3" key="0 0.5 0.9999 1" keyValue="20 2 -3, -40 2 -3, -100 2 -3, 0 -4 0"/>
+    <PositionInterpolator DEF="mA4" key="0 0.5 0.9999 1" keyValue="3 2 20, 3 2 -40, 3 2 -100, 0 -4 0"/>
+    
+<!-- ############## Routes ######################################################################-->
+    <!--                        Main clocking routes                                                   -->
+    <ROUTE fromNode="MainClock" fromField="fraction_changed" toNode="ToggleLight" toField="set_fraction"/>
+    <ROUTE fromNode="ToggleLight" fromField="color_changed" toNode="Light" toField="set_diffuseColor"/>
+    <!--                        Touch trigger routes                                                   -->
+    <ROUTE fromNode="Touch" fromField="isActive" toNode="ToggleColor" toField="set_active"/>
+    <ROUTE fromNode="ToggleColor" fromField="color_changed" toNode="Light" toField="diffuseColor"/>
+    <ROUTE fromNode="MainClock" fromField="cycleTime" toNode="ToggleMoving" toField="set_active"/>
+    
+    <ROUTE fromNode="ToggleMoving" fromField="slot1_changed" toNode="mTLC1" toField="set_startTime"/>
+    <ROUTE fromNode="ToggleMoving" fromField="slot2_changed" toNode="mAC1" toField="set_startTime"/>
+    
+    <ROUTE fromNode="ToggleMoving" fromField="slot1_changed" toNode="mAC2" toField="set_startTime"/>
+    <ROUTE fromNode="ToggleMoving" fromField="slot2_changed" toNode="mTLC2" toField="set_startTime"/>
+    <!--                        moveToLight Routes                                                     -->
+    <ROUTE fromNode="mTLC1" fromField="fraction_changed" toNode="mTL1" toField="set_fraction"/>
+    <ROUTE fromNode="mTL1" fromField="value_changed" toNode="veh1" toField="translation"/>
+    
+    <ROUTE fromNode="mTLC2" fromField="fraction_changed" toNode="mTL2" toField="set_fraction"/>
+    <ROUTE fromNode="mTL2" fromField="value_changed" toNode="veh2" toField="translation"/>
+    
+    <ROUTE fromNode="mTLC1" fromField="fraction_changed" toNode="mTL3" toField="set_fraction"/>
+    <ROUTE fromNode="mTL3" fromField="value_changed" toNode="veh3" toField="translation"/>
+    
+    <ROUTE fromNode="mTLC2" fromField="fraction_changed" toNode="mTL4" toField="set_fraction"/>
+    <ROUTE fromNode="mTL4" fromField="value_changed" toNode="veh4" toField="translation"/>
+    <!--                        moveAway Routes                                                        -->
+    <ROUTE fromNode="mAC1" fromField="fraction_changed" toNode="mA1" toField="set_fraction"/>
+    <ROUTE fromNode="mA1" fromField="value_changed" toNode="veh1" toField="translation"/>
+    
+    <ROUTE fromNode="mAC2" fromField="fraction_changed" toNode="mA2" toField="set_fraction"/>
+    <ROUTE fromNode="mA2" fromField="value_changed" toNode="veh2" toField="translation"/>
+    
+    <ROUTE fromNode="mAC1" fromField="fraction_changed" toNode="mA3" toField="set_fraction"/>
+    <ROUTE fromNode="mA3" fromField="value_changed" toNode="veh3" toField="translation"/>
+    
+    <ROUTE fromNode="mAC2" fromField="fraction_changed" toNode="mA4" toField="set_fraction"/>
+    <ROUTE fromNode="mA4" fromField="value_changed" toNode="veh4" toField="translation"/>
+<!-- ############ Inlines #######################################################################--> 
+    <Transform>
+        <Inline url="models/basic_environment/intersection.x3d"/>
+    </Transform>
+    <Transform>
+        <Inline url="models/buildings/Buildings.x3d"></Inline>
+    </Transform>
+    <Transform scale="1 1 1" translation="56 0 56">
+        <Inline url="models/park/park.x3d"></Inline>
+    </Transform>
+  </Scene>
+</X3D>
+
