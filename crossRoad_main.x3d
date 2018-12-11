@@ -2,8 +2,9 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat="true">
   <Scene>
-      <!--<Viewpoint position="0.0 40.0 120.0" orientation="1.0 0.0 0.0 -0.5" fieldOfView="1.0" description="Entry View"/>-->
-    <Viewpoint position="61 26 -107" orientation="0.0 1.0 0.0 -3.14159265359" fieldOfView="1.0" description="Entry View"/>
+    <!--<Viewpoint position="0.0 40.0 120.0" orientation="1.0 0.0 0.0 -0.5" fieldOfView="1.0" description="Entry View"/>-->
+    <Viewpoint position="8.0 4.0 23.0" orientation="1.0 0.0 0.0 0" fieldOfView="1.0" description="Walk View"/>
+    <!--<Viewpoint position="61 26 -107" orientation="0.0 1.0 0.0 -3.14159265359" fieldOfView="1.0" description="Entry View"/>-->
 <!-- ############ Inlines #######################################################################--> 
     <!--                            vehicles                                                                -->
     <Transform translation="0 -4 0">
@@ -14,9 +15,9 @@
     <Transform>
         <Inline url="models/basic_environment/intersection.x3d"/>
     </Transform>
-    <!--<Transform>
+    <Transform>
         <Inline url="models/buildings/Buildings.x3d"></Inline>
-    </Transform>-->
+    </Transform>
     <Transform translation="56 0 56">
         <Transform rotation="0 1 0 -1.5708">
             <Inline url="models/park/park.x3d"/>
@@ -118,22 +119,22 @@ function set_time (value, time)
     <TimeSensor DEF="parkDoorCloseClock2" cycleInterval="2" loop="false"/>
 <!-- ############### Objects #######################################################################-->
     <!--                    vehicles                                                                   -->
-    <Transform DEF="veh1" translation="0 -2 0">
+    <Transform DEF="veh1" translation="0 -2 0" scale="2 2 2">
         <Transform rotation="0 1 0 -1.5708">
             <Inline url="models/cars/car.x3d" DEF="blueCar"/>
         </Transform>
     </Transform>
-    <Transform DEF="veh2" translation="0 -2 0">
+    <Transform DEF="veh2" translation="0 -2 0" scale="2 2 2">
        <Transform rotation="0 1 0 3.1416">
            <Inline USE="blueCar"/>
        </Transform>
     </Transform>
-    <Transform DEF="veh3" translation="0 -2 0">
+    <Transform DEF="veh3" translation="0 -2 0" scale="2 2 2">
         <Transform rotation="0 1 0 1.5708">
             <Inline  USE="blueCar"/>
         </Transform>
     </Transform>
-    <Transform DEF="veh4" translation="0 -2 0">
+    <Transform DEF="veh4" translation="0 -2 0" scale="2 2 2">
         <Inline USE="blueCar"/>
     </Transform>
     <!--   traffic lights                                                             -->
@@ -294,15 +295,15 @@ function set_time (value, time)
     </Transform>
 <!-- ############## Interpolators ########################################################-->
     <!--                         moveToLight                                                         -->
-    <PositionInterpolator DEF="mTL1" key="0 0.5 1" keyValue="-100 2 3, -60 2 3, -20 2 3"/>
-    <PositionInterpolator DEF="mTL2" key="0 0.5 1" keyValue="-3 2 -100, -3 2 -60, -3 2 -20"/>
-    <PositionInterpolator DEF="mTL3" key="0 0.5 1" keyValue="100 2 -3, 60 2 -3, 20 2 -3"/>
-    <PositionInterpolator DEF="mTL4" key="0 0.5 1" keyValue="3 2 100, 3 2 60, 3 2 20"/>
+    <PositionInterpolator DEF="mTL1" key="0 0.5 1" keyValue="-100 1 3, -60 1 3, -23 1 3"/>
+    <PositionInterpolator DEF="mTL2" key="0 0.5 1" keyValue="-3 1 -100, -3 1 -60, -3 1 -23"/>
+    <PositionInterpolator DEF="mTL3" key="0 0.5 1" keyValue="100 1 -3, 60 1 -3, 23 1 -3"/>
+    <PositionInterpolator DEF="mTL4" key="0 0.5 1" keyValue="3 1 100, 3 1 60, 3 1 23"/>
     <!--                        moveAway                                                            -->
-    <PositionInterpolator DEF="mA1" key="0 0.5 0.9999 1" keyValue="-20 2 3, 40 2 3, 100 2 3, 0 -4 0"/>
-    <PositionInterpolator DEF="mA2" key="0 0.5 0.9999 1" keyValue="-3 2 -20, -3 2 40, -3 2 100, 0 -4 0"/>
-    <PositionInterpolator DEF="mA3" key="0 0.5 0.9999 1" keyValue="20 2 -3, -40 2 -3, -100 2 -3, 0 -4 0"/>
-    <PositionInterpolator DEF="mA4" key="0 0.5 0.9999 1" keyValue="3 2 20, 3 2 -40, 3 2 -100, 0 -4 0"/>
+    <PositionInterpolator DEF="mA1" key="0 0.5 0.9999 1" keyValue="-23 1 3, 40 1 3, 100 1 3, 0 -4 0"/>
+    <PositionInterpolator DEF="mA2" key="0 0.5 0.9999 1" keyValue="-3 1 -23, -3 1 40, -3 1 100, 0 -4 0"/>
+    <PositionInterpolator DEF="mA3" key="0 0.5 0.9999 1" keyValue="23 1 -3, -40 1 -3, -100 1 -3, 0 -4 0"/>
+    <PositionInterpolator DEF="mA4" key="0 0.5 0.9999 1" keyValue="3 1 23, 3 1 -40, 3 1 -100, 0 -4 0"/>
     <!--                        trafficLights                                                       -->
     <!-- greenphase car lights-->
     <ColorInterpolator DEF="gpRx" key="0 0.9 0.91 1" keyValue="0 0 0, 0 0 0, 1 0 0, 1 0 0"/>
