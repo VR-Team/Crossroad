@@ -51,6 +51,6 @@
         </Transform>
         
     </Transform>
-    <Inline url='lights.x3d'/>
+    <!--<Inline url='lights.x3d'/>-->
 </Scene>
 </X3D>
