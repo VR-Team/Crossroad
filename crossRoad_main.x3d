@@ -2,100 +2,83 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat="true">
   <Scene>
-      <Viewpoint position="0.0 40.0 120.0" orientation="1.0 0.0 0.0 -0.5" fieldOfView="1.0" description="Entry View"/>
-      <!--<Viewpoint position="0.0 6.0 20.0" fieldOfView="1.0" description="Entry View"/>-->
+      <!--<Viewpoint position="0.0 40.0 120.0" orientation="1.0 0.0 0.0 -0.5" fieldOfView="1.0" description="Entry View"/>-->
+    <Viewpoint position="61 26 -107" orientation="0.0 1.0 0.0 -3.14159265359" fieldOfView="1.0" description="Entry View"/>
 <!-- ############ Inlines #######################################################################--> 
-    <!--                            cars                                                                -->
+    <!--                            vehicles                                                                -->
     <Transform translation="0 -4 0">
         <Inline url="models/cars/car.x3d" DEF="blueCar"/>
     </Transform>
-    <!--                            interactiv environment objects                                                 -->
-    <!--                            environmentonment                                                   -->
+    <!--                            interactiv environment objects                                          -->
+    <!--                            environment                                                             -->
     <Transform>
         <Inline url="models/basic_environment/intersection.x3d"/>
     </Transform>
-    <Transform>
+    <!--<Transform>
         <Inline url="models/buildings/Buildings.x3d"></Inline>
-    </Transform>
-    <Transform scale="1 1 1" translation="56 0 56">
-        <Inline url="models/park/park.x3d"/>
+    </Transform>-->
+    <Transform translation="56 0 56">
+        <Transform rotation="0 1 0 -1.5708">
+            <Inline url="models/park/park.x3d"/>
+        </Transform>
     </Transform>
 <!-- ############### Skripts #######################################################################-->
-    <Script DEF="ToggleLight">
-        <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
-        <field accessType="inputOutput" type="SFBool" name="red" value="true"/>
-        <field accessType="inputOutput" type="SFBool" name="canChange" value="true"/>
-        <field accessType="inputOnly" type="SFFloat" name="set_fraction"/>
-        <field accessType="outputOnly" type="SFColor" name="color_changed"/>
-        <![CDATA[ecmascript:
-function set_fraction (value, time)
-{
-    if(!enabled){
-        return;
-    }
-    
-    if(value < 0.8){
-        return;
-    }
-    
-    if(value >= 0.9 && canChange == true){
-        if (red == true){
-            red = false;
-            color_changed [0] = 0.0;
-            color_changed [1] = 1.0;
-            color_changed [2] = 0.0;
-        } else {
-            red = true;
-            color_changed [0] = 1.0;
-            color_changed [1] = 0.0;
-            color_changed [2] = 0.0;
-        }
-        canChange = false;
-    }
-    
-    if(value >= 0.8 && value < 0.9){
-        canChange = true;
-    }
-}
-]]>
-    </Script>
-    <Script DEF="ToggleColor">
-        <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
-        <field accessType="inputOutput" type="SFBool" name="red" value="true"/>
-        <field accessType="inputOnly" type="SFBool" name="set_active"/>
-        <field accessType="outputOnly" type="SFColor" name="color_changed"/>
-        <![CDATA[ecmascript:
-function set_active (value, time)
-{
-  if(!enabled){
-    return;
-  }
-
-  if (value == false)
-    return;
- 
-  if (red == true){
-    red = FALSE;
-    color_changed [0] = 0.0;
-    color_changed [1] = 1.0;
-    color_changed [2] = 0.0;
-  } else {
-    red = true;
-    color_changed [0] = 1.0;
-    color_changed [1] = 0.0;
-    color_changed [2] = 0.0;
-  }
-}
-]]>
-    </Script>
-    <Script DEF="TwinToggler">
+    <Script DEF="TimeTwinToggler">
         <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
         <field accessType="inputOutput" type="SFBool" name="isMTL" value="true"/>
-        <field accessType="inputOnly" type="SFTime" name="set_active"/>
+        <field accessType="inputOnly" type="SFTime" name="set_time"/>
         <field accessType="outputOnly" type="SFTime" name="slot1_changed"/>
         <field accessType="outputOnly" type="SFTime" name="slot2_changed" />
         <![CDATA[ecmascript:
-function set_active (value, time)
+function set_time (value, time)
+{
+  if (!enabled)
+    return;
+ 
+  if (isMTL == true){
+    isMTL = false;
+    slot1_changed = value;
+    slot2_changed = "0.0";
+  } else {
+    isMTL = true;
+    slot1_changed = "0.0";
+    slot2_changed = value;
+  }
+}
+]]>
+    </Script>
+    <Script DEF="ParkDoorRotationToggler1">
+        <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
+        <field accessType="inputOutput" type="SFBool" name="isMTL" value="true"/>
+        <field accessType="inputOnly" type="SFTime" name="set_time"/>
+        <field accessType="outputOnly" type="SFTime" name="slot1_changed"/>
+        <field accessType="outputOnly" type="SFTime" name="slot2_changed" />
+        <![CDATA[ecmascript:
+function set_time (value, time)
+{
+  if (!enabled)
+    return;
+ 
+  if (isMTL == true){
+    isMTL = false;
+    slot1_changed = value;
+    slot2_changed = "0.0";
+  } else {
+    isMTL = true;
+    slot1_changed = "0.0";
+    slot2_changed = value;
+  }
+}
+]]>
+    </Script>
+    <Script DEF="ParkDoorRotationToggler2">
+        <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
+        <field accessType="inputOutput" type="SFBool" name="isMTL" value="true"/>
+        <field accessType="inputOnly" type="SFTime" name="set_time"/>
+        <field accessType="outputOnly" type="SFTime" name="slot1_changed"/>
+        <field accessType="outputOnly" type="SFTime" name="slot2_changed" />
+        <![CDATA[ecmascript:
+function set_time (value, time)
 {
   if (!enabled)
     return;
@@ -129,12 +112,15 @@ function set_active (value, time)
     <TimeSensor DEF="pLY" cycleInterval="10" loop="false"/>
     
     <!--                        parkdoors clocks                                                      -->
-    <TimeSensor DEF="parkDoorClock" cycleInterval="2" loop="false"/>
+    <TimeSensor DEF="parkDoorOpenClock1" cycleInterval="2" loop="false"/>
+    <TimeSensor DEF="parkDoorCloseClock1" cycleInterval="2" loop="false"/>
+    <TimeSensor DEF="parkDoorOpenClock2" cycleInterval="2" loop="false"/>
+    <TimeSensor DEF="parkDoorCloseClock2" cycleInterval="2" loop="false"/>
 <!-- ############### Objects #######################################################################-->
     <!--                    vehicles                                                                   -->
     <Transform DEF="veh1" translation="0 -2 0">
         <Transform rotation="0 1 0 -1.5708">
-            <Inline USE="blueCar"/>
+            <Inline url="models/cars/car.x3d" DEF="blueCar"/>
         </Transform>
     </Transform>
     <Transform DEF="veh2" translation="0 -2 0">
@@ -288,7 +274,24 @@ function set_active (value, time)
         <Transform USE="ALy"/>
     </Transform>
 </Transform>
-
+    <!--  parkdoors                                                                                     -->
+    <Transform translation="14.5 0.3 54" DEF="parka">
+        <Transform DEF="parkDoor1Rotation" rotation="0 1 0 0">
+            <Transform translation="0 0 2">
+                <TouchSensor DEF="doorTouch1"/>
+                <Inline url="models/park/models/fenceDoorFinal.x3d" DEF="ParkDoor"/>
+            </Transform>
+        </Transform>
+    </Transform>
+    
+    <Transform DEF="parkDoor2Rotation" translation="58 0.3 14.5">
+        <Transform translation="-2 0 0">
+            <Transform rotation="0 1 0 -1.57806">
+                <TouchSensor DEF="doorTouch2"/>
+                <Inline USE="ParkDoor"/>
+            </Transform>
+        </Transform>
+    </Transform>
 <!-- ############## Interpolators ########################################################-->
     <!--                         moveToLight                                                         -->
     <PositionInterpolator DEF="mTL1" key="0 0.5 1" keyValue="-100 2 3, -60 2 3, -20 2 3"/>
@@ -322,21 +325,25 @@ function set_active (value, time)
     <!-- 2 hauptclocks (eine pro Phase), Routes zwischen Clocks für gleiche Intervalle -->
     
     <!--                        parkDoors                                                           -->
+    <OrientationInterpolator DEF="door1RotationOpen" key="0 0.5 1" keyValue="0 1 0 0, 0 1 0 -0.6, 0 1 0 -1.5780"/>
+    <OrientationInterpolator DEF="door1RotationClose" key="0 0.5 1" keyValue="0 1 0 -1.5780, 0 1 0 -0.6, 0 1 0 0"/>
+    <OrientationInterpolator DEF="door2RotationOpen" key="0 0.5 1" keyValue="0 1 0 0, 0 1 0 -0.6, 0 1 0 -1.5780"/>
+    <OrientationInterpolator DEF="door2RotationClose" key="0 0.5 1" keyValue="0 1 0 -1.5780, 0 1 0 -0.6, 0 1 0 0"/>
 <!-- ############## Routes ######################################################################-->
     <!--                        Main clocking routes                                                   -->
-    <ROUTE fromNode="MainClock" fromField="cycleTime" toNode="TwinToggler" toField="set_active"/>
+    <ROUTE fromNode="MainClock" fromField="cycleTime" toNode="TimeTwinToggler" toField="set_time"/>
     <!--                        vehicle movement trigger routes                                                   -->
-    <ROUTE fromNode="TwinToggler" fromField="slot1_changed" toNode="mTLC1" toField="set_startTime"/>
-    <ROUTE fromNode="TwinToggler" fromField="slot2_changed" toNode="mAC1" toField="set_startTime"/>
+    <ROUTE fromNode="TimeTwinToggler" fromField="slot1_changed" toNode="mTLC1" toField="set_startTime"/>
+    <ROUTE fromNode="TimeTwinToggler" fromField="slot2_changed" toNode="mAC1" toField="set_startTime"/>
     
-    <ROUTE fromNode="TwinToggler" fromField="slot1_changed" toNode="mAC2" toField="set_startTime"/>
-    <ROUTE fromNode="TwinToggler" fromField="slot2_changed" toNode="mTLC2" toField="set_startTime"/>
+    <ROUTE fromNode="TimeTwinToggler" fromField="slot1_changed" toNode="mAC2" toField="set_startTime"/>
+    <ROUTE fromNode="TimeTwinToggler" fromField="slot2_changed" toNode="mTLC2" toField="set_startTime"/>
     <!--                        traffic light trigger routes                                                 -->
-    <ROUTE fromNode="TwinToggler" fromField="slot1_changed" toNode="gpCx" toField="set_startTime"/>
-    <ROUTE fromNode="TwinToggler" fromField="slot2_changed" toNode="rpCx" toField="set_startTime"/>
+    <ROUTE fromNode="TimeTwinToggler" fromField="slot1_changed" toNode="gpCx" toField="set_startTime"/>
+    <ROUTE fromNode="TimeTwinToggler" fromField="slot2_changed" toNode="rpCx" toField="set_startTime"/>
     
-    <ROUTE fromNode="TwinToggler" fromField="slot1_changed" toNode="rpCy" toField="set_startTime"/>
-    <ROUTE fromNode="TwinToggler" fromField="slot2_changed" toNode="gpCy" toField="set_startTime"/>
+    <ROUTE fromNode="TimeTwinToggler" fromField="slot1_changed" toNode="rpCy" toField="set_startTime"/>
+    <ROUTE fromNode="TimeTwinToggler" fromField="slot2_changed" toNode="gpCy" toField="set_startTime"/>
     <!--                        moveToLight Routes                                                     -->
     <ROUTE fromNode="mTLC1" fromField="fraction_changed" toNode="mTL1" toField="set_fraction"/>
     <ROUTE fromNode="mTL1" fromField="value_changed" toNode="veh1" toField="translation"/>
@@ -393,6 +400,24 @@ function set_active (value, time)
     <ROUTE fromNode="rpGy" fromField="value_changed" toNode="cLGy" toField="set_diffuseColor"/>
     <!--                            traffic light button routes                                         -->
     <!--                            park door routes                                                    -->
+    <ROUTE fromNode="doorTouch1" fromField="touchTime" toNode="ParkDoorRotationToggler1" toField="set_time"/>
+    <ROUTE fromNode="doorTouch2" fromField="touchTime" toNode="ParkDoorRotationToggler2" toField="set_time"/>
+    
+    <ROUTE fromNode="ParkDoorRotationToggler1" fromField="slot1_changed" toNode="parkDoorOpenClock1" toField="set_startTime"/>
+    <ROUTE fromNode="ParkDoorRotationToggler1" fromField="slot2_changed" toNode="parkDoorCloseClock1" toField="set_startTime"/>
+    
+    <ROUTE fromNode="ParkDoorRotationToggler2" fromField="slot1_changed" toNode="parkDoorOpenClock2" toField="set_startTime"/>
+    <ROUTE fromNode="ParkDoorRotationToggler2" fromField="slot2_changed" toNode="parkDoorCloseClock2" toField="set_startTime"/>
+    
+    <ROUTE fromNode="parkDoorOpenClock1" fromField="fraction_changed" toNode="door1RotationOpen" toField="set_fraction"/>
+    <ROUTE fromNode="door1RotationOpen" fromField="value_changed" toNode="parkDoor1Rotation" toField="rotation"/>
+    <ROUTE fromNode="parkDoorCloseClock1" fromField="fraction_changed" toNode="door1RotationClose" toField="set_fraction"/>
+    <ROUTE fromNode="door1RotationClose" fromField="value_changed" toNode="parkDoor1Rotation" toField="rotation"/>
+    
+    <ROUTE fromNode="parkDoorOpenClock2" fromField="fraction_changed" toNode="door2RotationOpen" toField="set_fraction"/>
+    <ROUTE fromNode="door2RotationOpen" fromField="value_changed" toNode="parkDoor2Rotation" toField="rotation"/>
+    <ROUTE fromNode="parkDoorCloseClock2" fromField="fraction_changed" toNode="door2RotationClose" toField="set_fraction"/>
+    <ROUTE fromNode="door2RotationClose" fromField="value_changed" toNode="parkDoor2Rotation" toField="rotation"/>
   </Scene>
 </X3D>
 

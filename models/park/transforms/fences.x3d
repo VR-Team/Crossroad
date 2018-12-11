@@ -17,14 +17,5 @@
         <transform translation="0 0 -41.5" rotation="0 1 0 1.57">
             <inline url="../models/fencelong2.x3d"/>
         </transform>
-        
-        <!--fencheDoor l-->
-         <transform translation="-41.5 0 0">
-            <inline url="../models/fenceDoorFinal.x3d"/>
-        </transform>
-        <!--fencheDoor u-->
-         <transform translation="0 0 41.5" rotation="0 1 0 1.57">
-            <inline url="../models/fenceDoorFinal.x3d"/>
-        </transform>
     </scene>
 </x3d>
