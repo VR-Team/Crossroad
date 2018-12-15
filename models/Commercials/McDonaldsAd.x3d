@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D>
+	<Scene>
+		<Transform rotation="1 0 0 1.56">
+			<VisibilitySensor DEF='VideoPlayer' size='3 0 2.5'/> 
+			<Shape>
+				<Appearance>
+					<MovieTexture DEF='Video' enabled='false' loop='true' url='../../textures/CommercialVideos/McDonalds.mpg'/>
+				</Appearance>
+				<Box size='3 0 2.5'/>
+				</Shape>
+			</Transform>
+		<ROUTE fromNode='VideoPlayer' fromField='isActive' toNode='Video' toField='enabled'/>
+	</Scene>
+</X3D>

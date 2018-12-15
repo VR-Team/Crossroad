@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <X3D>
 	<Scene>
+		<Transform scale="0.5 0.5 0.5" translation="-1.05 2.5 0" rotation="0 1 0 -1.56">
+			<Inline url="../Commercials/CocaColaAd.x3d"></Inline>
+		</Transform>
+		<Transform scale="0.4 0.4 0.4" translation="1.7 2.5 -3.5" rotation="0 1 0 3.12">
+			<Inline url="../Commercials/McDonaldsAd.x3d"></Inline>
+		</Transform>
 		<Transform DEF="Cube_TRANSFORM" rotation="0 0.707107 0.707107 3.141593">
 			<Transform DEF="Cube_ifs_TRANSFORM">
 				<Group DEF="group_ME_Cube_001">
