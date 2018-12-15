@@ -15,16 +15,16 @@
     <Transform>
         <Inline url="models/basic_environment/intersection.x3d"/>
     </Transform>
-    <Transform>
+    <!--<Transform>
         <Inline url="models/buildings/Buildings.x3d"></Inline>
     </Transform>
     <Transform translation="56 0 56">
         <Transform rotation="0 1 0 -1.5708">
             <Inline url="models/park/park.x3d"/>
         </Transform>
-    </Transform>
+    </Transform>-->
 <!-- ############### Skripts #######################################################################-->
-    <Script DEF="TimeTwinToggler">
+    <Script DEF="MainTimeTwinToggler">
         <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
         <field accessType="inputOutput" type="SFBool" name="isMTL" value="true"/>
         <field accessType="inputOnly" type="SFTime" name="set_time"/>
@@ -44,6 +44,24 @@ function set_time (value, time)
     isMTL = true;
     slot1_changed = "0.0";
     slot2_changed = value;
+  }
+}
+]]>
+    </Script>
+    <Script DEF="RadioButtonPedestrianLight">
+        <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
+        <field accessType="inputOnly" type="SFBool" name="isActive" value="false"/>
+        <field accessType="inputOnly" type="SFTime" name="set_time"/>
+        <field accessType="outputOnly" type="SFTime" name="output_changed"/>
+        <![CDATA[ecmascript:
+function set_time (value, time)
+{
+  if (!enabled)
+    return;
+  if(isActive == true){
+    output_changed = value;
+  }else{
+    output_changed = 0.0;
   }
 }
 ]]>
@@ -111,7 +129,9 @@ function set_time (value, time)
     <TimeSensor DEF="rpCy" cycleInterval="10" loop="false"/>
     <TimeSensor DEF="pLX" cycleInterval="10" loop="false"/>
     <TimeSensor DEF="pLY" cycleInterval="10" loop="false"/>
-    
+    <!--                        pedestrian light button clocks                                        -->
+    <TimeSensor DEF="pLbXC" cycleInterval="10" loop="false"/>
+    <TimeSensor DEF="pLbYC" cycleInterval="10" loop="false"/>
     <!--                        parkdoors clocks                                                      -->
     <TimeSensor DEF="parkDoorOpenClock1" cycleInterval="2" loop="false"/>
     <TimeSensor DEF="parkDoorCloseClock1" cycleInterval="2" loop="false"/>
@@ -138,157 +158,176 @@ function set_time (value, time)
         <Inline USE="blueCar"/>
     </Transform>
     <!--   traffic lights                                                             -->
-<Transform DEF="ALx"> <!--trafficlights X1-->
-<Transform DEF="AcLx">
-    <Transform DEF="cLx" translation='0.7 11.5 11.1'>
+    <Transform> <!--trafficlights X1-->
+        <Transform DEF="AcLx">
+            <Transform DEF="cLx" translation='0.7 11.5 11.1'>
+                <Transform rotation='0 1 0 1.5708'>
+                    <Transform rotation='0 0 1 1.5708'>
+                        <Transform translation='-1 0 0'>
+                            <Shape>
+                                <Cylinder height='0.6' radius='0.22'/>
+                                <Appearance>
+                                    <Material DEF="cLGx" diffuseColor='.1 .1 .1'/>
+                                </Appearance>
+                            </Shape>
+                        </Transform>
+                        <Transform translation='-0.5 0 0'>
+                            <Shape>
+                                <Cylinder height='0.6' radius='0.22'/>
+                                <Appearance>
+                                    <Material DEF="cLYx" diffuseColor='.1 .1 .1'/>
+                                </Appearance>
+                            </Shape>
+                        </Transform>
+                        <Transform translation='0 0 0'>
+                            <Shape>
+                                <Cylinder height='0.6' radius='0.22'/>
+                                <Appearance>
+                                    <Material DEF="cLRx" diffuseColor='1 0 0'/>
+                                </Appearance>
+                            </Shape>
+                        </Transform>
+                    </Transform>
+                </Transform>
+            </Transform>
+            <Transform translation='6.3 -5.25 0'>
+                <Transform USE="cLx"/>
+            </Transform>
+        </Transform>
+        <Transform DEF="ApLx">
+            <Transform DEF="pLx" translation="-6.9 6.35 11">
+                <Transform rotation='0 0 1 1.5708'>
+                    <Transform translation="-0.6 0 0">
+                        <Shape>
+                            <Cylinder height='0.6' radius='0.22'/>
+                            <Appearance>
+                                <Material DEF="pLGx" diffuseColor='.1 .1 .1'/>
+                            </Appearance>
+                        </Shape>
+                    </Transform>
+                    <Transform translation="0 0 0">
+                        <Shape>
+                            <Cylinder height='0.6' radius='0.22'/>
+                            <Appearance>
+                                <Material DEF="pLRx" diffuseColor='1 0 0'/>
+                            </Appearance>
+                        </Shape>
+                    </Transform>
+                </Transform>
+            </Transform>
+            <Transform translation="13.8 -0.25 0">
+                <Transform USE="pLx"/>
+            </Transform>
+        </Transform>
+    </Transform>
+    <Transform> <!--trafficlights X2-->
+        <Transform rotation="0 5 0 3.14159265359">
+            <Transform USE="AcLx"/>
+            <Transform USE="ApLx"/>
+        </Transform>
+    </Transform>
+    <Transform> <!--trafficlights Y1-->
         <Transform rotation='0 1 0 1.5708'>
-            <Transform rotation='0 0 1 1.5708'>
-                <Transform translation='-1 0 0'>
-                    <Shape>
-                        <Cylinder height='0.6' radius='0.22'/>
-                        <Appearance>
-                            <Material DEF="cLGx" diffuseColor='.1 .1 .1'/>
-                        </Appearance>
-                    </Shape>
+            <Transform DEF="AcLy">
+                <Transform DEF="cLy" translation='0.7 11.5 11.1'>
+                    <Transform rotation='0 1 0 1.5708'>
+                        <Transform rotation='0 0 1 1.5708'>
+                            <Transform translation='-1 0 0'>
+                                <Shape>
+                                    <Cylinder height='0.6' radius='0.22'/>
+                                    <Appearance>
+                                        <Material DEF="cLGy" diffuseColor='.1 .1 .1'/>
+                                    </Appearance>
+                                </Shape>
+                            </Transform>
+                            <Transform translation='-0.5 0 0'>
+                                <Shape>
+                                    <Cylinder height='0.6' radius='0.22'/>
+                                    <Appearance>
+                                        <Material DEF="cLYy" diffuseColor='.1 .1 .1'/>
+                                    </Appearance>
+                                </Shape>
+                            </Transform>
+                            <Transform translation='0 0 0'>
+                                <Shape>
+                                    <Cylinder height='0.6' radius='0.22'/>
+                                    <Appearance>
+                                        <Material DEF="cLRy" diffuseColor='1 0 0'/>
+                                    </Appearance>
+                                </Shape>
+                            </Transform>
+                        </Transform>
+                    </Transform>
                 </Transform>
-                <Transform translation='-0.5 0 0'>
-                    <Shape>
-                        <Cylinder height='0.6' radius='0.22'/>
-                        <Appearance>
-                            <Material DEF="cLYx" diffuseColor='.1 .1 .1'/>
-                        </Appearance>
-                    </Shape>
-                </Transform>
-                <Transform translation='0 0 0'>
-                    <Shape>
-                        <Cylinder height='0.6' radius='0.22'/>
-                        <Appearance>
-                            <Material DEF="cLRx" diffuseColor='1 0 0'/>
-                        </Appearance>
-                    </Shape>
+                <Transform translation='6.3 -5.25 0'>
+                    <Transform USE="cLy"/>
                 </Transform>
             </Transform>
-        </Transform>
-    </Transform>
-    <Transform translation='6.3 -5.25 0'>
-        <Transform USE="cLx"/>
-    </Transform>
-</Transform>
-<Transform DEF="ApLx">
-    <Transform DEF="pLx" translation="-6.9 6.35 11">
-        <Transform rotation='0 0 1 1.5708'>
-            <Transform translation="-0.6 0 0">
-                <Shape>
-                    <Cylinder height='0.6' radius='0.22'/>
-                    <Appearance>
-                        <Material DEF="pLGx" diffuseColor='.1 .1 .1'/>
-                    </Appearance>
-                </Shape>
-            </Transform>
-            <Transform translation="0 0 0">
-                <Shape>
-                    <Cylinder height='0.6' radius='0.22'/>
-                    <Appearance>
-                        <Material DEF="pLRx" diffuseColor='1 0 0'/>
-                    </Appearance>
-                </Shape>
-            </Transform>
-        </Transform>
-    </Transform>
-    <Transform translation="13.8 -0.25 0">
-        <Transform USE="pLx"/>
-    </Transform>
-</Transform>
-</Transform>
-<Transform translation="0 0 0"> <!--trafficlights X2-->
-    <Transform rotation="0 1 0 3.14159265359">
-        <Transform USE="ALx"/>
-    </Transform>
-</Transform>
-
-<Transform DEF="ALy"> <!--trafficlights Y1-->
-    <Transform rotation='0 1 0 1.5708'>
-<Transform DEF="AcLy">
-    <Transform DEF="cLy" translation='0.7 11.5 11.1'>
-        <Transform rotation='0 1 0 1.5708'>
-            <Transform rotation='0 0 1 1.5708'>
-                <Transform translation='-1 0 0'>
-                    <Shape>
-                        <Cylinder height='0.6' radius='0.22'/>
-                        <Appearance>
-                            <Material DEF="cLGy" diffuseColor='.1 .1 .1'/>
-                        </Appearance>
-                    </Shape>
+            <Transform DEF="ApLy">
+                <Transform DEF="pLy" translation="-6.9 6.35 11">
+                    <Transform rotation='0 0 1 1.5708'>
+                        <Transform translation="-0.6 0 0">
+                            <Shape>
+                                <Cylinder height='0.6' radius='0.22'/>
+                                <Appearance>
+                                    <Material DEF="pLGy" diffuseColor='.1 .1 .1'/>
+                                </Appearance>
+                            </Shape>
+                        </Transform>
+                        <Transform translation="0 0 0">
+                            <Shape>
+                                <Cylinder height='0.6' radius='0.22'/>
+                                <Appearance>
+                                    <Material DEF="pLRy" diffuseColor='1 0 0'/>
+                                </Appearance>
+                            </Shape>
+                        </Transform>
+                    </Transform>
                 </Transform>
-                <Transform translation='-0.5 0 0'>
-                    <Shape>
-                        <Cylinder height='0.6' radius='0.22'/>
-                        <Appearance>
-                            <Material DEF="cLYy" diffuseColor='.1 .1 .1'/>
-                        </Appearance>
-                    </Shape>
-                </Transform>
-                <Transform translation='0 0 0'>
-                    <Shape>
-                        <Cylinder height='0.6' radius='0.22'/>
-                        <Appearance>
-                            <Material DEF="cLRy" diffuseColor='1 0 0'/>
-                        </Appearance>
-                    </Shape>
+                <Transform translation="13.8 -0.25 0">
+                    <Transform USE="pLy"/>
                 </Transform>
             </Transform>
         </Transform>
     </Transform>
-    <Transform translation='6.3 -5.25 0'>
-        <Transform USE="cLy"/>
-    </Transform>
-</Transform>
-<Transform DEF="ApLy">
-    <Transform DEF="pLy" translation="-6.9 6.35 11">
-        <Transform rotation='0 0 1 1.5708'>
-            <Transform translation="-0.6 0 0">
-                <Shape>
-                    <Cylinder height='0.6' radius='0.22'/>
-                    <Appearance>
-                        <Material DEF="pLGy" diffuseColor='.1 .1 .1'/>
-                    </Appearance>
-                </Shape>
-            </Transform>
-            <Transform translation="0 0 0">
-                <Shape>
-                    <Cylinder height='0.6' radius='0.22'/>
-                    <Appearance>
-                        <Material DEF="pLRy" diffuseColor='1 0 0'/>
-                    </Appearance>
-                </Shape>
-            </Transform>
+    <Transform> <!--trafficlights Y2-->
+        <Transform rotation="0 1 0 -1.57079632679">
+            <Transform USE="AcLy"/>
+            <Transform USE="ApLy"/>
         </Transform>
     </Transform>
-    <Transform translation="13.8 -0.25 0">
-        <Transform USE="pLy"/>
+    <Transform DEF="pLBX"><!--trafficlight buttons X-Line-->
+        <Shape>
+            <Box size='.1 .2 .1'/>
+            <Appearance>
+                <Material diffuseColor='1 1 0.1'/>
+            </Appearance>
+        </Shape>
+        <TouchSensor DEF="TBX" description="Bitte druecken!"/>
     </Transform>
-</Transform>
-</Transform>
-</Transform>
-<Transform translation="0 0 0"> <!--trafficlights Y2-->
-    <Transform rotation="0 1 0 3.14159265359">
-        <Transform USE="ALy"/>
+    <Transform DEF="pLBY"><!--trafficlight buttons Y-line-->
+        <Shape>
+            <Box size='.1 .2 .1'/>
+            <Appearance>
+                <Material diffuseColor='1 1 0.1'/>
+            </Appearance>
+        </Shape>
+        <TouchSensor DEF="TBY" description="Bitte druecken!"/>
     </Transform>
-</Transform>
+    
     <!--  parkdoors                                                                                     -->
-    <Transform translation="14.5 0.3 54" DEF="parka">
+    <Transform translation="14.5 0.3 54">
         <Transform DEF="parkDoor1Rotation" rotation="0 1 0 0">
             <Transform translation="0 0 2">
-                <TouchSensor DEF="doorTouch1"/>
+                <TouchSensor DEF="doorTouch1" description="Bitte druecken zum Interagieren!"/>
                 <Inline url="models/park/models/fenceDoorFinal.x3d" DEF="ParkDoor"/>
             </Transform>
         </Transform>
     </Transform>
-    
     <Transform DEF="parkDoor2Rotation" translation="58 0.3 14.5">
         <Transform translation="-2 0 0">
             <Transform rotation="0 1 0 -1.57806">
-                <TouchSensor DEF="doorTouch2"/>
+                <TouchSensor DEF="doorTouch2" description="Bitte druecken zum Interagieren!"/>
                 <Inline USE="ParkDoor"/>
             </Transform>
         </Transform>
@@ -321,10 +360,11 @@ function set_time (value, time)
     <ColorInterpolator DEF="rpRy" key="0 0.99 1" keyValue="1 0 0, 1 0 0, 0 0 0"/>
     <ColorInterpolator DEF="rpYy" key="0 0.89 0.9 0.99 1" keyValue="0 0 0, 0 0 0, 1 1 0, 1 1 0, 0 0 0"/>
     <ColorInterpolator DEF="rpGy" key="0 0.99 1" keyValue="0 0 0, 0 0 0, 0 1 0"/>
-    <!-- greenphase pedestrian lights -->
-    <!-- redphase pedestrian lights -->
-    <!-- 2 hauptclocks (eine pro Phase), Routes zwischen Clocks für gleiche Intervalle -->
-    
+    <!-- colorphase pedestrian lights -->
+    <ColorInterpolator DEF="pLpRx" key="0 0.79 0.8 1" keyValue="0 0 0, 0 0 0, 1 0 0, 1 0 0"/>
+    <ColorInterpolator DEF="pLpGx" key="0 0.79 0.8 1" keyValue="0 1 0, 0 1 0, 0 0 0, 0 0 0"/>
+    <ColorInterpolator DEF="pLpRy" key="0 0.79 0.8 1" keyValue="0 0 0, 0 0 0, 1 0 0, 1 0 0"/>
+    <ColorInterpolator DEF="pLpGy" key="0 0.79 0.8 1" keyValue="0 1 0, 0 1 0, 0 0 0, 0 0 0"/>
     <!--                        parkDoors                                                           -->
     <OrientationInterpolator DEF="door1RotationOpen" key="0 0.5 1" keyValue="0 1 0 0, 0 1 0 -0.6, 0 1 0 -1.5780"/>
     <OrientationInterpolator DEF="door1RotationClose" key="0 0.5 1" keyValue="0 1 0 -1.5780, 0 1 0 -0.6, 0 1 0 0"/>
@@ -332,19 +372,19 @@ function set_time (value, time)
     <OrientationInterpolator DEF="door2RotationClose" key="0 0.5 1" keyValue="0 1 0 -1.5780, 0 1 0 -0.6, 0 1 0 0"/>
 <!-- ############## Routes ######################################################################-->
     <!--                        Main clocking routes                                                   -->
-    <ROUTE fromNode="MainClock" fromField="cycleTime" toNode="TimeTwinToggler" toField="set_time"/>
+    <ROUTE fromNode="MainClock" fromField="cycleTime" toNode="MainTimeTwinToggler" toField="set_time"/>
     <!--                        vehicle movement trigger routes                                                   -->
-    <ROUTE fromNode="TimeTwinToggler" fromField="slot1_changed" toNode="mTLC1" toField="set_startTime"/>
-    <ROUTE fromNode="TimeTwinToggler" fromField="slot2_changed" toNode="mAC1" toField="set_startTime"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot1_changed" toNode="mTLC1" toField="set_startTime"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot2_changed" toNode="mAC1" toField="set_startTime"/>
     
-    <ROUTE fromNode="TimeTwinToggler" fromField="slot1_changed" toNode="mAC2" toField="set_startTime"/>
-    <ROUTE fromNode="TimeTwinToggler" fromField="slot2_changed" toNode="mTLC2" toField="set_startTime"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot1_changed" toNode="mAC2" toField="set_startTime"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot2_changed" toNode="mTLC2" toField="set_startTime"/>
     <!--                        traffic light trigger routes                                                 -->
-    <ROUTE fromNode="TimeTwinToggler" fromField="slot1_changed" toNode="gpCx" toField="set_startTime"/>
-    <ROUTE fromNode="TimeTwinToggler" fromField="slot2_changed" toNode="rpCx" toField="set_startTime"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot1_changed" toNode="gpCx" toField="set_startTime"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot2_changed" toNode="rpCx" toField="set_startTime"/>
     
-    <ROUTE fromNode="TimeTwinToggler" fromField="slot1_changed" toNode="rpCy" toField="set_startTime"/>
-    <ROUTE fromNode="TimeTwinToggler" fromField="slot2_changed" toNode="gpCy" toField="set_startTime"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot1_changed" toNode="rpCy" toField="set_startTime"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot2_changed" toNode="gpCy" toField="set_startTime"/>
     <!--                        moveToLight Routes                                                     -->
     <ROUTE fromNode="mTLC1" fromField="fraction_changed" toNode="mTL1" toField="set_fraction"/>
     <ROUTE fromNode="mTL1" fromField="value_changed" toNode="veh1" toField="translation"/>
@@ -400,6 +440,18 @@ function set_time (value, time)
     <ROUTE fromNode="rpYy" fromField="value_changed" toNode="cLYy" toField="set_diffuseColor"/>
     <ROUTE fromNode="rpGy" fromField="value_changed" toNode="cLGy" toField="set_diffuseColor"/>
     <!--                            traffic light button routes                                         -->
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot1_changed" toNode="pLbYC" toField="set_startTime"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot2_changed" toNode="pLbXC" toField="set_startTime"/>
+
+    <ROUTE fromNode="pLbXC" fromField="fraction_changed" toNode="pLpRx" toField="set_fraction"/>
+    <ROUTE fromNode="pLbXC" fromField="fraction_changed" toNode="pLpGx" toField="set_fraction"/>
+    <ROUTE fromNode="pLbYC" fromField="fraction_changed" toNode="pLpRy" toField="set_fraction"/>
+    <ROUTE fromNode="pLbYC" fromField="fraction_changed" toNode="pLpGy" toField="set_fraction"/>
+    
+    <ROUTE fromNode="pLpRx" fromField="value_changed" toNode="pLRx" toField="set_diffuseColor"/>
+    <ROUTE fromNode="pLpGx" fromField="value_changed" toNode="pLGx" toField="set_diffuseColor"/>
+    <ROUTE fromNode="pLpRy" fromField="value_changed" toNode="pLRy" toField="set_diffuseColor"/>
+    <ROUTE fromNode="pLpGy" fromField="value_changed" toNode="pLGy" toField="set_diffuseColor"/>
     <!--                            park door routes                                                    -->
     <ROUTE fromNode="doorTouch1" fromField="touchTime" toNode="ParkDoorRotationToggler1" toField="set_time"/>
     <ROUTE fromNode="doorTouch2" fromField="touchTime" toNode="ParkDoorRotationToggler2" toField="set_time"/>
