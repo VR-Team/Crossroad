@@ -6,7 +6,7 @@
 </head>
 <Scene>
     <Transform translation='44 0.6 -2'>
-         <Transform translation='-20 .24 -1' scale=".7 .7 .7">
+         <Transform translation='-20 .24 0' scale=".7 .7 .7">
             <Inline url="busStop.x3d"/>
         </Transform>
         <Transform translation = "0 0.25 0" scale="0.2 0.2 0.2">
@@ -16,8 +16,8 @@
             <Shape DEF='Walk'>
                 <Box size='91.75 0.5 4'/>
                 <Appearance>
-                    <Material diffuseColor='1 1 1'/>
-                    <ImageTexture url="../../textures/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
+                    <Material diffuseColor='0 0 0'/>
+                    <ImageTexture url="../../textures/StreetComponents/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
                     <TextureTransform scale='13 0.75'/>
                 </Appearance>
             </Shape>
@@ -30,7 +30,7 @@
                         <Cylinder height='0.5' radius='2'/>
                         <Appearance>
                             <Material diffuseColor='0 0 0'/>
-                            <ImageTexture url="../../textures/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
+                            <ImageTexture url="../../textures/StreetComponents/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
                             <TextureTransform scale='1 1'/>
                         </Appearance>
                     </Shape>

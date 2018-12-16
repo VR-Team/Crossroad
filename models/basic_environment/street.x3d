@@ -9,7 +9,7 @@
         <Box size='91.5 0.5 15'/>
         <Appearance>
             <Material diffuseColor='0.5 0.5 0.5'/>
-            <ImageTexture url="../../textures/street_texture.jpg"/>
+            <ImageTexture url="../../textures/StreetComponents/street_texture.jpg"/>
             <TextureTransform scale='8 1'/>
         </Appearance>
     </Shape>

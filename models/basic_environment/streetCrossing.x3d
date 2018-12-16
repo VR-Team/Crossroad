@@ -5,29 +5,31 @@
     <meta name='description' content='Tree Models'/>
 </head>
 <Scene>
-    <Transform translation='0 0.6 0'>
-        <Transform translation='-54.25 0 0'>
-            <Inline url='street.x3d'/>
-        </Transform>
-        <Transform translation='54.25 0 0'>
-            <Inline url='street.x3d'/>
-        </Transform>
-        <Transform translation='0 0 -54.25'>
-            <Transform rotation='0 1 0 1.5708'>
+    <Transform translation='0 0.603 0'>
+        <Transform translation="0 0.045 0">
+            <Transform translation='-54.25 0 0'>
                 <Inline url='street.x3d'/>
             </Transform>
-        </Transform>
-        <Transform translation='0 0 54.25'>
-            <Transform rotation='0 1 0 1.5708'>
+            <Transform translation='54.25 0 0'>
                 <Inline url='street.x3d'/>
+            </Transform>
+            <Transform translation='0 0 -54.25'>
+                <Transform rotation='0 1 0 1.5708'>
+                    <Inline url='street.x3d'/>
+                </Transform>
+            </Transform>
+            <Transform translation='0 0 54.25'>
+                <Transform rotation='0 1 0 1.5708'>
+                    <Inline url='street.x3d'/>
+                </Transform>
             </Transform>
         </Transform>
         
         <Shape DEF='VerticalCrossing'>
-            <Box size='15 0.605 35'/>
+            <Box size='15 0.603 35'/>
             <Appearance>
                 <Material diffuseColor='0.5 0.5 0.5'/>
-                <ImageTexture url="../../textures/asphalt-texture.jpg"/>
+                <ImageTexture url="../../textures/StreetComponents/asphalt-texture.jpg"/>
                 <TextureTransform scale='4 4'/>
             </Appearance>
         </Shape>
@@ -38,7 +40,7 @@
         
         <Transform DEF='stopLine' translation='0 0 17.5'>
             <Shape>
-                <Box size='15 0.608 0.5'/>
+                <Box size='15 0.604 0.5'/>
                 <Appearance>
                     <Material diffuseColor='0.95 0.95 0.95'/>
                 </Appearance>
