@@ -15,6 +15,7 @@
 		            groundColor="0.051 0.051 0.051"
 		            skyColor="0.051 0.051 0.051"
 		            />
+        <Transform translation="0 0.8 -1">
 		<Transform DEF="Cylinder_001_TRANSFORM"
 		           translation="-0.815282 -0.370390 2.163033"
 		           scale="0.430969 0.430969 0.209927"
@@ -260,5 +261,6 @@
 				</Group>
 			</Transform>
 		</Transform>
+    </Transform>
 	</Scene>
 </X3D>

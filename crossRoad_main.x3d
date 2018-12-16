@@ -169,6 +169,8 @@ function change_design (value, time)
     designHolder = "models/cars/greencar.x3d";
   }else if(vehicleDesignID == 2){
     designHolder = "models/cars/pickup.x3d";
+  }if(vehicleDesignID == 3){
+    designHolder = "models/cars/truck.x3d";
   }
   
   if(vehicleID == 0){
@@ -187,7 +189,7 @@ function change_design (value, time)
     vehicleID = vehicleID + 1;
   }
     
-  if(vehicleDesignID == 2){
+  if(vehicleDesignID == 3){
     vehicleDesignID = 0;
   }else{
     vehicleDesignID = vehicleDesignID + 1;
@@ -235,7 +237,7 @@ function change_design (value, time)
         </Transform>
     </Transform>
     <Transform DEF="veh4" translation="0 -2 0" scale="1.5 1.5 1.5">
-        <Inline DEF="veh4D" url="models/cars/car.x3d"/>
+        <Inline DEF="veh4D" url="models/cars/truck.x3d"/>
     </Transform>
     <!--   traffic lights                                                             -->
     <Transform> <!--trafficlights X1-->
