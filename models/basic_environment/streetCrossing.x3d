@@ -5,7 +5,7 @@
     <meta name='description' content='Tree Models'/>
 </head>
 <Scene>
-    <Transform translation='0 0.5 0'>
+    <Transform translation='0 0.6 0'>
         <Transform translation='-54.25 0 0'>
             <Inline url='street.x3d'/>
         </Transform>
@@ -24,7 +24,7 @@
         </Transform>
         
         <Shape DEF='VerticalCrossing'>
-            <Box size='15 1.03 35'/>
+            <Box size='15 0.605 35'/>
             <Appearance>
                 <Material diffuseColor='0.5 0.5 0.5'/>
                 <ImageTexture url="../../textures/asphalt-texture.jpg"/>
@@ -38,7 +38,7 @@
         
         <Transform DEF='stopLine' translation='0 0 17.5'>
             <Shape>
-                <Box size='15 1.05 1'/>
+                <Box size='15 0.608 0.5'/>
                 <Appearance>
                     <Material diffuseColor='0.95 0.95 0.95'/>
                 </Appearance>

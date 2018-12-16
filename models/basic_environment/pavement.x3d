@@ -5,10 +5,16 @@
     <meta name='description' content='Pavement Models'/>
 </head>
 <Scene>
-    <Transform translation='44 1 -2'>
+    <Transform translation='44 0.6 -2'>
+         <Transform translation='-20 .24 -1' scale=".7 .7 .7">
+            <Inline url="busStop.x3d"/>
+        </Transform>
+        <Transform translation = "0 0.25 0" scale="0.2 0.2 0.2">
+            <Inline url="hydrantColored.x3d"/>
+        </Transform>
         <Transform DEF='Pavement'>
             <Shape DEF='Walk'>
-                <Box size='91.75 1 4'/>
+                <Box size='91.75 0.5 4'/>
                 <Appearance>
                     <Material diffuseColor='1 1 1'/>
                     <ImageTexture url="../../textures/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
@@ -17,16 +23,22 @@
             </Shape>
             <Transform translation='-44 0 2'>
                 <Transform translation="-2 0 -2">
+                    <Transform translation = "0 0.25 0" scale="0.2 0.2 0.2">
+                        <Inline url="hydrantColored.x3d"/>
+                    </Transform>
                     <Shape DEF='PavementCircle'>
-                        <Cylinder height='1' radius='2'/>
+                        <Cylinder height='0.5' radius='2'/>
                         <Appearance>
-                            <Material diffuseColor='1 1 1'/>
+                            <Material diffuseColor='0 0 0'/>
                             <ImageTexture url="../../textures/pavement_texture.jpg" repeatS ='true' repeatT = 'true'/>
                             <TextureTransform scale='1 1'/>
                         </Appearance>
                     </Shape>
                 </Transform>
                 <Transform translation='-2 0 44'>
+                    <Transform translation = "0 0.25 0" scale="0.2 0.2 0.2">
+                        <Inline url="hydrantColored.x3d"/>
+                    </Transform>
                     <Transform rotation='0 1 0 1.5708'>
                         <Shape USE='Walk'/>
                     </Transform>

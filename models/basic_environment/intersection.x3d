@@ -6,31 +6,24 @@
     <meta name='description' content='My first X3D World'/>
 </head>
 <Scene>
-    <TextureBackground>
-        <ImageTexture containerField='leftTexture' url= "../../textures/sky_106.png"/> 
-        <ImageTexture containerField='rightTexture' url= "../../textures/sky_106.png"/> 
-        <ImageTexture containerField='frontTexture' url= "../../textures/sky_106.png"/> 
-        <ImageTexture containerField='backTexture' url= "../../textures/sky_106.png"/> 
-        <ImageTexture containerField='topTexture' url= "../../textures/sky_106.png"/> 
-    </TextureBackground> 
     <Inline url='ground.x3d'/>	
     <Inline url='streetCrossing.x3d'/>
 	
 	<Group DEF='PavementGroup'>
-        <Transform translation='10 0 10'>
+        <Transform translation='10 0.2 10'>
             <Inline url='pavement.x3d'/>
         </Transform>
-        <Transform translation='10 0 -10'>
+        <Transform translation='10 0.2 -10'>
             <Transform rotation='0 1 0 1.5708'>
                 <Inline url='pavement.x3d'/>
             </Transform>
         </Transform>
-        <Transform translation='-10 0 10'>
+        <Transform translation='-10 0.2 10'>
             <Transform rotation='0 1 0 -1.5708'>
                 <Inline url='pavement.x3d'/>
             </Transform>
         </Transform>
-        <Transform translation='-10 0 -10'>
+        <Transform translation='-10 0.2 -10'>
             <Transform rotation='0 1 0 3.1416'>
                 <Inline url='pavement.x3d'/>
             </Transform>

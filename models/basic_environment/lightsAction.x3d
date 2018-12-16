@@ -74,7 +74,7 @@
                                 <Material diffuseColor='1 1 0.1'/>
                             </Appearance>
                         </Shape>
-                        <TouchSensor DEF="Touch1" description="Bitte druecken 1"/>
+                        <TouchSensor DEF="VerticalTouch" description="Bitte druecken 1"/>
                     </Group>
                 </Transform>
             </Transform>
@@ -142,7 +142,7 @@
                     <Transform translation='0.15 2.3 0'> 
                         <Group DEF='Button2'>
                             <Shape USE='Button'/>
-                            <TouchSensor DEF="Touch2" description="Bitte druecken 2"/>
+                            <TouchSensor DEF="HorizontalTouch" description="Bitte druecken 2"/>
                         </Group>
                     </Transform>
                 </Transform>
@@ -271,21 +271,21 @@
     <BooleanFilter DEF="HorizontalGreen"/>
     <ROUTE fromField="cycleTime" fromNode="HorizontalMotherClock" toField="startTime" toNode="HorizontalGreenPhase"/>
     <ROUTE fromField="isActive" fromNode="HorizontalGreenPhase" toField="set_boolean" toNode="HorizontalGreen"/>
-    <ROUTE fromField="inputNegate" fromNode="HorizontalGreen" toField="enabled" toNode="Touch2"/>
+    <ROUTE fromField="inputNegate" fromNode="HorizontalGreen" toField="enabled" toNode="HorizontalTouch"/>
     
     <BooleanFilter DEF="UserInput1"/>
     <BooleanFilter DEF="UserInput2"/>
     <ROUTE fromField="isActive" fromNode="VerticalTime" toField="set_boolean" toNode="UserInput1"/>
     <ROUTE fromField="isActive" fromNode="HorizontalTime" toField="set_boolean" toNode="UserInput2"/>
-    <ROUTE fromField="inputNegate" fromNode="UserInput1" toField="enabled" toNode="Touch1"/>
-    <ROUTE fromField="inputNegate" fromNode="UserInput2" toField="enabled" toNode="Touch2"/>
+    <ROUTE fromField="inputNegate" fromNode="UserInput1" toField="enabled" toNode="VerticalTouch"/>
+    <ROUTE fromField="inputNegate" fromNode="UserInput2" toField="enabled" toNode="HorizontalTouch"/>
 
     <BooleanFilter DEF="TouchFilter1"/>
     <BooleanFilter DEF="TouchFilter2"/>
-    <ROUTE fromField="enabled" fromNode="Touch1" toField="set_boolean" toNode="TouchFilter1"/>
-    <ROUTE fromField="inputNegate" fromNode="TouchFilter1" toField="enabled" toNode="Touch2"/>
-    <ROUTE fromField="enabled" fromNode="Touch2" toField="set_boolean" toNode="TouchFilter2"/>
-    <ROUTE fromField="inputNegate" fromNode="TouchFilter2" toField="enabled" toNode="Touch1"/>
+    <ROUTE fromField="enabled" fromNode="VerticalTouch" toField="set_boolean" toNode="TouchFilter1"/>
+    <ROUTE fromField="inputNegate" fromNode="TouchFilter1" toField="enabled" toNode="HorizontalTouch"/>
+    <ROUTE fromField="enabled" fromNode="HorizontalTouch" toField="set_boolean" toNode="TouchFilter2"/>
+    <ROUTE fromField="inputNegate" fromNode="TouchFilter2" toField="enabled" toNode="VerticalTouch"/>
 
 <!--set up time with interpolators for system induced phases  -->
     <TimeSensor DEF="VerticalTime" cycleInterval='20' loop='FALSE'/>
@@ -335,13 +335,26 @@
     <ROUTE fromField="value_changed" fromNode="HorizontalMotherFootGreenInterpolator" toField="set_diffuseColor" toNode="HorizontalGreenFootLight"/>
     
 <!--Interpolators which for pedestrian induced phases      -->
-    <PositionInterpolator DEF="VerticalRedInterpolatorGreenPhase" key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1'    keyValue='1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0'/>
-    <PositionInterpolator DEF="VerticalYellowInterpolatorGreenPhase" key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1' keyValue='0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0'/>
-    <PositionInterpolator DEF="VerticalGreenInterpolatorGreenPhase" key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1'  keyValue='0 0 0 0 0 0 0 0 0 0 0 0 0 1 .3 0 1 .3 0 0 0 0 0 0 0 0 0 0 0 0'/>
+<PositionInterpolator DEF="VerticalRedInterpolatorGreenPhase" key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1'      keyValue='1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0'/>
+<PositionInterpolator DEF="VerticalYellowInterpolatorGreenPhase" key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1' keyValue='0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0 1 1 0 1 1 0'/>
+<PositionInterpolator DEF="VerticalGreenInterpolatorGreenPhase" key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1'  keyValue='0 0 0 0 0 0 0 0 0 0 0 0 0 1 .3 0 1 .3 0 0 0 0 0 0'/>
+
+<PositionInterpolator DEF="HorizontalRedInterpolatorGreenPhase"    key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1' keyValue='1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0'/>
+<PositionInterpolator DEF="HorizontalYellowInterpolatorGreenPhase" key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1' keyValue='0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0 1 1 0 1 1 0'/>
+<PositionInterpolator DEF="HorizontalGreenInterpolatorGreenPhase"  key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1' keyValue='0 0 0 0 0 0 0 0 0 0 0 0 0 1 .3 0 1 .3 0 0 0 0 0 0'/>
     
-    <PositionInterpolator DEF="HorizontalRedInterpolatorGreenPhase"    key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1' keyValue='1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0'/>
-    <PositionInterpolator DEF="HorizontalYellowInterpolatorGreenPhase" key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1' keyValue='0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0'/>
-    <PositionInterpolator DEF="HorizontalGreenInterpolatorGreenPhase"  key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1' keyValue='0 0 0 0 0 0 0 0 0 0 0 0 0 1 .3 0 1 .3 0 0 0 0 0 0 0 0 0 0 0 0'/>
+<!-- Times that are active druing the real green time for vertical    -->
+    <Time DEF="VerticalGreenTransition" cycleInterval="4"/>
+    <Time DEF="VerticalGreenTime" cycleInterval="4"/>
+    
+    <BooleanFilter DEF="VerticalTimeIsActive"/>
+    <TimeTrigger DEF="StartVerticalGreenTime"/>
+    <BooleanFilter DEF="VerticalGreenTimeIsActive"/>
+    <ROUTE fromField="isActive" fromNode="VerticalTime" toField="set_boolean" toNode="VerticalTimeIsActive"/>
+    <ROUTE fromField="isActive" fromNode="VerticalGreenTime" toField="set_boolean" toNode="VerticalGreenTimeIsActive"/>
+    <ROUTE fromField="inpuFalse" fromNode="VerticalTimeIsActive" toField="set_boolean" toNode="StartVerticalGreenTime"/>
+    <ROUTE fromField="triggerTime" fromNode="StartVerticalGreenTime" toField="startTime" toNode="VerticalGreenTime"/>
+    
     
     <PositionInterpolator DEF="VerticalFootRedInterpolatorGreenPhase" key='0 0.25 0.26 0.74 0.75 1'    keyValue='0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0'/>
     <PositionInterpolator DEF="VerticalFootGreenInterpolatorGreenPhase" key='0 0.25 0.26 0.74 0.75 1'  keyValue='0 1 .3 0 1 .3 0 0 0 0 0 0 0 1 .3 0 1 .3'/>
@@ -349,37 +362,64 @@
     <PositionInterpolator DEF="HorizontalFootRedInterpolatorGreenPhase"    key='0 0.25 0.26 0.74 0.75 1' keyValue='1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0'/>
     <PositionInterpolator DEF="HorizontalFootGreenInterpolatorGreenPhase"  key='0 0.25 0.26 0.74 0.75 1'  keyValue='0 0 0 0 0 0 0 1 .3 0 1 .3 0 0 0 0 0 0'/>
     
-    <PositionInterpolator DEF="HorizontalRedInterpolatorRedPhase" key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1' keyValue='0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0'/>
-    <PositionInterpolator DEF="HorizontalYellowInterpolatorRedPhase" key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1' keyValue='0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0'/>
-    <PositionInterpolator DEF="HorizontalGreenInterpolatorRedPhase" key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1' keyValue='0 1 .3 0 1 .3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 .3 0 1 .3'/>
+<PositionInterpolator DEF="HorizontalRedInterpolatorRedPhase"       key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1' keyValue='0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0'/>
+<PositionInterpolator DEF="HorizontalYellowInterpolatorRedPhase"    key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1' keyValue='0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0 1 1 0 1 1 0'/>
+<PositionInterpolator DEF="HorizontalGreenInterpolatorRedPhase"     key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1' keyValue='0 1 .3 0 1 .3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0'/>
+
+<PositionInterpolator DEF="VerticalRedInterpolatorRedPhase" key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1'     keyValue='0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0'/>
+<PositionInterpolator DEF="VerticalYellowInterpolatorRedPhase" key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1'  keyValue='0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0 1 1 0 1 1 0'/>
+<PositionInterpolator DEF="VerticalGreenInterpolatorRedPhase" key='0 0.125 0.1251 0.25 0.251 0.875 0.8751 1' keyValue='0 1 .3 0 1 .3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0'/>
     
-    <PositionInterpolator DEF="VerticalRedInterpolatorRedPhase" key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1' keyValue='0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0'/>
-    <PositionInterpolator DEF="VerticalYellowInterpolatorRedPhase" key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1' keyValue='0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0'/>
-    <PositionInterpolator DEF="VerticalGreenInterpolatorRedPhase" key='0 0.1 0.11 0.25 0.26 0.74 0.75 0.89 0.9 1' keyValue='0 1 .3 0 1 .3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 .3 0 1 .3'/>
+    <PositionInterpolator DEF="VerticalFootRedInterpolatorRedPhase" key='0 0.25 0.251 0.5 0.501 1'    keyValue='1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0'/>
+    <PositionInterpolator DEF="VerticalFootGreenInterpolatorRedPhase" key='0 0.25 0.26 0.74 0.75 1'   keyValue='0 0 0 0 0 0 0 1 .3 0 1 .3 0 0 0 0 0 0'/>
     
-    <PositionInterpolator DEF="VerticalFootRedInterpolatorRedPhase" key='0 0.25 0.26 0.74 0.75 1'    keyValue='1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0'/>
-    <PositionInterpolator DEF="VerticalFootGreenInterpolatorRedPhase" key='0 0.25 0.26 0.74 0.75 1'  keyValue='0 0 0 0 0 0 0 1 .3 0 1 .3 0 0 0 0 0 0'/>
+    <PositionInterpolator DEF="HorizontalFootRedInterpolatorRedPhase"    key='0 0.25 0.251 0.5 0.501 1'  keyValue='0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0'/>
+    <PositionInterpolator DEF="HorizontalFootGreenInterpolatorRedPhase"  key='0 0.25 0.251 0.5 0.501 1'  keyValue='0 1 .3 0 1 .3 0 0 0 0 0 0 0 1 .3 0 1 .3'/>
+
     
-    <PositionInterpolator DEF="HorizontalFootRedInterpolatorRedPhase"    key='0 0.25 0.26 0.74 0.75 1' keyValue='0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0'/>
-    <PositionInterpolator DEF="HorizontalFootGreenInterpolatorRedPhase"  key='0 0.25 0.26 0.74 0.75 1'  keyValue='0 1 .3 0 1 .3 0 0 0 0 0 0 0 1 .3 0 1 .3'/>
+<!--needs work, probably make intermediatetime longer and add red/green time     
+    <TimeSensor DEF = "IntermediateTime" cycleInterval="4" loop = "false"/>
+    
+    <PositionInterpolator DEF="IntermediateRedInterpolator" key='0 1' keyValue='0 0 0 0 0 0'/>
+    <PositionInterpolator DEF="IntermediateYellowInterpolator" key='0 1' keyValue='1 1 0 1 1 0'/>
+    <PositionInterpolator DEF="IntermediateGreenInterpolator" key='0 1' keyValue='0 0 0 0 0 0'/>
+    
+    <ROUTE fromField="fraction_changed" fromNode="IntermediateTime" toField="set_fraction" toNode="IntermediateRedInterpolator"/>
+    <ROUTE fromField="fraction_changed" fromNode="IntermediateTime" toField="set_fraction" toNode="IntermediateYellowInterpolator"/>
+    <ROUTE fromField="fraction_changed" fromNode="IntermediateTime" toField="set_fraction" toNode="IntermediateGreenInterpolator"/>
+    
+    <ROUTE fromField="value_changed" fromNode="IntermediateRedInterpolator" toField="set_diffuseColor" toNode="VerticalRedCarLight"/>
+    <ROUTE fromField="value_changed" fromNode="IntermediateYellowInterpolator" toField="set_diffuseColor" toNode="VerticalYellowCarLight"/>
+    <ROUTE fromField="value_changed" fromNode="IntermediateGreenInterpolator" toField="set_diffuseColor" toNode="VerticalGreenCarLight"/>
+    
+    <ROUTE fromField="value_changed" fromNode="IntermediateRedInterpolator" toField="set_diffuseColor" toNode="HorizontalRedCarLight"/>
+    <ROUTE fromField="value_changed" fromNode="IntermediateYellowInterpolator" toField="set_diffuseColor" toNode="HorizontalYellowCarLight"/>
+    <ROUTE fromField="value_changed" fromNode="IntermediateGreenInterpolator" toField="set_diffuseColor" toNode="HorizontalGreenCarLight"/>
+    
+    <TimeTrigger DEF="IntermediateTrigger"/>
+    <BooleanFilter DEF="IntermediateFilter"/>
+    <ROUTE fromField="isActive" fromNode="VerticalTime" toField="set_boolean" toNode="IntermediateFilter"/>
+    <ROUTE fromField="isActive" fromNode="HorizontalTime" toField="set_boolean" toNode="IntermediateFilter"/>
+    <ROUTE fromField="inputFalse" fromNode="IntermediateFilter" toField="set_boolean" toNode="IntermediateTrigger"/>
+    <ROUTE fromField="triggerTime" fromNode="IntermediateTrigger" toField="startTime" toNode="IntermediateTime"/>
+ -->    
+    <TimeTrigger DEF="StartMotherTrigger"/>
+    <BooleanFilter DEF="StartMotherFilter"/>
+    <ROUTE fromField="isActive" fromNode="VerticalTime" toField="set_boolean" toNode="StartMotherFilter"/>
+    <ROUTE fromField="isActive" fromNode="HorizontalTime" toField="set_boolean" toNode="StartMotherFilter"/>
+    <ROUTE fromField="inputFalse" fromNode="StartMotherFilter" toField="set_boolean" toNode="StartMotherTrigger"/>
+    <ROUTE fromField="triggerTime" fromNode="StartMotherTrigger" toField="startTime" toNode="VerticalMotherClock"/>
+    <ROUTE fromField="triggerTime" fromNode="StartMotherTrigger" toField="startTime" toNode="HorizontalMotherClock"/>
 
 <!--Button mapping      -->
-    <ROUTE fromField='touchTime' fromNode='Touch1' toField='startTime' toNode='VerticalTime'/>
-    <ROUTE fromField='touchTime' fromNode='Touch2' toField='startTime' toNode='HorizontalTime'/>
+    <ROUTE fromField='touchTime' fromNode='VerticalTouch' toField='startTime' toNode='VerticalTime'/>
+    <ROUTE fromField='touchTime' fromNode='HorizontalTouch' toField='startTime' toNode='HorizontalTime'/>
     
 <!--make it so that the user initialized cycle interacts with the routine      -->
-    <ROUTE fromField='touchTime' fromNode='Touch1' toField='stopTime' toNode='HorizontalMotherClock'/>
-    <ROUTE fromField='touchTime' fromNode='Touch1' toField='stopTime' toNode='VerticalMotherClock'/>    
-    <ROUTE fromField='touchTime' fromNode='Touch2' toField='stopTime' toNode='VerticalMotherClock'/>
-    <ROUTE fromField='touchTime' fromNode='Touch2' toField='stopTime' toNode='HorizontalMotherClock'/>
-    
-    <BooleanFilter DEF="PassageOver"/>
-    <TimeTrigger DEF="MotherTrigger"/>
-    <ROUTE fromField="isActive" fromNode="VerticalTime" toField="set_boolean" toNode="PassageOver"/>
-    <ROUTE fromField="isActive" fromNode="HorizontalTime" toField="set_boolean" toNode="PassageOver"/>
-    <ROUTE fromField="inputFalse" fromNode="PassageOver" toField="set_boolean" toNode="MotherTrigger"/>
-    <ROUTE fromField="triggerTime" fromNode="MotherTrigger" toField="startTime" toNode="VerticalMotherClock"/>
-    <ROUTE fromField="triggerTime" fromNode="MotherTrigger" toField="startTime" toNode="HorizontalMotherClock"/>
+    <ROUTE fromField='touchTime' fromNode='VerticalTouch' toField='stopTime' toNode='HorizontalMotherClock'/>
+    <ROUTE fromField='touchTime' fromNode='VerticalTouch' toField='stopTime' toNode='VerticalMotherClock'/>    
+    <ROUTE fromField='touchTime' fromNode='HorizontalTouch' toField='stopTime' toNode='VerticalMotherClock'/>
+    <ROUTE fromField='touchTime' fromNode='HorizontalTouch' toField='stopTime' toNode='HorizontalMotherClock'/>
 
     
 <!--when Vertical Lights are in green phase, horizontal are in red phase      -->
@@ -442,10 +482,9 @@
     <ROUTE fromField="value_changed" fromNode="HorizontalFootRedInterpolatorRedPhase" toField="set_diffuseColor" toNode="HorizontalRedFootLight"/>
     <ROUTE fromField="value_changed" fromNode="HorizontalFootGreenInterpolatorRedPhase" toField="set_diffuseColor" toNode="HorizontalGreenFootLight"/>
     
-    <Script DEF='CheckPassageUD'>
+   <Script DEF='VerticalControl'>
         <field accessType='outputOnly' name='resumeTime' type='SFTime'/>
-        <field accessType='inputOnly' name='toggleMother' type='SFBool'/>
-        <field accessType='inputOnly' name='toggleUser' type='SFBool'/>
+        <field accessType='inputOnly' name='toggle' type='SFBool'/>
         <field accessType='outputOnly' name='changedText' type='SFString'/>
         <field accessType='inputOnly' name='check' type='SFTime'/>
         <field accessType='inputOnly' name='resumeWaiting' type='SFTime'/>
@@ -453,26 +492,26 @@
             ecmascript:
             function initialize () // no parameters allowed
             {
-                changedText = new SFString ('initialized');
-                motherGreen = false;
-                userGreen = false;
+                changedText = new SFString ('Phases');
+                green = false;
                 wait = false;
             }
             
-            function toggleMother(value, time)
+            function toggle(value, time)
             {
-                motherGreen = value
-            }
-            
-            function toggleUser(value, time)
-            {
-                userGreen = value
+                if(value == true){
+                    changedText = new SFString("Green");
+                }
+                if(value == false){
+                    changedText = new SFString("Red");
+                }
+                green = value
             }
             
             function check (value, timestamp)
             {
                 changedText = new SFString('check');
-                if(motherGreen || userGreen){
+                if(green){
                     resumeTime = new SFTime(value);
                     changedText = new SFString('resume');
                 }
@@ -495,302 +534,60 @@
             }
         ]]>
       </Script>
+
       
-      <TimeSensor DEF="CarClock1" cycleInterval="30" loop="true" startTime="1"/>
+    <TimeSensor DEF="CarClock1" cycleInterval="30" loop="true" startTime="1"/>
     <TimeSensor DEF="CarTime1" cycleInterval="3" loop="false" startTime="1"/>
     <TimeSensor DEF="CarTime2" cycleInterval="4" loop="false" startTime="1"/>
 
-    <ROUTE fromField="cycleTime" fromNode="CarClock1" toField="startTime" toNode="CarTime1"/>
-
-    <PositionInterpolator DEF="HorizontalUD1" key="0 1" keyValue="0 0 0 0 0 45"/>
-    <PositionInterpolator DEF="HorizontalUD2" key="0 1" keyValue="0 0 45 0 0 100"/>
-    
-    <ROUTE fromField="fraction_changed" fromNode="CarTime1" toField="set_fraction" toNode="HorizontalUD1"/>
-    <ROUTE fromField="value_changed" fromNode="HorizontalUD1" toField="translation" toNode="VerticalUDCar"/>
-    
-     <ROUTE fromField="fraction_changed" fromNode="CarTime2" toField="set_fraction" toNode="HorizontalUD2"/>
-    <ROUTE fromField="value_changed" fromNode="HorizontalUD2" toField="translation" toNode="VerticalUDCar"/>
-    
-
-     <BooleanFilter DEF="CarTime1Filter"/>
-      <TimeTrigger DEF="UDCheckTrigger"/>
-      <TimeTrigger DEF="HorizontalGreenTrigger"/>
-      <TimeTrigger DEF="HorizontalTimeTrigger"/>
-      <BooleanFilter DEF="Touch2Filter"/>
-      
-      <!--save the state of the horizontal traffic lights to script node        -->
-      <ROUTE fromField="enabled" fromNode="Touch2" toField="toggleMother" toNode="CheckPassageUD"/>
-      <ROUTE fromField="enabled" fromNode="Touch2" toField="set_boolean" toNode="Touch2Filter"/>
-      <ROUTE fromField="inputTrue" fromNode="Touch2Filter" toField="set_boolean" toNode="HorizontalGreenTrigger"/>
-      <ROUTE fromField="triggerTime" fromNode="HorizontalGreenTrigger" toField="resumeWaiting" toNode="CheckPassageUD"/>
-
-      
-      <ROUTE fromField="isActive" fromNode="CarTime1" toField="set_boolean" toNode="CarTime1Filter"/>
-      <ROUTE fromField="inputFalse" fromNode="CarTime1Filter" toField="set_boolean" toNode="UDCheckTrigger"/>
-      <ROUTE fromField='triggerTime' fromNode='UDCheckTrigger' toField='check' toNode='CheckPassageUD'/>
-      <ROUTE fromField='resumeTime' fromNode='CheckPassageUD' toField='startTime' toNode='CarTime2'/>
-
-      <Script DEF='CheckPassageDU'>
-        <field accessType='outputOnly' name='resumeTime' type='SFTime'/>
-        <field accessType='inputOnly' name='toggleMother' type='SFBool'/>
-        <field accessType='inputOnly' name='toggleUser' type='SFBool'/>
-        <field accessType='inputOnly' name='check' type='SFTime'/>
-        <field accessType='inputOnly' name='resumeWaiting' type='SFTime'/>
-        <![CDATA[
-            ecmascript:
-            function initialize () // no parameters allowed
-            {
-                changedText = new SFString ('initialized');
-                motherGreen = false;
-                userGreen = false;
-                wait = false;
-            }
-            
-            function toggleMother(value, time)
-            {
-                motherGreen = value
-            }
-            
-            function toggleUser(value, time)
-            {
-                userGreen = value
-            }
-            
-            function check (value, timestamp)
-            {
-                changedText = new SFString('check');
-                if(motherGreen || userGreen){
-                    resumeTime = new SFTime(value);
-                }
-                else{
-                    wait = true;
-                }
-            }
-            
-            function resumeWaiting(value, timestamp)
-            {
-                if(wait){
-                    resumeTime= new SFTime(value+4);
-                    wait = false;
-                }
-            }
-            
-            function shutdown()
-            {
-            
-            }
-        ]]>
-      </Script>
-      
-<!--<TimeSensor DEF="CarClock1" cycleInterval="30" loop="true" startTime="1"/> -->
+    <!--<TimeSensor DEF="CarClock1" cycleInterval="30" loop="true" startTime="1"/> -->
     <TimeSensor DEF="VerticalDUCarTime1" cycleInterval="3" loop="false" startTime="1"/>
     <TimeSensor DEF="VerticalDUCarTime2" cycleInterval="4" loop="false" startTime="1"/>
-
+    
+    <ROUTE fromField="cycleTime" fromNode="CarClock1" toField="startTime" toNode="CarTime1"/>
     <ROUTE fromField="cycleTime" fromNode="CarClock1" toField="startTime" toNode="VerticalDUCarTime1"/>
 
-    <PositionInterpolator DEF="HorizontalDU1" key="0 1" keyValue="0 0 0 0 0 -45"/>
-    <PositionInterpolator DEF="HorizontalDU2" key="0 1" keyValue="0 0 -45 0 0 -100"/>
+    <PositionInterpolator DEF="VerticalUDTime1" key="0 1" keyValue="0 0 0 0 0 45"/>
+    <PositionInterpolator DEF="VerticalUDTime2" key="0 1" keyValue="0 0 45 0 0 100"/>
     
-    <ROUTE fromField="fraction_changed" fromNode="VerticalDUCarTime1" toField="set_fraction" toNode="HorizontalDU1"/>
-    <ROUTE fromField="value_changed" fromNode="HorizontalDU1" toField="translation" toNode="VerticalDUCar"/>
+    <PositionInterpolator DEF="VerticalDUTime1" key="0 1" keyValue="0 0 0 0 0 -45"/>
+    <PositionInterpolator DEF="VerticalDUTime2" key="0 1" keyValue="0 0 -45 0 0 -100"/>
     
-     <ROUTE fromField="fraction_changed" fromNode="VerticalDUCarTime2" toField="set_fraction" toNode="HorizontalDU2"/>
-    <ROUTE fromField="value_changed" fromNode="HorizontalDU2" toField="translation" toNode="VerticalDUCar"/>
+    <BooleanFilter DEF="CarTime1Filter"/>
+    <TimeTrigger DEF="VerticalTrigger"/>
+    <TimeTrigger DEF="HorizontalTouchDisabledTrigger"/>
+    <TimeTrigger DEF="HorizontalTimeTrigger"/>
+    <BooleanFilter DEF="HorizontalTouchEnabled"/>
+    <BooleanFilter DEF="VerticalTimeFilter"/>
+    <BooleanFilter DEF="HorizontalTimeFilter"/>
     
+    <ROUTE fromField="isActive" fromNode="VerticalTime" toField="set_boolean" toNode="VerticalTimeFilter"/>
+    <ROUTE fromField="isActive" fromNode="HorizontalTime" toField="set_boolean" toNode="HorizontalTimeFilter"/>
 
-     <BooleanFilter DEF="VerticalDUCarTime1Filter"/>
-      <TimeTrigger DEF="DUCheckTrigger"/>
-      <TimeTrigger DEF="HorizontalGreenTrigger"/>
-      <TimeTrigger DEF="HorizontalTimeTrigger"/>
-      
-      <!--save the state of the horizontal traffic lights to script node        -->
-      <ROUTE fromField="inputNegate" fromNode="HorizontalGreen" toField="toggleMother" toNode="CheckPassageDU"/>
-      <ROUTE fromField="inputNegate" fromNode="HorizontalGreen" toField="set_boolean" toNode="HorizontalGreenTrigger"/>
-      <ROUTE fromField="triggerTime" fromNode="HorizontalGreenTrigger" toField="resumeWaiting" toNode="CheckPassageDU"/>
-
-      <ROUTE fromField="isActive" fromNode="VerticalDUCarTime1" toField="set_boolean" toNode="VerticalDUCarTime1Filter"/>
-      <ROUTE fromField="inputFalse" fromNode="VerticalDUCarTime1Filter" toField="set_boolean" toNode="DUCheckTrigger"/>
-      <ROUTE fromField='triggerTime' fromNode='DUCheckTrigger' toField='check' toNode='CheckPassageDU'/>
-      <ROUTE fromField='resumeTime' fromNode='CheckPassageDU' toField='startTime' toNode='VerticalDUCarTime2'/>
-      
-      <Script DEF='CheckPassageLR'>
-        <field accessType='outputOnly' name='resumeTime' type='SFTime'/>
-        <field accessType='inputOnly' name='toggleMother' type='SFBool'/>
-        <field accessType='inputOnly' name='toggleUser' type='SFBool'/>
-        <field accessType='outputOnly' name='changedText' type='SFString'/>
-        <field accessType='inputOnly' name='check' type='SFTime'/>
-        <field accessType='inputOnly' name='resumeWaiting' type='SFTime'/>
-        <![CDATA[
-            ecmascript:
-            function initialize () // no parameters allowed
-            {
-                changedText = new SFString ('initialized');
-                motherGreen = false;
-                userGreen = false;
-                wait = false;
-            }
-            
-            function toggleMother(value, time)
-            {
-                motherGreen = value
-            }
-            
-            function toggleUser(value, time)
-            {
-                userGreen = value
-            }
-            
-            function check (value, timestamp)
-            {
-                changedText = new SFString('check');
-                if(motherGreen || userGreen){
-                    resumeTime = new SFTime(value);
-                    changedText = new SFString('resume');
-                }
-                else{
-                    wait = true;
-                }
-            }
-            
-            function resumeWaiting(value, timestamp)
-            {
-                changedText = new SFString("in Resume");
-                if(wait){
-                    resumeTime= new SFTime(value);
-                    wait = false;
-                }
-            }
-            
-            function shutdown()
-            {
-            
-            }
-        ]]>
-      </Script>
-      
-<!--<TimeSensor DEF="CarClock1" cycleInterval="30" loop="true" startTime="1"/> -->
-    <TimeSensor DEF="HorizontalLRCarTime1" cycleInterval="3" loop="false" startTime="1"/>
-    <TimeSensor DEF="HorizontalLRCarTime2" cycleInterval="4" loop="false" startTime="1"/>
-
-    <ROUTE fromField="cycleTime" fromNode="CarClock1" toField="startTime" toNode="HorizontalLRCarTime1"/>
-
-    <PositionInterpolator DEF="VerticalLR1" key="0 1" keyValue="0 0 0 45 0 0"/>
-    <PositionInterpolator DEF="VerticalLR2" key="0 1" keyValue="45 0 0 100 0 0"/>
+    <ROUTE fromField="fraction_changed" fromNode="CarTime1" toField="set_fraction" toNode="VerticalUDTime1"/>
+    <ROUTE fromField="value_changed" fromNode="VerticalUDTime1" toField="translation" toNode="VerticalUDCar"/>
+    <ROUTE fromField="fraction_changed" fromNode="CarTime2" toField="set_fraction" toNode="VerticalUDTime2"/>
+    <ROUTE fromField="value_changed" fromNode="VerticalUDTime2" toField="translation" toNode="VerticalUDCar"/>
     
-    <ROUTE fromField="fraction_changed" fromNode="HorizontalLRCarTime1" toField="set_fraction" toNode="VerticalLR1"/>
-    <ROUTE fromField="value_changed" fromNode="VerticalLR1" toField="translation" toNode="HorizontalLRCar"/>
+    <ROUTE fromField="fraction_changed" fromNode="VerticalDUCarTime1" toField="set_fraction" toNode="VerticalDUTime1"/>
+    <ROUTE fromField="value_changed" fromNode="VerticalDUTime1" toField="translation" toNode="VerticalDUCar"/>
+    <ROUTE fromField="fraction_changed" fromNode="VerticalDUCarTime2" toField="set_fraction" toNode="VerticalDUTime2"/>
+    <ROUTE fromField="value_changed" fromNode="VerticalDUTime2" toField="translation" toNode="VerticalDUCar"/>
+      
+    <!--save the state of the horizontal traffic lights to script node        -->
+    <ROUTE fromField="enabled" fromNode="HorizontalTouch" toField="toggle" toNode="VerticalControl"/>
+    <ROUTE fromField="inputNegate" fromNode="HorizontalTimeFilter" toField="toggle" toNode="VerticalControl"/>
+    <ROUTE fromField="isActive" fromNode="VerticalTime" toField="toggle" toNode="VerticalControl"/>
+
     
-     <ROUTE fromField="fraction_changed" fromNode="HorizontalLRCarTime2" toField="set_fraction" toNode="VerticalLR2"/>
-    <ROUTE fromField="value_changed" fromNode="VerticalLR2" toField="translation" toNode="HorizontalLRCar"/>
-    
+    <ROUTE fromField="enabled" fromNode="HorizontalTouch" toField="set_boolean" toNode="HorizontalTouchEnabled"/>
+    <ROUTE fromField="inputTrue" fromNode="HorizontalTouchEnabled" toField="set_boolean" toNode="HorizontalTouchDisabledTrigger"/>
+    <ROUTE fromField="triggerTime" fromNode="HorizontalTouchDisabledTrigger" toField="resumeWaiting" toNode="VerticalControl"/>
 
-     <BooleanFilter DEF="HorizontalLRCarTime1Filter"/>
-      <TimeTrigger DEF="LRCheckTrigger"/>
-      <TimeTrigger DEF="VerticalGreenTrigger"/>
-      <TimeTrigger DEF="VerticalTimeTrigger"/>
-      
-      <!--save the state of the horizontal traffic lights to script node        -->
-      <ROUTE fromField="isActive" fromNode="HorizontalGreenPhase" toField="toggleMother" toNode="CheckPassageLR"/>
-      <ROUTE fromField="isActive" fromNode="VerticalTime" toField="toggleUser" toNode="CheckPassageLR"/>
-      <ROUTE fromField="enabled" fromNode="Touch1" toField="set_boolean" toNode="VerticalTimeTrigger"/>
-      <ROUTE fromField="inputNegate" fromNode="VerticalGreen" toField="set_boolean" toNode="VerticalGreenTrigger"/>
-      <ROUTE fromField="triggerTime" fromNode="VerticalTimeTrigger" toField="resumeWaiting" toNode="CheckPassageLR"/>
-      <ROUTE fromField="triggerTime" fromNode="VerticalGreenTrigger" toField="resumeWaiting" toNode="CheckPassageLR"/>
-
-      
-      <ROUTE fromField="isActive" fromNode="HorizontalLRCarTime1" toField="set_boolean" toNode="HorizontalLRCarTime1Filter"/>
-      <ROUTE fromField="inputFalse" fromNode="HorizontalLRCarTime1Filter" toField="set_boolean" toNode="LRCheckTrigger"/>
-      <ROUTE fromField='triggerTime' fromNode='LRCheckTrigger' toField='check' toNode='CheckPassageLR'/>
-      <ROUTE fromField='resumeTime' fromNode='CheckPassageLR' toField='startTime' toNode='HorizontalLRCarTime2'/>
-      <ROUTE fromField='changedText' fromNode='CheckPassageLR' toField='set_string' toNode='MessageToUser'/>
-      
-      <Script DEF='CheckPassageRL'>
-        <field accessType='outputOnly' name='resumeTime' type='SFTime'/>
-        <field accessType='inputOnly' name='toggleMother' type='SFBool'/>
-        <field accessType='inputOnly' name='toggleUser' type='SFBool'/>
-        <field accessType='outputOnly' name='changedText' type='SFString'/>
-        <field accessType='inputOnly' name='check' type='SFTime'/>
-        <field accessType='inputOnly' name='resumeWaiting' type='SFTime'/>
-        <![CDATA[
-            ecmascript:
-            function initialize () // no parameters allowed
-            {
-                changedText = new SFString ('initialized');
-                motherGreen = false;
-                userGreen = false;
-                wait = false;
-            }
-            
-            function toggleMother(value, time)
-            {
-                motherGreen = value
-            }
-            
-            function toggleUser(value, time)
-            {
-                userGreen = value
-            }
-            
-            function check (value, timestamp)
-            {
-                changedText = new SFString('check');
-                if(motherGreen || userGreen){
-                    resumeTime = new SFTime(value);
-                    changedText = new SFString('resume');
-                }
-                else{
-                    wait = true;
-                }
-            }
-            
-            function resumeWaiting(value, timestamp)
-            {
-                if(wait){
-                    resumeTime= new SFTime(value);
-                    wait = false;
-                }
-            }
-            
-            function shutdown()
-            {
-            
-            }
-        ]]>
-      </Script>
-      
-<!--<TimeSensor DEF="CarClock1" cycleInterval="30" loop="true" startTime="1"/> -->
-    <TimeSensor DEF="HorizontalRLCarTime1" cycleInterval="3" loop="false" startTime="1"/>
-    <TimeSensor DEF="HorizontalRLCarTime2" cycleInterval="4" loop="false" startTime="1"/>
-
-    <ROUTE fromField="cycleTime" fromNode="CarClock1" toField="startTime" toNode="HorizontalRLCarTime1"/>
-
-    <PositionInterpolator DEF="VerticalRL1" key="0 1" keyValue="0 0 0 -45 0 0"/>
-    <PositionInterpolator DEF="VerticalRL2" key="0 1" keyValue="-45 0 0 -100 0 0"/>
-    
-    <ROUTE fromField="fraction_changed" fromNode="HorizontalRLCarTime1" toField="set_fraction" toNode="VerticalRL1"/>
-    <ROUTE fromField="value_changed" fromNode="VerticalRL1" toField="translation" toNode="HorizontalRLCar"/>
-    
-     <ROUTE fromField="fraction_changed" fromNode="HorizontalRLCarTime2" toField="set_fraction" toNode="VerticalRL2"/>
-    <ROUTE fromField="value_changed" fromNode="VerticalRL2" toField="translation" toNode="HorizontalRLCar"/>
-    
-
-     <BooleanFilter DEF="HorizontalRLCarTime1Filter"/>
-      <TimeTrigger DEF="RLCheckTrigger"/>
-      <TimeTrigger DEF="VerticalGreenTrigger"/>
-      <TimeTrigger DEF="VerticalTimeTrigger"/>
-      
-      <!--save the state of the horizontal traffic lights to script node        -->
-      <ROUTE fromField="isActive" fromNode="HorizontalGreenPhase" toField="toggleMother" toNode="CheckPassageRL"/>
-      <ROUTE fromField="isActive" fromNode="VerticalTime" toField="toggleUser" toNode="CheckPassageRL"/>
-      <ROUTE fromField="enabled" fromNode="Touch1" toField="set_boolean" toNode="VerticalTimeTrigger"/>
-      <ROUTE fromField="inputNegate" fromNode="VerticalGreen" toField="set_boolean" toNode="VerticalGreenTrigger"/>
-      <ROUTE fromField="triggerTime" fromNode="VerticalTimeTrigger" toField="resumeWaiting" toNode="CheckPassageRL"/>
-      <ROUTE fromField="triggerTime" fromNode="VerticalGreenTrigger" toField="resumeWaiting" toNode="CheckPassageRL"/>
-
-      
-      <ROUTE fromField="isActive" fromNode="HorizontalRLCarTime1" toField="set_boolean" toNode="HorizontalRLCarTime1Filter"/>
-      <ROUTE fromField="inputFalse" fromNode="HorizontalRLCarTime1Filter" toField="set_boolean" toNode="RLCheckTrigger"/>
-      <ROUTE fromField='triggerTime' fromNode='RLCheckTrigger' toField='check' toNode='CheckPassageRL'/>
-      <ROUTE fromField='resumeTime' fromNode='CheckPassageRL' toField='startTime' toNode='HorizontalRLCarTime2'/>
+    <ROUTE fromField="isActive" fromNode="CarTime1" toField="set_boolean" toNode="CarTime1Filter"/>
+    <ROUTE fromField="inputFalse" fromNode="CarTime1Filter" toField="set_boolean" toNode="VerticalTrigger"/>
+    <ROUTE fromField='triggerTime' fromNode='VerticalTrigger' toField='check' toNode='VerticalControl'/>
+    <ROUTE fromField='resumeTime' fromNode='VerticalControl' toField='startTime' toNode='CarTime2'/>
+    <ROUTE fromField='resumeTime' fromNode='VerticalControl' toField='startTime' toNode='VerticalDUCarTime2'/>
 </Scene>
 </X3D>
