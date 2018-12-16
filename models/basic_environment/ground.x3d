@@ -7,7 +7,7 @@
     </head>
     <Scene>
     <Group>  
-        <Background DEF="B0" set_bind="true" groundAngle='0.1 1.309 1.57' groundColor='0 0 0 0 0.1 0.3 0 0.2 0.5 0 0.3 0.8' skyAngle='0.1 0.15 1.309 1.57' skyColor='0.4 0.4 0.1 0.4 0.4 0.1 0 0.1 0.3 0 0.2 0.6 0.8 0.8 0.8' 
+        <Background DEF="BG0" set_bind="true" groundAngle='0.1 1.309 1.57' groundColor='0 0 0 0 0.1 0.3 0 0.2 0.5 0 0.3 0.8' skyAngle='0.1 0.15 1.309 1.57' skyColor='0.4 0.4 0.1 0.4 0.4 0.1 0 0.1 0.3 0 0.2 0.6 0.8 0.8 0.8' 
         backUrl=' "../../textures/sky_106.png" '
         bottomUrl=' "../../textures/sky_106.png" '
         frontUrl=' "../../textures/sky_106.png" '
@@ -53,13 +53,12 @@
     
     <Script DEF="BackgroundInterpolator">
         <field accessType="inputOnly" type="SFFloat" name="set_bg"/>
-        <field accessType="outputOnly" type="SFBool" name="bind_0" value="true"/>
+        <field accessType="outputOnly" type="SFBool" name="bind_0" value="false"/>
         <field accessType="outputOnly" type="SFBool" name="bind_1" value="false"/>
         <field accessType="outputOnly" type="SFBool" name="bind_2" value="false"/>
         <field accessType="outputOnly" type="SFBool" name="bind_3" value="false"/>
         <field accessType="outputOnly" type="SFBool" name="bind_4" value="false"/>
         <field accessType="outputOnly" type="SFBool" name="bind_5" value="false"/>
-        <field accessType="outputOnly" type="MFString" name="bg_src" value="false"/>
         <![CDATA[ecmascript:
         function initialize () // no parameters allowed
         {
