@@ -59,6 +59,8 @@
         <field accessType="outputOnly" type="SFBool" name="bind_3" value="false"/>
         <field accessType="outputOnly" type="SFBool" name="bind_4" value="false"/>
         <field accessType="outputOnly" type="SFBool" name="bind_5" value="false"/>
+        <field accessType="outputOnly" type="SFColor" name="lantern_color"/>
+        <field accessType="outputOnly" type="SFFloat" name="lantern_intensity"/>
         <![CDATA[ecmascript:
         function initialize () // no parameters allowed
         {
@@ -78,6 +80,8 @@
             if(value>=0){
                 unbind_all();
                 bind_0 = true;
+                lantern_color = new SFColor(0.8,0.8,0.8);
+                lantern_intensity = 0;
             }
             if(value>=0.1){
                 unbind_all();
@@ -88,6 +92,8 @@
                 bind_2 = true;
             }
             if(value>=0.3){
+                lantern_color = new SFColor(1,0.7,0.15);
+                lantern_intensity = 0.4;
                 unbind_all();
                 bind_3 = true;
             }
@@ -104,6 +110,8 @@
                 bind_4 =true;
             }
              if(value>=0.7){
+                lantern_color = new SFColor(0.8,0.8,0.8);
+                lantern_intensity = 0;
                 unbind_all();
                 bind_3 =true;
             }
@@ -119,9 +127,7 @@
         
         ]]>
     </Script>
-        <Transform translation="100 500 100">
-            <PointLight DEF="DayLight" intensity="1"/>
-        </Transform>
+        <PointLight DEF="DayLight" intensity="1" location="100 500 100"/>
         <TimeSensor DEF="DayClock" cycleInterval="120" loop="True" startTime="1"/>
         <ScalarInterpolator DEF="DayInterpolator" key="0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1" keyValue="1 0.8 0.5 0.3 0.05 0 0.05 0.3 0.5 0.8 1"/>
         <ROUTE fromField="fraction_changed" fromNode="DayClock" toField="set_fraction" toNode="DayInterpolator"/>
@@ -133,6 +139,76 @@
         <ROUTE fromField="bind_3" fromNode="BackgroundInterpolator" toField="set_bind" toNode="BG3"/>
         <ROUTE fromField="bind_4" fromNode="BackgroundInterpolator" toField="set_bind" toNode="BG4"/>
         <ROUTE fromField="bind_5" fromNode="BackgroundInterpolator" toField="set_bind" toNode="BG5"/>
+        
+        <Transform translation="8 6 0">
+            <Transform DEF="LanternLine">
+                <Transform translation="0 0 25">
+                    <Transform DEF="Lantern">
+                        <Shape>
+                            <Sphere radius="0.2"/>
+                            <Appearance>
+                                <Material DEF="LanternCol" diffuseColor="0.8 0.8 0.8"/>
+                            </Appearance>
+                        </Shape>
+                        <PointLight DEF="TryLight" radius="2" color='1 0.7 0'/>
+                        <Transform translation="0.5 0 0">
+                            <Transform rotation="0 0 1 1.5708">
+                                <Shape>
+                                    <Cylinder radius="0.08" height="1"/>
+                                    <Appearance>
+                                        <Material diffuseColor="0 0 0"/>
+                                    </Appearance>
+                                </Shape>
+                            ´</Transform>
+                        </Transform>
+                        <Transform translation="1 -3 0">
+                            <Shape>
+                                <Cylinder radius="0.08" height="6"/>
+                                <Appearance>
+                                    <Material diffuseColor="0 0 0"/>
+                                </Appearance>
+                            </Shape>
+                        </Transform>
+                    </Transform>
+                </Transform>
+                <Transform translation="0 0 50">
+                    <Transform USE="Lantern"/>
+                </Transform>
+                <Transform translation="0 0 70">
+                    <Transform USE="Lantern"/>
+                </Transform>
+                <Transform translation="0 0 90">
+                    <Transform USE="Lantern"/>
+                </Transform>
+                <Transform translation="0 0 -25">
+                    <Transform USE="Lantern"/>
+                </Transform>
+                <Transform translation="0 0 -50">
+                    <Transform USE="Lantern"/>
+                </Transform>
+                <Transform translation="0 0 -70">
+                    <Transform USE="Lantern"/>
+                </Transform>
+                <Transform translation="0 0 -90">
+                    <Transform USE="Lantern"/>
+                </Transform>
+            </Transform>
+        </Transform>
+        <Transform translation="-8 6 0">
+            <Transform rotation="0 1 0 3.1416">
+                <Transform USE="LanternLine"/>
+            </Transform>
+        </Transform>
+        <Transform translation="0 6 8">
+            <Transform rotation="0 1 0 -1.5708">
+                <Transform USE="LanternLine"/>
+            </Transform>
+        </Transform>
+        <Transform translation="0 6 -8">
+            <Transform rotation="0 1 0 1.5708">
+                <Transform USE="LanternLine"/>
+            </Transform>
+        </Transform>
         <Shape DEF='Ground'>
             <Box size='200 1.3 200'/>
             <Appearance>
@@ -141,5 +217,8 @@
                 <TextureTransform scale='20 20'/>
             </Appearance>
         </Shape>
+        <ROUTE fromField="lantern_color" fromNode="BackgroundInterpolator" toField="set_diffuseColor" toNode="LanternCol"/>
+        <ROUTE fromField="lantern_intensity" fromNode="BackgroundInterpolator" toField="intensity" toNode="TryLight"/>
+<!--            <SpotLight DEF="Lantern" direction="0 -1 0" cutOffAngle="0.4" location="30 10 0"/>-->
     </Scene>
 </X3D>
