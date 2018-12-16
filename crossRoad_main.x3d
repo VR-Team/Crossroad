@@ -140,22 +140,22 @@ function set_time (value, time)
     <TimeSensor DEF="parkDoorCloseClock2" cycleInterval="2" loop="false"/>
 <!-- ############### Objects #######################################################################-->
     <!--                    vehicles                                                                   -->
-    <Transform DEF="veh1" translation="0 -2 0" scale="2 2 2">
+    <Transform DEF="veh1" translation="0 -2 0" scale="1.5 1.5 1.5">
         <Transform rotation="0 1 0 -1.5708">
             <Inline url="models/cars/car.x3d" DEF="blueCar"/>
         </Transform>
     </Transform>
-    <Transform DEF="veh2" translation="0 -2 0" scale="2 2 2">
+    <Transform DEF="veh2" translation="0 -2 0" scale="1.5 1.5 1.5">
        <Transform rotation="0 1 0 3.1416">
            <Inline USE="blueCar"/>
        </Transform>
     </Transform>
-    <Transform DEF="veh3" translation="0 -2 0" scale="2 2 2">
+    <Transform DEF="veh3" translation="0 -2 0" scale="1.5 1.5 1.5">
         <Transform rotation="0 1 0 1.5708">
             <Inline  USE="blueCar"/>
         </Transform>
     </Transform>
-    <Transform DEF="veh4" translation="0 -2 0" scale="2 2 2">
+    <Transform DEF="veh4" translation="0 -2 0" scale="1.5 1.5 1.5">
         <Inline USE="blueCar"/>
     </Transform>
     <!--   traffic lights                                                             -->
