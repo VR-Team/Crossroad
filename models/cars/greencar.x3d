@@ -17,7 +17,7 @@
 		            />
 
 		<Transform DEF="car_TRANSFORM"
-		           translation="0.000000 0.487918 0.949712"
+		           translation="0.000000 0.487918 0.0"
 		           scale="0.800000 1.000000 0.360000"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
