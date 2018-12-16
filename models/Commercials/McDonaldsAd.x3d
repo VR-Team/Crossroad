@@ -1,13 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <X3D>
 	<Scene>
+		<Transform translation="1.5 0 0">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/CommercialVideos/metalTexture.jpg"/>
+				</Appearance>
+				<Box size='0.15 1.85 0.15'/>
+			</Shape>
+		</Transform>
+		<Transform translation="-1.5 0 0">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/CommercialVideos/metalTexture.jpg"/>
+				</Appearance>
+				<Box size='0.15 1.85 0.15'/>
+			</Shape>
+		</Transform>
+		<Transform translation="0 1 0">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/CommercialVideos/metalTexture.jpg"/>
+				</Appearance>
+				<Box size='3.15 0.15 0.15'/>
+			</Shape>
+		</Transform>
+		<Transform translation="0 -1 0">
+			<Shape>
+				<Appearance>
+					<ImageTexture url="../../textures/CommercialVideos/metalTexture.jpg"/>
+				</Appearance>
+				<Box size='3.15 0.15 0.15'/>
+			</Shape>
+		</Transform>
 		<Transform rotation="1 0 0 1.56">
 			<VisibilitySensor DEF='VideoPlayer' size='3 0 2.5'/> 
 			<Shape>
 				<Appearance>
 					<MovieTexture DEF='Video' enabled='false' loop='true' url='../../textures/CommercialVideos/McDonalds.mpg'/>
 				</Appearance>
-				<Box size='3 0 2.5'/>
+				<Box size='3 0 2'/>
 				</Shape>
 			</Transform>
 		<ROUTE fromNode='VideoPlayer' fromField='isActive' toNode='Video' toField='enabled'/>

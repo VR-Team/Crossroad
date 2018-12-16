@@ -16,14 +16,14 @@
     <Transform>
         <Inline url="models/basic_environment/intersection.x3d"/>
     </Transform>
-    <!--<Transform>
+    <Transform>
         <Inline url="models/buildings/Buildings.x3d"></Inline>
     </Transform>
     <Transform translation="56 0 56">
         <Transform rotation="0 1 0 -1.5708">
             <Inline url="models/park/park.x3d"/>
         </Transform>
-    </Transform>-->
+    </Transform>
 <!-- ############### Skripts #######################################################################-->
     <Script DEF="MainTimeTwinToggler">
         <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
@@ -40,18 +40,17 @@ function set_time (value, time)
   if (isMTL == true){
     isMTL = false;
     slot1_changed = value;
-    slot2_changed = "0.0";
   } else {
     isMTL = true;
-    slot1_changed = "0.0";
     slot2_changed = value;
   }
 }
 ]]>
     </Script>
-    <Script DEF="RadioButtonPedestrianLight">
+    <Script DEF="RadioButtonPedestrianLightX">
         <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
-        <field accessType="inputOnly" type="SFBool" name="isActive" value="false"/>
+        <field accessType="inputOutput" type="SFBool" name="isActive" value="false"/>
+        <field accessType="inputOnly" type="SFTime" name="set_active"/>
         <field accessType="inputOnly" type="SFTime" name="set_time"/>
         <field accessType="outputOnly" type="SFTime" name="output_changed"/>
         <![CDATA[ecmascript:
@@ -61,9 +60,42 @@ function set_time (value, time)
     return;
   if(isActive == true){
     output_changed = value;
+    isActive = false;
   }else{
     output_changed = 0.0;
   }
+}
+function set_active(value, time){
+    if (!enabled)
+        return;
+
+    isActive = true;
+}
+]]>
+    </Script>
+    <Script DEF="RadioButtonPedestrianLightY">
+        <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
+        <field accessType="inputOutput" type="SFBool" name="isActive" value="false"/>
+        <field accessType="inputOnly" type="SFTime" name="set_active"/>
+        <field accessType="inputOnly" type="SFTime" name="set_time"/>
+        <field accessType="outputOnly" type="SFTime" name="output_changed"/>
+        <![CDATA[ecmascript:
+function set_time (value, time)
+{
+  if (!enabled)
+    return;
+  if(isActive == true){
+    output_changed = value;
+    isActive = false;
+  }else{
+    output_changed = 0.0;
+  }
+}
+function set_active(value, time){
+    if (!enabled)
+        return;
+
+    isActive = true;
 }
 ]]>
     </Script>
@@ -140,22 +172,22 @@ function set_time (value, time)
     <TimeSensor DEF="parkDoorCloseClock2" cycleInterval="2" loop="false"/>
 <!-- ############### Objects #######################################################################-->
     <!--                    vehicles                                                                   -->
-    <Transform DEF="veh1" translation="0 -2 0" scale="2 2 2">
+    <Transform DEF="veh1" translation="0 -2 0" scale="1.5 1.5 1.5">
         <Transform rotation="0 1 0 -1.5708">
             <Inline url="models/cars/car.x3d" DEF="blueCar"/>
         </Transform>
     </Transform>
-    <Transform DEF="veh2" translation="0 -2 0" scale="2 2 2">
+    <Transform DEF="veh2" translation="0 -2 0" scale="1.5 1.5 1.5">
        <Transform rotation="0 1 0 3.1416">
            <Inline USE="blueCar"/>
        </Transform>
     </Transform>
-    <Transform DEF="veh3" translation="0 -2 0" scale="2 2 2">
+    <Transform DEF="veh3" translation="0 -2 0" scale="1.5 1.5 1.5">
         <Transform rotation="0 1 0 1.5708">
             <Inline  USE="blueCar"/>
         </Transform>
     </Transform>
-    <Transform DEF="veh4" translation="0 -2 0" scale="2 2 2">
+    <Transform DEF="veh4" translation="0 -2 0" scale="1.5 1.5 1.5">
         <Inline USE="blueCar"/>
     </Transform>
     <!--   traffic lights                                                             -->
@@ -297,23 +329,43 @@ function set_time (value, time)
             <Transform USE="ApLy"/>
         </Transform>
     </Transform>
-    <Transform DEF="pLBX"><!--trafficlight buttons X-Line-->
-        <Shape>
-            <Box size='.1 .2 .1'/>
-            <Appearance>
-                <Material diffuseColor='1 1 0.1'/>
-            </Appearance>
-        </Shape>
-        <TouchSensor DEF="TBX" description="Bitte druecken!"/>
+    <Transform DEF="AplBX"> <!-- button traffic lights pedestrian X -->
+        <Transform DEF="pLBX"><!--trafficlight buttons X-Line-->
+            <Transform DEF="pLBX1" translation="11 2.5 7.15">
+                <TouchSensor DEF="TBX" description="Bitte druecken!"/>
+                <Shape>
+                    <Box size='.1 .2 .1'/>
+                    <Appearance>
+                        <Material diffuseColor='1 1 0.1'/>
+                    </Appearance>
+                </Shape>
+            </Transform>
+            <Transform translation="0 0 -14.3">
+                <Transform USE="pLBX1"/>
+            </Transform>
+        </Transform>
+        <Transform rotation="0 1 0 3.14159265359">
+            <Transform USE="pLBX"/>
+        </Transform>
     </Transform>
-    <Transform DEF="pLBY"><!--trafficlight buttons Y-line-->
-        <Shape>
-            <Box size='.1 .2 .1'/>
-            <Appearance>
-                <Material diffuseColor='1 1 0.1'/>
-            </Appearance>
-        </Shape>
-        <TouchSensor DEF="TBY" description="Bitte druecken!"/>
+    <Transform DEF="AplBy"> <!-- button traffic lights pedestrian Y -->
+        <Transform DEF="pLBY"><!--trafficlight buttons Y-line-->
+            <Transform DEF="pLBY1" translation="7.15 2.5 11">
+                <TouchSensor DEF="TBY" description="Bitte druecken!"/>
+                <Shape>
+                    <Box size='.1 .2 .1'/>
+                    <Appearance>
+                        <Material diffuseColor='1 1 0.1'/>
+                    </Appearance>
+                </Shape>
+            </Transform>
+            <Transform translation="-14.3 0 0">
+                <Transform USE="pLBY1"/>
+            </Transform>
+        </Transform>
+        <Transform rotation="0 1 0 3.14159265359">
+            <Transform USE="pLBY"/>
+        </Transform>
     </Transform>
 
     <!--  parkdoors                                                                                     -->
@@ -441,8 +493,14 @@ function set_time (value, time)
     <ROUTE fromNode="rpYy" fromField="value_changed" toNode="cLYy" toField="set_diffuseColor"/>
     <ROUTE fromNode="rpGy" fromField="value_changed" toNode="cLGy" toField="set_diffuseColor"/>
     <!--                            traffic light button routes                                         -->
-    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot1_changed" toNode="pLbYC" toField="set_startTime"/>
-    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot2_changed" toNode="pLbXC" toField="set_startTime"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot1_changed" toNode="RadioButtonPedestrianLightY" toField="set_time"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot2_changed" toNode="RadioButtonPedestrianLightX" toField="set_time"/>
+    
+    <ROUTE fromNode="RadioButtonPedestrianLightX" fromField="output_changed" toNode="pLbXC" toField="set_startTime"/>
+    <ROUTE fromNode="RadioButtonPedestrianLightY" fromField="output_changed" toNode="pLbYC" toField="set_startTime"/>
+    
+    <ROUTE fromNode="TBY" fromField="touchTime" toNode="RadioButtonPedestrianLightX" toField="set_active"/>
+    <ROUTE fromNode="TBX" fromField="touchTime" toNode="RadioButtonPedestrianLightY" toField="set_active"/>
 
     <ROUTE fromNode="pLbXC" fromField="fraction_changed" toNode="pLpRx" toField="set_fraction"/>
     <ROUTE fromNode="pLbXC" fromField="fraction_changed" toNode="pLpGx" toField="set_fraction"/>
