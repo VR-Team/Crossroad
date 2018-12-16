@@ -221,7 +221,7 @@ function change_design (value, time)
     <!--                    vehicles                                                                   -->
     <Transform DEF="veh1" translation="0 -2 0" scale="1.5 1.5 1.5">
         <Transform rotation="0 1 0 -1.5708">
-            <Inline DEF="veh1D" url="models/cars/car.x3d"/>
+            <Inline DEF="veh1D" url="models/cars/greencar.x3d"/>
         </Transform>
     </Transform>
     <Transform DEF="veh2" translation="0 -2 0" scale="1.5 1.5 1.5">
@@ -231,7 +231,7 @@ function change_design (value, time)
     </Transform>
     <Transform DEF="veh3" translation="0 -2 0" scale="1.5 1.5 1.5">
         <Transform rotation="0 1 0 1.5708">
-            <Inline DEF="veh3D" url="models/cars/car.x3d"/>
+            <Inline DEF="veh3D" url="models/cars/pickup.x3d"/>
         </Transform>
     </Transform>
     <Transform DEF="veh4" translation="0 -2 0" scale="1.5 1.5 1.5">
