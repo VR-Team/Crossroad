@@ -16,14 +16,14 @@
     <Transform>
         <Inline url="models/basic_environment/intersection.x3d"/>
     </Transform>
-    <!--<Transform>
+    <Transform>
         <Inline url="models/buildings/Buildings.x3d"></Inline>
     </Transform>
     <Transform translation="56 0 56">
         <Transform rotation="0 1 0 -1.5708">
             <Inline url="models/park/park.x3d"/>
         </Transform>
-    </Transform>-->
+    </Transform>
 <!-- ############### Skripts #######################################################################-->
     <Script DEF="MainTimeTwinToggler">
         <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
