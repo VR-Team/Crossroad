@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"					"http://www.web3d.org/specifications/x3d-3.0.dtd">
 <X3D profile='Immersive'>
-    <head>
-        <meta name='filename' content='MyWorld.x3d'/>
-        <meta name='description' content='My first X3D World'/>
-    </head>
     <Scene>
         <Shape DEF='Ground'>
             <Box translation="-50 1 -50" size='100 1 100'/>
             <Appearance>
                 <Material diffuseColor='0 1 0'/>
-                <ImageTexture url="../../textures/asphalt-texture.jpg" repeatS ='true' repeatT = 'true'/>
+                <ImageTexture url="../../textures/StreetComponents/asphalt-texture.jpg" repeatS ='true' repeatT = 'true'/>
                 <TextureTransform scale='10 10'/>
             </Appearance>
         </Shape>

@@ -17,11 +17,11 @@
 			<Inline url="Hospital.x3d"></Inline>
 		</Transform>
 				
-		<Transform scale="22 1 26.5" translation="-87 0.675 -54" >
+		<Transform scale="22 1 26.5" translation="-87 0.71 -54" >
 			<Inline url="ParkingLot.x3d"></Inline>
 		</Transform>
 		
-		<Transform scale="20.5 1 20.5" translation="-64.8 0.675 36.4" rotation="0 1 0 1.58">
+		<Transform scale="20.5 1 20.5" translation="-64.8 0.71 36.4" rotation="0 1 0 1.58">
 			<Inline url="ParkingLot.x3d"></Inline>
 		</Transform>
 				
@@ -46,22 +46,22 @@
 		</Transform>
 				
 
-		<Transform translation="-50 0.1 -50">
+		<Transform translation="-50 0.2 -50">
             <Inline url="BuildingGround.x3d"></Inline>
 		</Transform>
 		
-		<Transform translation="-65 0.1 40.5" scale='0.7 1 0.3'>
+		<Transform translation="-65 0.2 40" scale='0.7 1 0.31'>
             <Inline url="BuildingGround.x3d"></Inline>
 		</Transform>
 		
-		<Transform translation="-83.5 0.1 20" scale='0.1 1 0.2'>
+		<Transform translation="-83.5 0.2 20" scale='0.1 1 0.2'>
             <Inline url="BuildingGround.x3d"></Inline>
 		</Transform>
-		<Transform translation="-65 0.1 20" scale='0.1 1 0.2'>
+		<Transform translation="-65 0.2 20" scale='0.1 1 0.2'>
             <Inline url="BuildingGround.x3d"></Inline>
 		</Transform>
 		
-		<Transform translation="-20 0.1 48" scale='0.2 1 0.15'>
+		<Transform translation="-20 0.2 48" scale='0.2 1 0.15'>
             <Inline url="BuildingGround.x3d"></Inline>
 		</Transform>
 				
