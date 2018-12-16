@@ -38,7 +38,7 @@
             <Shape USE='VerticalCrossing'/>
         </Transform>
         
-<!--        <Inline url="lines.x3d"/>-->
+        <Inline url="lines.x3d"/>
     </Transform>
 </Scene>
 </X3D>
