@@ -50,7 +50,7 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_fahrplan_jpg"
-							              url="../../textures/BusStop/fahrplan.jpg"'
+							              url="../../textures/BusStop/fahrplan.jpg"
 							              />
 							<TextureTransform
 							                  translation="0.000000 0.000000"
@@ -144,7 +144,7 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_haltestellenschild_jpg"
-							              url="../../textures/BusStop/haltestellenschild.jpg"'
+							              url="../../textures/BusStop/haltestellenschild.jpg"
 							              />
 							<TextureTransform
 							                  translation="0.000000 0.000000"
