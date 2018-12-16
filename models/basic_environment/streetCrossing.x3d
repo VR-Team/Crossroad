@@ -56,6 +56,8 @@
         <Transform rotation='0 1 0 -1.5708'>
             <Transform USE='stopLine'/>
         </Transform>
+        
+        <Inline url="pedestrianLines.x3d"/>
     </Transform>
 </Scene>
 </X3D>

@@ -76,43 +76,43 @@
 
         function set_bg (value, time)
         {
-            if(value>0){
+            if(value>=0){
                 unbind_all();
                 bind_0 = true;
             }
-            if(value>0.1){
+            if(value>=0.1){
                 unbind_all();
                 bind_1 = true;
             }
-            if(value>0.2){
+            if(value>=0.2){
                 unbind_all();
                 bind_2 = true;
             }
-            if(value>0.3){
+            if(value>=0.3){
                 unbind_all();
                 bind_3 = true;
             }
-            if(value>0.4){
+            if(value>=0.4){
                 unbind_all();
                 bind_4 = true;
             }
-            if(value>0.5){
+            if(value>=0.5){
                 unbind_all();
                 bind_5 =true;
             }
-             if(value>0.6){
+             if(value>=0.6){
                 unbind_all();
                 bind_4 =true;
             }
-             if(value>0.7){
+             if(value>=0.7){
                 unbind_all();
                 bind_3 =true;
             }
-             if(value>0.8){
+             if(value>=0.8){
                 unbind_all();
                 bind_2 =true;
             }
-             if(value>0.9){
+             if(value>=0.9){
                 unbind_all();
                 bind_1 =true;
             }
@@ -120,7 +120,7 @@
         
         ]]>
     </Script>
-        <Transform translation="100 100 100">
+        <Transform translation="100 500 100">
             <PointLight DEF="DayLight" intensity="1"/>
         </Transform>
         <TimeSensor DEF="DayClock" cycleInterval="120" loop="True" startTime="1"/>
