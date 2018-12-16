@@ -38,28 +38,7 @@
             <Shape USE='VerticalCrossing'/>
         </Transform>
         
-        <Transform DEF='stopLine' translation='0 0 17.5'>
-            <Shape>
-                <Box size='15 0.604 0.5'/>
-                <Appearance>
-                    <Material diffuseColor='0.95 0.95 0.95'/>
-                </Appearance>
-            </Shape>
-        </Transform>
-        
-        <Transform rotation='0 1 0 1.5708'>
-            <Transform USE='stopLine'/>
-        </Transform>
-        
-        <Transform rotation='0 1 0 3.1416'>
-            <Transform USE='stopLine'/>
-        </Transform>
-        
-        <Transform rotation='0 1 0 -1.5708'>
-            <Transform USE='stopLine'/>
-        </Transform>
-        
-        <Inline url="pedestrianLines.x3d"/>
+<!--        <Inline url="lines.x3d"/>-->
     </Transform>
 </Scene>
 </X3D>
