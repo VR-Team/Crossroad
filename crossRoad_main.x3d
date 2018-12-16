@@ -147,6 +147,53 @@ function set_time (value, time)
 }
 ]]>
     </Script>
+    <Script DEF="VehicleDesignChangeController">
+        <field accessType="inputOutput" type="SFBool" name="enabled" value="true"/>
+        <field accessType="inputOutput" type="SFInt32" name="vehicleDesignID" value="0"/>
+        <field accessType="inputOutput" type="SFInt32" name="vehicleID" value="0"/>
+        <field accessType="inputOutput" type="SFString" name="designHolder"/>
+        <field accessType="inputOnly" type="SFTime" name="change_design"/>
+        <field accessType="outputOnly" type="MFString" name="vehicle1Design_changed"/>
+        <field accessType="outputOnly" type="MFString" name="vehicle2Design_changed"/>
+        <field accessType="outputOnly" type="MFString" name="vehicle3Design_changed"/>
+        <field accessType="outputOnly" type="MFString" name="vehicle4Design_changed"/>
+<![CDATA[ecmascript:
+function change_design (value, time)
+{
+  if (!enabled)
+    return;
+ 
+  if(vehicleDesignID == 0){
+    designHolder = "models/cars/car.x3d";
+  }else if(vehicleDesignID == 1){
+    designHolder = "models/cars/greencar.x3d";
+  }else if(vehicleDesignID == 2){
+    designHolder = "models/cars/pickup.x3d";
+  }
+  
+  if(vehicleID == 0){
+    vehicle1Design_changed[0] = designHolder;
+  }else if(vehicleID == 1){
+    vehicle2Design_changed[0] = designHolder;
+  }else if(vehicleID == 2){
+    vehicle3Design_changed[0] = designHolder;
+  }else if(vehicleID == 3){
+    vehicle4Design_changed[0] = designHolder;
+  }
+    
+  if(vehicleID == 3){
+    vehicleID = 0;
+  }else{
+    vehicleID = vehicleID + 1;
+  }
+    
+  if(vehicleDesignID == 2){
+    vehicleDesignID = 0;
+  }else{
+    vehicleDesignID = vehicleDesignID + 1;
+  }
+}
+]]></Script>
 <!-- ############### TimeSensors ####################################################################-->
     <TimeSensor DEF="MainClock" cycleInterval="10" loop="true"/>
     <!--                        moveToLight Clocks                                                    -->
@@ -174,21 +221,21 @@ function set_time (value, time)
     <!--                    vehicles                                                                   -->
     <Transform DEF="veh1" translation="0 -2 0" scale="1.5 1.5 1.5">
         <Transform rotation="0 1 0 -1.5708">
-            <Inline url="models/cars/car.x3d" DEF="blueCar"/>
+            <Inline DEF="veh1D" url="models/cars/car.x3d"/>
         </Transform>
     </Transform>
     <Transform DEF="veh2" translation="0 -2 0" scale="1.5 1.5 1.5">
        <Transform rotation="0 1 0 3.1416">
-           <Inline USE="blueCar"/>
+           <Inline DEF="veh2D" url="models/cars/car.x3d"/>
        </Transform>
     </Transform>
     <Transform DEF="veh3" translation="0 -2 0" scale="1.5 1.5 1.5">
         <Transform rotation="0 1 0 1.5708">
-            <Inline  USE="blueCar"/>
+            <Inline DEF="veh3D" url="models/cars/car.x3d"/>
         </Transform>
     </Transform>
     <Transform DEF="veh4" translation="0 -2 0" scale="1.5 1.5 1.5">
-        <Inline USE="blueCar"/>
+        <Inline DEF="veh4D" url="models/cars/car.x3d"/>
     </Transform>
     <!--   traffic lights                                                             -->
     <Transform> <!--trafficlights X1-->
@@ -530,5 +577,12 @@ function set_time (value, time)
     <ROUTE fromNode="door2RotationOpen" fromField="value_changed" toNode="parkDoor2Rotation" toField="rotation"/>
     <ROUTE fromNode="parkDoorCloseClock2" fromField="fraction_changed" toNode="door2RotationClose" toField="set_fraction"/>
     <ROUTE fromNode="door2RotationClose" fromField="value_changed" toNode="parkDoor2Rotation" toField="rotation"/>
+    <!-- vehicle design change -->
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot1_changed" toNode="VehicleDesignChangeController" toField="change_design"/>
+    
+    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle1Design_changed" toNode="veh2D" toField="url"/>
+    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle2Design_changed" toNode="veh1D" toField="url"/>
+    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle3Design_changed" toNode="veh4D" toField="url"/>
+    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle4Design_changed" toNode="veh3D" toField="url"/>
   </Scene>
 </X3D>
