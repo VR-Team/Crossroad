@@ -129,7 +129,7 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_focusRsFront_png"
-							              url="../../textures/cars/focusRsFront.jpg"
+							              url="../../textures/cars/focusRsFront.png"
 							              />
 							<TextureTransform
 							                  translation="0.000000 0.000000"
