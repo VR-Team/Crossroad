@@ -1,3 +1,9 @@
+<!--
+Filename: crossRoad_main.x3d
+Author: Hendrik Tanke
+Version: 1.0
+Brief: This is the main file of project "CrossRoad". Run this file with a x3D-Viewer to show whole simulation. This contains all logical / dynamic mechanics and links to statical structures. 
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat="true">
@@ -19,7 +25,7 @@
     <Transform>
         <Inline url="models/buildings/Buildings.x3d"></Inline>
     </Transform>
-    <Transform translation="56 0 56">
+    <Transform translation="56 0.3 56">
         <Transform rotation="0 1 0 -1.5708">
             <Inline url="models/park/park.x3d"/>
         </Transform>
