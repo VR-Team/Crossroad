@@ -1,68 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <x3d>
-    <scene>
-        <!--<directionalLight direction="0 -1 0" color="1.0 1.0 0.0" on="true"/>-->
-        <!--sidewalks-->
-        <transform>
-            <inline url="transforms/sidewalks.x3d"/>
-        </transform>
-        <!--fences-->
-        <transform>
-            <inline url="transforms/fences.x3d"/>
-        </transform>
-        <!--fountain-->
-        <transform translation="0 0.5 0">
-            <inline url="models/fountainFinal.x3d"/>
-        </transform>
-        <!--fountain-water-->
-        <transform translation="0 1 0">
-            <shape>
-                <cylinder  radius="4.7" height="0.5"/>
-                <appearance>
-                    <material diffuseColor="0 0 1"/>
-                </appearance>
-            </shape>
-        </transform>
-        <transform translation="0 3.15 0">
-            <shape>
-                <cylinder  radius="2.3" height="0.05"/>
-                <appearance>
-                    <material diffuseColor="0 0 1"/>
-                </appearance>
-            </shape>
-        </transform>
-        <transform translation="0 5.38 0">
-            <shape>
-                <cylinder  radius="1.35" height="0.05"/>
-                <appearance>
-                    <material diffuseColor="0 0 1"/>
-                </appearance>
-            </shape>
-        </transform>
-        <transform translation="0 7.6 0">
-            <shape>
-                <cylinder  radius="0.75" height="0.03"/>
-                <appearance>
-                    <material diffuseColor="0 0 1"/>
-                </appearance>
-            </shape>
-        </transform>
-        
-        <!--benches-->
-        <transform>
-            <inline url="transforms/benches.x3d"/>
-        </transform>
-        <!--rubbishes-->
-        <transform>
-            <inline url="transforms/rubbishes.x3d"/>
-        </transform>
-        <!--trees-->
-        <transform>
-            <inline url="transforms/trees.x3d"/>
-        </transform>
-        
-  
-        
-       
-    </scene>
+  <scene>
+    <!--<directionalLight direction="0 -1 0" color="1.0 1.0 0.0" on="true"/>-->
+    <!--sidewalks-->
+    <transform>
+      <inline url="transforms/sidewalks.x3d"/>
+    </transform>
+    <!--fences-->
+    <transform>
+      <inline url="transforms/fences.x3d"/>
+    </transform>
+    <!--fountain-->
+    <transform scale="0.6 0.8 0.6">
+      <inline url="models/fountainFinal.x3d"/>
+    </transform>
+    <!--benches-->
+    <transform>
+      <inline url="transforms/benches.x3d"/>
+    </transform>
+    <!--rubbishes-->
+    <transform>
+      <inline url="transforms/rubbishes.x3d"/>
+    </transform>
+    <!--trees-->
+    <transform>
+      <inline url="transforms/trees.x3d"/>
+    </transform>
+  </scene>
 </x3d>
