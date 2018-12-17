@@ -30,7 +30,7 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_fordF350Felgeneu_jpg"
-							              url='"fordF350Felgeneu.jpg" "/Users/philipmitzlaff/Documents/TH_Wildau/5. Semester/Virtual Reality und Simulation/fordF350Felgeneu.jpg"'
+							              url="../../textures/cars/fordF350Felgeneu.jpg"
 							              />
 							<TextureTransform
 							                  translation="0.000000 0.000000"
@@ -115,7 +115,7 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_fordF350Front_png"
-							              url='"fordF350Front.png" "/Users/philipmitzlaff/Documents/TH_Wildau/5. Semester/Virtual Reality und Simulation/fordF350Front.png"'
+							              url="../../textures/cars/fordF350Front.png"
 							              />
 							<TextureTransform
 							                  translation="0.000000 0.000000"
@@ -142,7 +142,7 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_fordF350Rear_png"
-							              url='"fordF350Rear.png" "/Users/philipmitzlaff/Documents/TH_Wildau/5. Semester/Virtual Reality und Simulation/fordF350Rear.png"'
+							              url="../../textures/cars/fordF350Rear.png"
 							              />
 							<TextureTransform
 							                  translation="0.000000 0.000000"
@@ -169,7 +169,7 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_fordF350Ladeflaeche_jpg"
-							              url='"fordF350Ladeflaeche.jpg" "/Users/philipmitzlaff/Documents/TH_Wildau/5. Semester/Virtual Reality und Simulation/fordF350Ladeflaeche.jpg"'
+							              url="../../textures/cars/fordF350Ladeflaeche.jpg"
 							              />
 							<TextureTransform
 							                  translation="0.000000 0.000000"

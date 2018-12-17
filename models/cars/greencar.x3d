@@ -30,7 +30,7 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_fiesta-mk1-front_jpg"
-							              url='"fiesta-mk1-front.jpg" "/Users/philipmitzlaff/Documents/TH_Wildau/5. Semester/Virtual Reality und Simulation/fiesta-mk1-front.jpg"'
+							              url="../../textures/cars/fiesta-mk1-front.jpg"
 							              />
 							<TextureTransform
 							                  translation="0.000000 0.000000"
@@ -97,7 +97,7 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_fiesta_rear_left_jpg"
-							              url='"fiesta_rear_left.jpg" "/Users/philipmitzlaff/Documents/TH_Wildau/5. Semester/Virtual Reality und Simulation/fiesta_rear_left.jpg"'
+							              url="../../textures/cars/fiesta_rear_left.jpg"
 							              />
 							<TextureTransform
 							                  translation="0.000000 0.000000"
@@ -124,7 +124,7 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_fiesta_rear_right_jpg"
-							              url='"fiesta_rear_right.jpg" "/Users/philipmitzlaff/Documents/TH_Wildau/5. Semester/Virtual Reality und Simulation/fiesta_rear_right.jpg"'
+							              url="../../textures/cars/fiesta_rear_right.jpg"
 							              />
 							<TextureTransform
 							                  translation="0.000000 0.000000"
@@ -151,7 +151,7 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_fiesta-mk1-kennzeichen_png"
-							              url='"fiesta-mk1-kennzeichen.png" "/Users/philipmitzlaff/Documents/TH_Wildau/5. Semester/Virtual Reality und Simulation/fiesta-mk1-kennzeichen.png"'
+							              url="../../textures/cars/fiesta-mk1-kennzeichen.png"
 							              />
 							<TextureTransform
 							                  translation="0.000000 0.000000"
@@ -191,7 +191,7 @@
 						<Shape>
 							<Appearance>
 								<ImageTexture DEF="IM_rs_rad_png"
-								              url='"rs_rad.png" "/Users/philipmitzlaff/Documents/TH_Wildau/5. Semester/Virtual Reality und Simulation/rs_rad.png"'
+								              url="../../textures/cars/rs_rad.png"
 								              />
 								<TextureTransform
 								                  translation="0.000000 0.000000"
