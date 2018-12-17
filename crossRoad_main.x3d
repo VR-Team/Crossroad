@@ -189,7 +189,7 @@ function change_design (value, time)
     vehicleID = vehicleID + 1;
   }
     
-  if(vehicleDesignID == 3){
+  if(vehicleDesignID == 4){
     vehicleDesignID = 0;
   }else{
     vehicleDesignID = vehicleDesignID + 1;
@@ -581,10 +581,11 @@ function change_design (value, time)
     <ROUTE fromNode="door2RotationClose" fromField="value_changed" toNode="parkDoor2Rotation" toField="rotation"/>
     <!-- vehicle design change -->
     <ROUTE fromNode="MainTimeTwinToggler" fromField="slot1_changed" toNode="VehicleDesignChangeController" toField="change_design"/>
+    <ROUTE fromNode="MainTimeTwinToggler" fromField="slot2_changed" toNode="VehicleDesignChangeController" toField="change_design"/>
     
-    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle1Design_changed" toNode="veh2D" toField="url"/>
-    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle2Design_changed" toNode="veh1D" toField="url"/>
-    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle3Design_changed" toNode="veh4D" toField="url"/>
-    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle4Design_changed" toNode="veh3D" toField="url"/>
+    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle1Design_changed" toNode="veh1D" toField="url"/>
+    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle2Design_changed" toNode="veh2D" toField="url"/>
+    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle3Design_changed" toNode="veh3D" toField="url"/>
+    <ROUTE fromNode="VehicleDesignChangeController" fromField="vehicle4Design_changed" toNode="veh4D" toField="url"/>
   </Scene>
 </X3D>
