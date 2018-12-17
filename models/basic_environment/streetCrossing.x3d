@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <X3D profile='Immersive'>
 <head>
-    <meta name='filename' content='trees.x3d'/>
-    <meta name='description' content='Tree Models'/>
+    <meta name='filename' content='streetCrossing.x3d'/>
+    <meta name='description' content='Combination of streets and marks for cars and pedestrians.'/>
 </head>
 <Scene>
     <Transform translation='0 0.603 0'>

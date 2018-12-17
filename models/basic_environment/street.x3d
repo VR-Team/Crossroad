@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <X3D profile='Immersive'>
 <head>
-    <meta name='filename' content='trees.x3d'/>
-    <meta name='description' content='Tree Models'/>
+    <meta name='filename' content='street.x3d'/>
+    <meta name='description' content='Model for streets with separation of car tracks.'/>
 </head>
 <Scene>
     <Shape DEF='Street'>

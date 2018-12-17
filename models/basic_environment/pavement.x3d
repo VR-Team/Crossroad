@@ -2,7 +2,7 @@
 <X3D profile='Immersive'>
 <head>
     <meta name='filename' content='pavement.x3d'/>
-    <meta name='description' content='Pavement Models'/>
+    <meta name='description' content='Pavement Models with hydrants and bus stops.'/>
 </head>
 <Scene>
     <Transform translation='44 0.6 -2'>

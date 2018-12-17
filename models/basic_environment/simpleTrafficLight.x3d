@@ -2,7 +2,7 @@
 <X3D profile='Immersive'>
 <head>
     <meta name='filename' content='simpleTrafficLight.x3d'/>
-    <meta name='description' content='Traffic light Models'/>
+    <meta name='description' content='Simple (small) Traffic light Models'/>
 </head>
 <Scene>
     <Transform DEF = 'SimpleTrafficLight' translation='0 3 0'>

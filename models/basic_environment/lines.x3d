@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <X3D profile='Immersive'>
 <head>
-    <meta name='filename' content='trees.x3d'/>
-    <meta name='description' content='Tree Models'/>
+    <meta name='filename' content='lines.x3d'/>
+    <meta name='description' content='The street marks symbolizing the stop line for cars and the crossing lines for pedestrians.'/>
 </head>
 <Scene>
     <Transform DEF='stopLine' translation='0 0 17.5'>

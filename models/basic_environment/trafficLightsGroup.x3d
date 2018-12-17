@@ -2,7 +2,7 @@
 <X3D profile='Immersive'>
 <head>
     <meta name='filename' content='trafficLightsGroup.x3d'/>
-    <meta name='description' content='Traffic light Models arranged with no use of lights to illuminate colors'/>
+    <meta name='description' content='Traffic light models arranged correctly.'/>
 </head>
 <Scene>
     <Transform translation='-7 0 -11'>

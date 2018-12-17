@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <X3D profile='Immersive'>
 <head>
-    <meta name='arcTrafficLights.x3d' content='arcTrafficLight.x3d'/>
-    <meta name='description' content='Traffic light Models'/>
+    <meta name='filename' content='arcTrafficLights.x3d'/>
+    <meta name='description' content='Model for the arced traffic light.'/>
 </head>
 <Scene>
     <Transform DEF = 'ArcTrafficLight'>
