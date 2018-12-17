@@ -2,9 +2,9 @@
 <x3d>
     <scene>
         <!--<directionalLight direction="0 -1 0" color="1.0 1.0 0.0" on="true"/>-->
-        <!--sideworks-->
+        <!--sidewalks-->
         <transform>
-            <inline url="transforms/sideworks.x3d"/>
+            <inline url="transforms/sidewalks.x3d"/>
         </transform>
         <!--fences-->
         <transform>
@@ -14,17 +14,7 @@
         <transform translation="0 0.5 0">
             <inline url="models/fountainFinal.x3d"/>
         </transform>
-        <!--benches-->
-        <transform>
-            <inline url="transforms/benches.x3d"/>
-        </transform>
-        <!--trees-->
-        <transform>
-            <inline url="transforms/trees.x3d"/>
-        </transform>
-        
-  
-        
+        <!--fountain-water-->
         <transform translation="0 1 0">
             <shape>
                 <cylinder  radius="4.7" height="0.5"/>
@@ -57,5 +47,22 @@
                 </appearance>
             </shape>
         </transform>
+        
+        <!--benches-->
+        <transform>
+            <inline url="transforms/benches.x3d"/>
+        </transform>
+        <!--rubbishes-->
+        <transform>
+            <inline url="transforms/rubbishes.x3d"/>
+        </transform>
+        <!--trees-->
+        <transform>
+            <inline url="transforms/trees.x3d"/>
+        </transform>
+        
+  
+        
+       
     </scene>
 </x3d>

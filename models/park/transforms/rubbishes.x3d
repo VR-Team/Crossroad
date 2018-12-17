@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x3d>
+    <scene>
+        <!--rubbish o-r-o-->
+        <transform translation="15.25 0.5 -32">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish o-l-o-->
+        <transform translation="-15.25 0.5 -32">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish u-r-u-->
+        <transform translation="15.25 0.5 32">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish u-l-u-->
+        <transform translation="-15.25 0.5 32">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish u-l-l-->
+        <transform translation="-32 0.5 15.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish u-l-r-->
+        <transform translation="32 0.5 15.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish o-l-r-->
+        <transform translation="32 0.5 -15.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish o-l-l-->
+        <transform translation="-32 0.5 -15.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish o-r-u-->
+        <transform translation="15.25 0.5 -4.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish o-l-u-->
+        <transform translation="-15.25 0.5 -4.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish u-l-o-->
+        <transform translation="-15.25 0.5 4.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish u-r-o-->
+        <transform translation="15.25 0.5 4.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish u-l-r-->
+        <transform translation="-4.25 0.5 15.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish u-r-l-->
+        <transform translation="4.25 0.5 15.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish o-l-r-->
+        <transform translation="-4.25 0.5 -15.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+        <!--rubbish o-r-l-->
+        <transform translation="-4.25 0.5 -15.25">
+            <inline url="../models/rubbishFinal.x3d"/>
+        </transform>
+     </scene>
+</x3d>

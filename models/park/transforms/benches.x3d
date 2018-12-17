@@ -65,5 +65,5 @@
         <transform translation="18.25 0 -4.25" rotation="0 1 0 3.14">
             <inline url="../models/benchFinal.x3d"/>
         </transform>
-    </scene>
+     </scene>
 </x3d>
