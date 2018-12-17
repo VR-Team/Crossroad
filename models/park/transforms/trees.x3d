@@ -4,116 +4,116 @@
       
         <!--tree1 u-l-l-->
         <transform translation="-15 0 18.25" rotation="0 1 0 1.57">
-            <inline url="../models/tree1.x3d"/>
+            <inline url="../models/tree1.x3d" DEF="Tree1"/>
         </transform>
         <!--tree1 u-l-l-->
         <transform translation="-7 0 15" rotation="0 1 0 1.57">
-            <inline url="../models/tree3.x3d"/>
+            <inline url="../models/tree3.x3d" DEF="Tree3"/>
         </transform>
         <!--tree1 u-l-l-->
         <transform translation="-5 0 23" rotation="0 1 0 1.57">
-            <inline url="../models/tree2s.x3d"/>
+            <inline url="../models/tree2s.x3d" DEF="Tree2"/>
         </transform>
         <!--tree1 u-l-l-->
         <transform translation="-9 0 30" rotation="0 1 0 1.57">
-            <inline url="../models/tree3.x3d"/>
+            <inline USE="Tree3"/>
         </transform>
         <!--tree1 u-l-l-->
         <transform translation="-20 0 15" rotation="0 1 0 1.57">
-            <inline url="../models/tanne.x3d"/>
+            <inline url="../models/tanne.x3d" DEF="Tanne"/>
         </transform>
         <!--tree1 u-l-l-->
         <transform translation="-19 0 28" rotation="0 1 0 1.57">
-            <inline url="../models/tree4.x3d"/>
+            <inline url="../models/tree4.x3d" DEF="Tree4"/>
         </transform>
         <!--tree1 u-l-l-->
         <transform translation="-14 0 25" rotation="0 1 0 1.57">
-            <inline url="../models/tanne.x3d"/>
+            <inline USE="Tanne"/>
         </transform>
         
         <!--tree1 u-l-l-->
         <transform translation="-20 0 8" rotation="0 1 0 1.57">
-            <inline url="../models/tree2s.x3d"/>
+            <inline USE="Tree2"/>
         </transform>
         <!--tree1 u-l-l-->
         <transform translation="-23 0 18" rotation="0 1 0 1.57">
-            <inline url="../models/tree1.x3d"/>
+            <inline USE="Tree1"/>
         </transform>
         <!--tree1 u-l-l-->
         <transform translation="-30 0 11" rotation="0 1 0 1.57">
-            <inline url="../models/tree4.x3d"/>
+            <inline USE="Tree4"/>
         </transform>
         
         <!--tree2s u-r-r-->
         <transform translation="-15 0 18.25" rotation="0 1 0 1.57">
-            <inline url="../models/tree2s.x3d"/>
+            <inline USE="Tree2"/>
         </transform>
         <!--tree2s u-r-r-->
         <transform translation="7 0 12.25">
-            <inline url="../models/tree2s.x3d"/>
+            <inline USE="Tree2"/>
         </transform>
         <!--tanne u-r-r-->
         <transform translation="10 0 5">
-            <inline url="../models/tanne.x3d"/>
+            <inline USE="Tanne"/>
         </transform>
         <!--tree2s u-r-r-->
         <transform translation="30 0 4">
-            <inline url="../models/tree2s.x3d"/>
+            <inline USE="Tree2"/>
         </transform>
         <!--tanne u-r-r-->
         <transform translation="25 0 30">
-            <inline url="../models/tanne.x3d"/>
+            <inline USE="Tanne"/>
         </transform>
         <!--tree1 u-r-r-->
         <transform translation="20 0 8" rotation="0 1 0 1.57">
-            <inline url="../models/tree1.x3d"/>
+            <inline USE="Tree1"/>
         </transform>
         <!--tree1 u-r-r-->
         <transform translation="23 0 15" rotation="0 1 0 1.57">
-            <inline url="../models/tree3.x3d"/>
+            <inline USE="Tree3"/>
         </transform>
         <!--tree1 u-r-r-->
         <transform translation="30 0 11" rotation="0 1 0 1.57">
-            <inline url="../models/tree4.x3d"/>
+            <inline USE="Tree4"/>
         </transform>
         
         <!--tree1 u-r-r-->
         <transform translation="13 0 13.25" rotation="0 1 0 1.57">
-            <inline url="../models/tree4.x3d"/>
+            <inline USE="Tree4"/>
         </transform>
         <!--tree1 u-r-r-->
         <transform translation="6 0 19" rotation="0 1 0 1.57">
-            <inline url="../models/tree1.x3d"/>
+            <inline USE="Tree1"/>
         </transform>
         <!--tree1 u-r-r-->
         <transform translation="3 0 26" rotation="0 1 0 1.57">
-            <inline url="../models/tree2s.x3d"/>
+            <inline USE="Tree2"/>
         </transform>
         <!--tree1 u-r-r-->
         <transform translation="7 0 33" rotation="0 1 0 1.57">
-            <inline url="../models/tree4.x3d"/>
+            <inline USE="Tree4"/>
         </transform>
         <!--tree1 u-r-r-->
         <transform translation="22 0 11" rotation="0 1 0 1.57">
-            <inline url="../models/tanne.x3d"/>
+            <inline USE="Tanne"/>
         </transform>
         <!--tree1 u-r-r-->
         <transform translation="15 0 24" rotation="0 1 0 1.57">
-            <inline url="../models/tree1.x3d"/>
+            <inline USE="Tree1"/>
         </transform>
         <!--tree1 u-r-r-->
         <transform translation="13 0 26" rotation="0 1 0 1.57">
-            <inline url="../models/tree3.x3d"/>
+            <inline USE="Tree3"/>
         </transform>
         <!--tree1 u-r-r-->
         <transform translation="19 0 30" rotation="0 1 0 1.57">
-            <inline url="../models/tree2s.x3d"/>
+            <inline USE="Tree2"/>
         </transform>
         
         
         <!--tanne o-r-r-->
         <transform translation="15 0 -18.25" rotation="0 1 0 1.57">
-            <inline url="../models/tanne.x3d"/>
+            <inline USE="Tanne"/>
         </transform>
         <!--tanne o-r-r-->
         <transform translation="20 0 -25.25" rotation="0 1 0 1.57">
@@ -121,19 +121,19 @@
         </transform>
         <!--tanne o-r-r-->
         <transform translation="25 0 -30.25" rotation="0 1 0 1.57">
-            <inline url="../models/tree4.x3d"/>
+            <inline USE="Tree4"/>
         </transform>
         <!--tanne o-r-r-->
         <transform translation="29 0 -11.25" rotation="0 1 0 1.57">
-            <inline url="../models/tree2s.x3d"/>
+            <inline USE="Tree2"/>
         </transform>
         <!--tree1 o-r-r-->
         <transform translation="13 0 -11" rotation="0 1 0 1.57">
-            <inline url="../models/tree1.x3d"/>
+            <inline USE="Tree1"/>
         </transform>
         <!--tanne o-r-r-->
         <transform translation="25 0 -5">
-            <inline url="../models/tree3.x3d"/>
+            <inline USE="Tree3"/>
         </transform>
         
         
