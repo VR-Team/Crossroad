@@ -102,9 +102,9 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_focusRsHeck_png"
-							              url='"focusRsHeck.png" "/Users/philipmitzlaff/Documents/TH_Wildau/5. Semester/Virtual Reality und Simulation/focusRsHeck.png"'
+							              url="../../textures/cars/focusRsHeck.jpg"
 							              />
-							<TextureTransform 
+							<TextureTransform
 							                  translation="0.000000 0.000000"
 							                  scale="1.000000 1.000000"
 							                  rotation="0.000000"
@@ -129,9 +129,9 @@
 					<Shape>
 						<Appearance>
 							<ImageTexture DEF="IM_focusRsFront_png"
-							              url='"focusRsFront.png" "/Users/philipmitzlaff/Documents/TH_Wildau/5. Semester/Virtual Reality und Simulation/focusRsFront.png"'
+							              url="../../textures/cars/focusRsFront.jpg"
 							              />
-							<TextureTransform 
+							<TextureTransform
 							                  translation="0.000000 0.000000"
 							                  scale="1.000000 1.000000"
 							                  rotation="0.000000"
