@@ -13,11 +13,6 @@ Brief: This is the main file of project "CrossRoad". Run this file with a x3D-Vi
     <NavigationInfo DEF='WalkNav' type='"WALK" "ANY"' transitionType='"ANIMATE"' transitionTime='1.0' speed="3" avatarSize = "0.25 1.8 0.5"/>
     <!--<Viewpoint position="61 26 -107" orientation="0.0 1.0 0.0 -3.14159265359" fieldOfView="1.0" description="Entry View"/>-->
 <!-- ############ Inlines #######################################################################-->
-    <!--                            vehicles                                                                -->
-    <Transform translation="0 -4 0">
-        <Inline url="models/cars/car.x3d" DEF="blueCar"/>
-    </Transform>
-    <!--                            interactiv environment objects                                          -->
     <!--                            environment                                                             -->
     <Transform>
         <Inline url="models/basic_environment/intersection.x3d"/>
@@ -170,7 +165,7 @@ function change_design (value, time)
     return;
  
   if(vehicleDesignID == 0){
-    designHolder = "models/cars/car.x3d";
+    designHolder = "models/cars/bluecar.x3d";
   }else if(vehicleDesignID == 1){
     designHolder = "models/cars/greencar.x3d";
   }else if(vehicleDesignID == 2){
